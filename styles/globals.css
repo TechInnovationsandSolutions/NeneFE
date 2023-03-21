@@ -8,7 +8,10 @@ html {
 }
 
 @layer base {
+  :root {
+    @apply text-base;
+  }
   body {
-    @apply bg-[#fff];
+    @apply bg-[#fff] text-base;
   }
 }
