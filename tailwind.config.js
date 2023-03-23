@@ -10,7 +10,13 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {},
+      colors: {
+        'black':'#000000'
+      },
+      fontFamily:{
+        'sans':'DM Sans,sans-serif',
+        'alegreya':'Alegreya,sans-serif', 
+      }
     },
   },
   plugins: [],
