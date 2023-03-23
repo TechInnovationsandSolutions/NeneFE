@@ -107,7 +107,7 @@ const Footer = () => {
           />
           <button className="cursor-pointer py-2 px-4 rounded-r-md bg-[#F8F8F8]">
             {" "}
-            <img src="/sendBtn.svg" alt="send-Email" />
+            <img src="/assets/svgs/sendBtn.svg" alt="send-Email" />
           </button>
         </div>
       </div>
@@ -138,19 +138,19 @@ const Footer = () => {
           <div className="flex gap-3 ">
             <a href="">
               {" "}
-              <img src="/fb.svg" alt="" />
+              <img src="/assets/svgs/fb.svg" alt="" />
             </a>
             <a href="">
               {" "}
-              <img src="/insta.svg" alt="" />
+              <img src="/assets/svgs/insta.svg" alt="" />
             </a>
             <a href="">
               {" "}
-              <img src="/twt.svg" alt="" />
+              <img src="/assets/svgs/twt.svg" alt="" />
             </a>
             <a href="">
               {" "}
-              <img src="/linkdin.svg" alt="" />
+              <img src="/assets/svgs/linkdin.svg" alt="" />
             </a>
           </div>
         </section>
