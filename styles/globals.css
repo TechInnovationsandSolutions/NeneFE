@@ -13,5 +13,6 @@ html {
   }
   body {
     @apply bg-[#fff] text-base;
+    min-width: 320px;
   }
 }
