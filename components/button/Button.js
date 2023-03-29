@@ -4,10 +4,11 @@ const Button = ({
   text = "",
   variant = "black",
   size = "small",
+  type = "button",
   customClassName = "",
 }) => {
   const className = useMemo(() => {
-    const baseClassName = "py-[0.8em] px-[2.62em]";
+    const baseClassName = "py-[0.8125rem] px-[2.625rem] rounded ";
     const buttonWidth = size === "small" ? "w-fit" : "w-full";
     const buttonVariant = `bg-${variant}`;
     const buttonTextColor = variant === "black" ? "text-white" : "text-black";
@@ -17,7 +18,11 @@ const Button = ({
     return className;
   }, [size, variant]);
 
-  return <button className={`${className} ${customClassName}`}>{text}</button>;
+  return (
+    <button type={type} className={`${className} ${customClassName}`}>
+      {text}
+    </button>
+  );
 };
 
 export default Button;
@@ -30,5 +35,5 @@ Button Background Color Variant as "variant" - Which is either white/black,
 Button Size as "size" - Which is either small/big,
 Custom Class property for any other styles you wish to add.
 
-Example -         <Button text="Register" variant="black" size="small" />
+Example -         <Button text="Register" variant="black" type="button" size="small" />
 */
