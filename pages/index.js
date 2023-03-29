@@ -1,5 +1,3 @@
-import Button from "@/components/button/Button";
-import SignIn from "@/components/verifications/signin";
 import Head from "next/head";
 
 export default function Home() {
