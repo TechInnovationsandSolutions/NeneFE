@@ -1,4 +1,4 @@
-import Button from "@/components/button/Button";
+import Button from "@/components/button/button";
 import FirstSlider from "@/components/homePage1/FirstSlider";
 import SecondSlider from "@/components/homePage1/SecondSlide";
 import Shoes from "@/components/homePage1/Shoes";

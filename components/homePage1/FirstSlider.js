@@ -3,8 +3,7 @@ import img2 from "../homePage1/assets/robert-andall-h2dY1o-3rp0-unsplash 1.png";
 
 import Image from "next/image";
 
-import "swiper/css/autoplay";
-import Button from "../button/Button";
+import Button from "../button/button";
 import Carousel from "react-elastic-carousel";
 
 const data = [

@@ -8,7 +8,7 @@ import b6 from "./assets/brand/b6.png";
 import b7 from "./assets/brand/b7.png";
 import b8 from "./assets/brand/b8.png";
 import b9 from "./assets/brand/b9.png";
-import Button from "../button/Button";
+import Button from "../button/button";
 
 export default function Brands() {
   const brands = [b1, b2, b3, b4, b5, b6, b7, b8, b9];

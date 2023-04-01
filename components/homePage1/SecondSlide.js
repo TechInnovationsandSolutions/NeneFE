@@ -1,12 +1,8 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-
-import "swiper/swiper.min.css";
 import img1 from "../homePage1/assets/s1.png";
 import img2 from "../homePage1/assets/s2.png";
 import Image from "next/image";
 
-import "swiper/css/autoplay";
-import Button from "../button/Button";
+import Button from "../button/button";
 import Carousel from "react-elastic-carousel";
 
 import like from "../../public/assets/svgs/like.svg";

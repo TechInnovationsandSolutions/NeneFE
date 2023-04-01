@@ -2,7 +2,7 @@ import { SwiperSlide } from "swiper/react";
 
 import "swiper/css/autoplay";
 import Image from "next/image";
-import Button from "../button/Button";
+import Button from "../button/button";
 export default function Card({ item, index }) {
   return (
     <SwiperSlide
