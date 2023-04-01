@@ -1,12 +1,6 @@
-import { useState,useEffect } from "react";
-import { inputDivStyle } from "../../utils/sharedStyles";
+import { useState } from "react";
 const Header = () => {
 const [dropdown,setDropdown] = useState(false)
-console.log(dropdown);
-
-useEffect(() => {
-  console.log(dropdown);
-}, [dropdown])
 
   return (
     <header className="bg-black  text-white ">
