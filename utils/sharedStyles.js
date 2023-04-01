@@ -1,0 +1,1 @@
+export const inputDivStyle = ` p-2 rounded-sm bg-white`
