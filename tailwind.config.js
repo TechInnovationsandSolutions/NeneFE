@@ -11,12 +11,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'black':'#000000'
+        black: "#000000",
+        purle: "#FFC0CB",
       },
-      fontFamily:{
-        'sans':'DM Sans,sans-serif',
-        'alegreya':'Alegreya,sans-serif', 
-      }
+      fontFamily: {
+        sans: "DM Sans,sans-serif",
+        alegreya: "Alegreya,sans-serif",
+      },
     },
   },
   plugins: [],
