@@ -1,5 +1,5 @@
-import img1 from "../homePage1/assets/naeim-jafari-Z_nCYyud2yM-unsplash 1.png";
-import img2 from "../homePage1/assets/robert-andall-h2dY1o-3rp0-unsplash 1.png";
+import img1 from "../../public/assets/homePage1/naeim-jafari-Z_nCYyud2yM-unsplash 1.png";
+import img2 from "../../public/assets/homePage1/robert-andall-h2dY1o-3rp0-unsplash 1.png";
 
 import Image from "next/image";
 

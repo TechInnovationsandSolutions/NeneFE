@@ -1,10 +1,9 @@
-import img1 from "../homePage1/assets/s1.png";
-import img2 from "../homePage1/assets/s2.png";
-
-import im1 from "../homePage1/assets/sho.png";
-import im2 from "../homePage1/assets/sho2.png";
-import im3 from "../homePage1/assets/sho3.png";
-import im4 from "../homePage1/assets/sho4.png";
+import img1 from "../../public/assets/homePage1/s1.png";
+import img2 from "../../public/assets/homePage1/s2.png";
+import im1 from "../../public/assets/homePage1/sho.png";
+import im2 from "../../public/assets/homePage1/sho3.png";
+import im3 from "../../public/assets/homePage1/sho4.png";
+import im4 from "../../public/assets/homePage1/s1.png";
 
 export const shirt = [
   {
