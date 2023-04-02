@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-import Button from "@/components/button/button";
-import FirstSlider from "@/components/homePage1/FirstSlider";
-import SecondSlider from "@/components/homePage1/SecondSlide";
-import Shoes from "@/components/homePage1/Shoes";
-
-=======
->>>>>>> parent of 7b3fd4e (Feat: implenting the homepage 1)
 import Head from "next/head";
 
 export default function Home() {

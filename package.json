@@ -17,18 +17,13 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.43.7",
-<<<<<<< HEAD
-    "react-redux": "^8.0.5",
-    "styled-components": "^5.3.9",
-    "tailwind-scrollbar-hide": "^1.1.7"
-=======
     "react-redux": "^8.0.5"
->>>>>>> parent of 7b3fd4e (Feat: implenting the homepage 1)
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "eslint-config-prettier": "^8.7.0",
     "postcss": "^8.4.21",
+    "tailwind-scrollbar-hide": "^1.1.7",
     "tailwindcss": "^3.2.7"
   }
 }
