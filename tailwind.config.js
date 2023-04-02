@@ -11,13 +11,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        black: "#000000",
-        purle: "#FFC0CB",
+        'black':'#000000'
       },
-      fontFamily: {
-        sans: "DM Sans,sans-serif",
-        alegreya: "Alegreya,sans-serif",
-      },
+      fontFamily:{
+        'sans':'DM Sans,sans-serif',
+        'alegreya':'Alegreya,sans-serif', 
+      }
     },
   },
   plugins: [require("tailwind-scrollbar-hide")],
