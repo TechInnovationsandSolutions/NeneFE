@@ -35,10 +35,10 @@ export default function Home() {
           <div className="md:mx-10 border-2 h-4/5 w-full border-white p-8 md:flex items-center">
             <div className="flex-1">
               <p className="text-2xl">
-                " I’m a product of in-depth discipline and growth. And after 30
-                years of being in the entertainment industry, I can say that the
-                sense of fullfillment comes into play. But I still want to give
-                back to the society at large. "
+                &ldquo; I&lsquo;m a product of in-depth discipline and growth.
+                And after 30 years of being in the entertainment industry, I can
+                say that the sense of fullfillment comes into play. But I still
+                want to give back to the society at large. &ldquo;
               </p>
               <div className="flex gap-4 items-center mt-5">
                 <div className="w-12 h-12 border-2 border-white rounded-full overflow-hidden md:hidden">
