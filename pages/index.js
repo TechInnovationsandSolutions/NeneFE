@@ -31,6 +31,7 @@ export default function Home() {
           className="bg-purle flex justify-center items-center p-2"
           style={{
             minHeight: "500px",
+            background: "#FFC0CB",
           }}
         >
           <div className="md:mx-10 border-2 h-4/5 w-full border-white p-8 md:flex items-center">
