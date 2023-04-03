@@ -4,8 +4,9 @@ import Head from "next/head";
 import peso from "../public/assets/homePage1/persone.png";
 import Image from "next/image";
 import Brands from "@/components/homePage1/brand";
-import CategoryRender from "@/components/homePage1/categoryRender";
-import { shirt, shoes } from "@/components/homePage1/data";
+
+import { bags, shirt, shoes } from "@/components/homePage1/data";
+import Carrousel from "@/components/homePage1/slider";
 
 export default function Home() {
   return (
@@ -20,10 +21,11 @@ export default function Home() {
         <div className="w-full md:w-9/12 mx-auto mb-5">
           <FirstSlider />
         </div>
-        <section className="md:pt-20 pt-10 mb-2">
+        <section className="md:pt-20 pt-10 mb-2 pb-10 overflow-hidden">
           <h2 className="font-bold text-4xl text-center">New Now</h2>
-          <CategoryRender data={shirt} title="Shirt" />
-          <CategoryRender data={shoes} title="Shoes" />
+          <Carrousel title="Shirts" data={shirt} />
+          <Carrousel title="Bags" data={bags} />
+          <Carrousel title="Shoes" data={shoes} />
         </section>
         <section
           className="bg-purle flex justify-center items-center p-2"
@@ -61,6 +63,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+
         <section>
           <Brands />
         </section>
