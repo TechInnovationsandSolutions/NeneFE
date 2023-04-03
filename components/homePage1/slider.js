@@ -15,8 +15,8 @@ export default function slider({ title, data }) {
     centerMode: true,
     infinite: true,
     autoplay: true,
-    speed: 4000,
-    autoplaySpeed: 4000,
+    speed: 6000,
+    autoplaySpeed: 6000,
 
     responsive: [
       {
@@ -29,7 +29,7 @@ export default function slider({ title, data }) {
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 600,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -37,14 +37,10 @@ export default function slider({ title, data }) {
         },
       },
       {
-        breakpoint: 678,
+        breakpoint: 480,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          centerPadding: 45,
-          className: "center",
-          centerMode: true,
-          pauseOnHover: true,
         },
       },
     ],

@@ -41,8 +41,8 @@ const FirstSlider = () => {
     initialSlide: 0,
     infinite: true,
     autoplay: true,
-    speed: 4000,
-    autoplaySpeed: 4000,
+    speed: 6000,
+    autoplaySpeed: 6000,
 
     responsive: [
       {
@@ -65,12 +65,13 @@ const FirstSlider = () => {
       {
         breakpoint: 678,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
           centerPadding: 45,
           className: "center",
           centerMode: true,
           pauseOnHover: true,
+          vertical: true,
         },
       },
     ],
