@@ -1,12 +1,16 @@
 import { useState } from "react";
 const Header = () => {
-const [dropdown,setDropdown] = useState(false)
+  const [dropdown, setDropdown] = useState(false);
 
   return (
     <header className="bg-black  text-white ">
       <div className=" flex items-center border-b px-[4em] border-b-[#8B8282] justify-between py-[2em]  ">
         <p> Nene </p>
-        <div className={`py-2 px-4 ${dropdown?'flex':'hidden'}  lg:flex bg-white rounded-2xl text-black bg-black w-3/5`}>
+        <div
+          className={`py-2 px-4 ${
+            dropdown ? "flex" : "hidden"
+          }  lg:flex bg-white rounded-2xl text-black  w-3/5`}
+        >
           <input
             type="search"
             className="w-full  outline-none"
@@ -28,11 +32,11 @@ const [dropdown,setDropdown] = useState(false)
             <img src="/assets/svgs/navIcon4.svg" alt="" />
           </button>
         </nav>
-<button onClick={()=>setDropdown(true)} className='lg:hidden' ><img src="/assets/svgs/icon-hamburger.svg" alt="" />
-</button>
-
+        <button onClick={() => setDropdown(true)} className="lg:hidden">
+          <img src="/assets/svgs/icon-hamburger.svg" alt="" />
+        </button>
       </div>
-      <div className="hidden lg:flex justify-between px-[4em] ">
+      <div className="hidden py-[1.1875rem] lg:flex justify-between px-[4em] ">
         <div className="flex gap-1 ">
           <span>New In</span>
           <img src="/assets/svgs/drop.svg" alt="" />

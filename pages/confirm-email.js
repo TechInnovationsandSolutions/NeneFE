@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const ConfirmEmail = () => {
   return (
-    <div className="bg-black w-full h-screen flex justify-center items-center absolute z-10">
+    <div className="bg-black w-full h-screen flex justify-center items-center absolute top-0 z-10">
       <div className=" w-[60%] md:w-[50%] lg:w-[44.65%] flex flex-col items-center py-[1.875rem] px-[4.8125rem] justify-center bg-white">
         <h1 className="font-sans font-medium text-black text-2xl pb-[1.3125rem] text-center ">
           Reset your password{" "}
