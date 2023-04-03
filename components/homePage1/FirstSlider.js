@@ -4,7 +4,10 @@ import img2 from "../../public/assets/homePage1/robert-andall-h2dY1o-3rp0-unspla
 import Image from "next/image";
 
 import Button from "../button/button";
-import Carousel from "react-elastic-carousel";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Card from "./Card";
 
 const data = [
   {
@@ -30,32 +33,56 @@ const data = [
 ];
 
 const FirstSlider = () => {
-  const breakPoints = [
-    { width: 1, itemsToShow: 1 },
-    { width: 550, itemsToShow: 2 },
-  ];
+  const settings = {
+    dots: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    infinite: true,
+    autoplay: true,
+    speed: 4000,
+    autoplaySpeed: 4000,
+
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 678,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerPadding: 45,
+          className: "center",
+          centerMode: true,
+          pauseOnHover: true,
+        },
+      },
+    ],
+  };
+
   return (
     <div className="slider">
-      <Carousel itemsToShow={2} breakPoints={breakPoints} enableAutoPlay={true}>
+      <Slider {...settings}>
         {data.map((item, index) => (
-          <div
-            key={index}
-            className="slide overflow-hidden justify-center flex  relative "
-          >
-            <Image src={item.img} alt={`Slide ${index}`} height={700} />
-            <div className="absolute flex-col  top-0 left-0 right-0 bottom-0 w-full h-full flex items-center justify-center">
-              <div className="mt-16 flex flex-col items-center justify-center gap-4 w-full">
-                <p className="md:text-3xl font-bold text-white ">{item.name}</p>
-                <Button
-                  text="Shop now"
-                  customClassName="rounded-md bg-white"
-                  variant=""
-                />
-              </div>
-            </div>
-          </div>
+          <Card index={index} item={item} key={index} />
         ))}
-      </Carousel>
+      </Slider>
     </div>
   );
 };

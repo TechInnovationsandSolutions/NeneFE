@@ -1,18 +1,12 @@
-import { SwiperSlide } from "swiper/react";
-
-import "swiper/css/autoplay";
 import Image from "next/image";
 import Button from "../button/button";
 export default function Card({ item, index }) {
   return (
-    <SwiperSlide
-      key={index}
-      className="slide overflow-hidden justify-center flex  relative bg-gray-100"
-    >
+    <div className="slide overflow-hidden justify-center flex  relative bg-gray-100 w-full">
       <Image
         src={item.img}
         alt={`Slide ${index}`}
-        className="w-fit h-4/5 overflow-hidden"
+        className="w-full h-3/5 overflow-hidden"
       />
 
       <div className="absolute flex-col  top-0 left-0 right-0 bottom-0 w-full h-full flex items-center justify-center">
@@ -25,6 +19,6 @@ export default function Card({ item, index }) {
           />
         </div>
       </div>
-    </SwiperSlide>
+    </div>
   );
 }

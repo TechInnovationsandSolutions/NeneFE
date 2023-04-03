@@ -19,6 +19,8 @@
     "react-elastic-carousel": "^0.11.5",
     "react-hook-form": "^7.43.7",
     "react-redux": "^8.0.5",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.9",
     "tailwind-scrollbar-hide": "^1.1.7"
   },

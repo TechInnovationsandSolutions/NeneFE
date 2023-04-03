@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import like from "../../public/assets/svgs/like.svg";
+import lik from "../../public/assets/svgs/like.svg";
 import { useState } from "react";
 
 export default function CardArtcile({ item }) {
@@ -9,14 +9,14 @@ export default function CardArtcile({ item }) {
     setLike(!like);
   };
   return (
-    <div className="slide justify-center   relative  ml-4">
+    <div className="slide justify-center relative w-72 overflow-hidden">
       <div className="relative">
         <Image src={item.img} alt="Slide" className="w-full" />
         <div
           onClick={handleLike}
           className="absolute right-5 bottom-8 w-8 flex items-center justify-center bg-white h-8 rounded-full cursor-pointer"
         >
-          <Image src={like} width={20} alt="like btn" height={18.48} />
+          <Image src={lik} width={20} alt="like btn" height={18.48} />
         </div>
       </div>
       <div>
