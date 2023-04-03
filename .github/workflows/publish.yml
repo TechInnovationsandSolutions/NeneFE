@@ -8,6 +8,10 @@ on:
     workflows: [Deploy Next.js site to Pages]
     types: [completed]
 
+   # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+
 jobs:
   on-success:
     runs-on: ubuntu-latest
@@ -19,6 +23,8 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     steps:
       - run: echo 'The triggering wokflow has failed'
+
+      
 
   build:
     runs-on: ubuntu-latest
@@ -42,4 +48,28 @@ jobs:
         run: npm ci
       - name: build
         run: npm run build
+      
+    
+  Deploy_to_EC2:
+    name: Deploy to server
+    runs-on: ubuntu-latest
+    environment: staging
+
+    needs: build
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Remote ssh access
+        env:
+            PRIVATE_KEY: ${{ secrets.SSH_PRIVATEKEY  }}
+            HOSTNAME : ${{ secrets.SSH_HOST  }}
+            USER_NAME : ${{ secrets.USERNAME  }}
+            
+        run: |
+          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          ssh -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${SSH_HOST} '
+
+
+
+
       
