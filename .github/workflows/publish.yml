@@ -58,17 +58,15 @@ jobs:
     needs: build
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Remote ssh access
-        env:
-            SSH_PRIVATEKEY: ${{ secrets.SSH_PRIVATEKEY  }}
-            SSH_HOST : ${{ secrets.SSH_HOST  }}
-            USERNAME : ${{ secrets.USERNAME  }}
-            
-        run: |
-          echo "$SSH_PRIVATEKEY" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${SSH_HOST} 
-
+      - name: Remote ssh actions
+        uses: Creepios/sftp-action@v1.0.1
+        with:
+            privatekey: ${{ secrets.SSH_PRIVATEKEY  }}
+            host: ${{ secrets.SSH_HOST  }}
+            username: ${{ secrets.USERNAME  }}
+            port: ${{ secrets.PORT }}
+            localpath: './build'
+            remotepath: '/home/ubuntu/NeneFe/build/'
 
 
       
