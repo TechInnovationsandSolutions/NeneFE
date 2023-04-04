@@ -61,13 +61,13 @@ jobs:
       - uses: actions/checkout@v2
       - name: Remote ssh access
         env:
-            PRIVATE_KEY: ${{ secrets.SSH_PRIVATEKEY  }}
-            HOSTNAME : ${{ secrets.SSH_HOST  }}
-            USER_NAME : ${{ secrets.USERNAME  }}
+            SSH_PRIVATEKEY: ${{ secrets.SSH_PRIVATEKEY  }}
+            SSH_HOST : ${{ secrets.SSH_HOST  }}
+            USERNAME : ${{ secrets.USERNAME  }}
             
         run: |
           echo "$SSH_PRIVATEKEY" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${SSH_HOST} '
+          ssh -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${SSH_HOST} 
 
 
 
