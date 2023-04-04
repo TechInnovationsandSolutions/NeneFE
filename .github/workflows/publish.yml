@@ -61,12 +61,12 @@ jobs:
       - name: Remote ssh actions
         uses: garygrossgarten/github-action-scp@release
         with:
-            localpath: './build'
-            remotepath: '/home/ubuntu/NeneFe/build/'
-            privatekey: ${{ secrets.SSH_PRIVATEKEY  }}
+            local: './build'
+            remote: '/home/ubuntu/NeneFe/build/'
+            password: ${{ secrets.SSH_PRIVATEKEY  }}
             host: ${{ secrets.SSH_HOST  }}
             username: ${{ secrets.USERNAME  }}
-            port: ${{ secrets.PORT }}
+            #port: ${{ secrets.PORT }}
             
 
 
