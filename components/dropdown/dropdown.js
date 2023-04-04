@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Image from "next/image";
 
 function Dropdown({ children, name }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,21 +10,23 @@ function Dropdown({ children, name }) {
   }
 
   return (
-    <div className="inline-flex relative h-10">
+    <div className="inline-flex relative h-10 mx-3 my-2">
       {/* The dropdown button */}
       <button
         className="flex justify-between items-center border border-gray-400 rounded px-3"
         onClick={handleClick}
       >
         <span>{name}</span>
-        <img
+        <Image
           src={
             isOpen
               ? "/assets/svgs/chevronUp.svg"
               : "/assets/svgs/chevronDown.svg"
           }
-          alt=""
-          className="ml-20"
+          height={12}
+          width={12}
+          alt="chevron"
+          className="ml-10 md:ml-20"
         />
       </button>
 

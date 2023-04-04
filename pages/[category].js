@@ -1,9 +1,9 @@
 import Pill from "@/components/pill/pill";
 import ProductCard from "@/components/productCard/productCard";
-import Button from "@/components/button/Button";
+import Button from "@/components/button/button";
 import { useState } from "react";
 import Image from "next/image";
-import Dropdown from "@/components/dropdown/Dropdown";
+import Dropdown from "@/components/dropdown/dropdown";
 
 function Category() {
   const [numberOfProducts, setNumberOfProducts] = useState(328);
@@ -14,12 +14,13 @@ function Category() {
 
   return (
     <div>
-      <div className="flex h-[55vh] gap-0">
-        <div className="w-1/2 overflow-hidden">
-          <img
+      <div className="flex h-[300px] sm:h-[400px] gap-0">
+        <div className="w-1/2 h-full overflow-hidden relative">
+          <Image
             src="/assets/images/unsplash2.webp"
-            alt=""
-            className="h-full w-full object-cover"
+            fill
+            alt="dress"
+            className="object-cover"
           />
         </div>
         <div className="w-1/2 bg-[#FFC0CB] flex flex-col justify-center items-center gap-3">
@@ -32,14 +33,14 @@ function Category() {
         </div>
       </div>
 
-      <div className="text-center px-5 md:px-14 lg:px-20 py-5">
+      <div className="text-center px-5 md:px-14 lg:px-20 py-5 box-content">
         <p className="text-lg my-5 font-medium text-[#3E3E3E]">
           When it comes to finding a wear on a nightout, the options are
           endless. Certain outfits flatter certain body types, weather and
           occasion, so it can be overwhelming to try and tackle the choices
           alone.
         </p>
-        <div>
+        <div className="flex sm:block overflow-x-auto scrollbar-hide">
           {[4, 5, 6, 5, 5, 5, 5, 5, 5, 5, 5].map((e, i) => (
             <Pill text="Beautiful Dresses" key={i} />
           ))}
@@ -48,7 +49,7 @@ function Category() {
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-5 bg-gray-100 py-6 px-5 md:px-14 lg:px-20">
+      <div className="flex flex-wrap bg-gray-100 py-6 px-5 md:px-14 lg:px-20">
         {filters.map((filter, index) => {
           return <Dropdown name={filter} key={index}></Dropdown>;
         })}
@@ -56,7 +57,7 @@ function Category() {
 
       <div className="px-5 md:px-14 lg:px-20 py-5 text-center">
         <h3 className="text-lg text-gray-600 font-medium">322 Products</h3>
-        <div className="flex justify-center flex-wrap gap-7 py-6">
+        <div className="flex justify-center flex-wrap py-2">
           {products.map((product, index) => {
             return (
               <ProductCard
@@ -70,11 +71,11 @@ function Category() {
         </div>
       </div>
 
-      <div className="p-2 flex flex-col gap-3 items-center">
-        <p className="text-[15px] font-medium">
+      <div className="p-2 flex flex-col items-center">
+        <p className="text-[15px] font-medium mb-3">
           Showing {currentNumber} of {numberOfProducts} products
         </p>
-        <div className="inline-flex w-80 h-1 bg-gray-300">
+        <div className="inline-flex w-80 h-1 bg-gray-300 mb-3">
           <div
             className={`bg-black h-full`}
             style={{ width: `${progressPercentage}%` }}
@@ -88,7 +89,7 @@ function Category() {
       </div>
 
       <div className="flex flex-col items-center gap-5 px-5 md:px-14 lg:px-16 my-10">
-        <h3 className="text-lg text-[#3E3E3E] font-medium text-center mb-2">
+        <h3 className="text-lg text-[#3E3E3E] font-medium text-center">
           Brands
         </h3>
         <div className="flex justify-center flex-wrap gap-8 px-10">
@@ -97,9 +98,9 @@ function Category() {
               <Image
                 src={`/assets/images/${brand}.png`}
                 className="h-20 w-auto"
-                alt=""
-                width={500}
-                height={500}
+                alt={brand}
+                width={200}
+                height={200}
                 key={brand}
               />
             );
