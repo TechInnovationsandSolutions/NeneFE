@@ -70,7 +70,7 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${SSH_HOST} '
             sudo su
             pwd
-            cd /home/ubuntu/NeneFe &&
+            cd /NeneFe &&
             git checkout dev &&
             git fetch --all &&
             git reset --hard origin/dev &&
