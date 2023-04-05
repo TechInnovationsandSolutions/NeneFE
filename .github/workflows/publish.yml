@@ -58,20 +58,13 @@ jobs:
     needs: build
 
     steps:
-      - uses: actions/checkout@v2
       - name: Remote ssh access
-        env:
-            SSH_PRIVATEKEY: ${{ secrets.SSH_PRIVATEKEY  }}
-            SSH_HOST : ${{ secrets.SSH_HOST  }}
-            USERNAME : ${{ secrets.USERNAME  }}
-            
-        run: |
-          echo "$SSH_PRIVATEKEY" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${SSH_HOST} '
-            sudo su
-            ls 
-            cd NeneFe/ &&
-            git checkout dev &&
-            git fetch --all &&
-            git reset --hard origin/dev &&
-            git pull origin dev'
+        uses: appleboy/ssh-actions@v0.1.9
+        with:
+            host : ${{ secrets.SSH_HOST  }}
+            username : ${{ secrets.USERNAME  }}
+            password: ${{ secrets.SSH_PRIVATEKEY  }}
+            port: ${{ secrets.PORT }}
+            script: |
+                pwd
+                cd home/ubuntu/NeneFe
