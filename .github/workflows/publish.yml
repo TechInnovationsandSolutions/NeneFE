@@ -69,6 +69,7 @@ jobs:
           echo "$SSH_PRIVATEKEY" > private_key && chmod 600 private_key
           ssh -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${SSH_HOST} '
             sudo su
+            pwd
             cd /home/ubuntu/NeneFe &&
             git checkout dev &&
             git fetch --all &&
