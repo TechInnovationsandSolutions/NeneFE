@@ -67,4 +67,8 @@ jobs:
             port: ${{ secrets.PORT }}
             script: |
                 pwd
-                cd home/ubuntu/NeneFe
+                cd home/ubuntu/NeneFE
+                git checkout dev 
+                git fetch --all &&
+                git reset --hard origin/dev
+                git pull origin dev'
