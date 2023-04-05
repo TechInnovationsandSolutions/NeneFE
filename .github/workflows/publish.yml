@@ -58,12 +58,12 @@ jobs:
     needs: build
 
     steps:
-      - name: Remote ssh access
-        uses: appleboy/ssh-actions@v0.1.9
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@v0.1.9
         with:
             host : ${{ secrets.SSH_HOST  }}
             username : ${{ secrets.USERNAME  }}
-            password: ${{ secrets.SSH_PRIVATEKEY  }}
+            key: ${{ secrets.SSH_PRIVATEKEY  }}
             port: ${{ secrets.PORT }}
             script: |
                 pwd
