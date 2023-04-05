@@ -69,6 +69,8 @@ jobs:
           echo "$SSH_PRIVATEKEY" > private_key && chmod 600 private_key
           ssh -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${SSH_HOST} 
 
-          cd /home/ubuntu
-          git clone https://github.com/TechInnovationsandSolutions/NeneFE.git
-          
+          cd /home/ubuntu/NeneFe &&
+          git checkout dev &&
+          git fetch --all &&
+          git reset --hard origin/dev &&
+          git pull origin dev
