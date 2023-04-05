@@ -58,16 +58,17 @@ jobs:
     needs: build
 
     steps:
-      - name: Remote ssh actions
-        uses: garygrossgarten/github-action-scp@release
-        with:
-            local: './build'
-            remote: '/home/ubuntu/NeneFe/build/'
-            password: ${{ secrets.SSH_PRIVATEKEY  }}
-            host: ${{ secrets.SSH_HOST  }}
-            username: ${{ secrets.USERNAME  }}
-            #port: ${{ secrets.PORT }}
+      - uses: actions/checkout@v2
+      - name: Remote ssh access
+        env:
+            SSH_PRIVATEKEY: ${{ secrets.SSH_PRIVATEKEY  }}
+            SSH_HOST : ${{ secrets.SSH_HOST  }}
+            USERNAME : ${{ secrets.USERNAME  }}
             
+        run: |
+          echo "$SSH_PRIVATEKEY" > private_key && chmod 600 private_key
+          ssh -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${SSH_HOST} 
 
-
-      
+          cd /home/ubuntu/
+          git clone https://github.com/TechInnovationsandSolutions/NeneFE.git
+          
