@@ -14,7 +14,7 @@ export default function Brands() {
   const brands = [b1, b2, b3, b4, b5, b6, b7, b8, b9];
   return (
     <div className="p-8">
-      <h2 className="text-center">Brands</h2>
+      <h2 className="text-center text-2xl">Brands</h2>
       <div className="flex flex-wrap gap-4 mt-5 items-center justify-center">
         {brands.map((brand) => (
           <Image src={brand} key={brand} alt="" />
