@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React from "react";
 
-export default function slider({ title, data }) {
+export default function MobileCaroussel({ title, data }) {
   const settings = {
     dots: true,
     slidesToShow: 5,
@@ -30,9 +30,16 @@ export default function slider({ title, data }) {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 1,
+          slidesToScroll: 1,
           initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 831,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
         },
       },
       {
@@ -45,8 +52,7 @@ export default function slider({ title, data }) {
     ],
   };
   return (
-    <div className="mb-5 font-sans md:block hidden">
-      <h3 className="pl-2 md:pl-10 text-2xl mb-2">{title}</h3>
+    <div className="mb-5 font-sans md:hidden">
       <Slider {...settings} className="items-center justify-center flex gap-2">
         {data.map((item) => (
           <CardArtcile item={item} key={item.id} />

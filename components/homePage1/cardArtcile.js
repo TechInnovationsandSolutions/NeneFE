@@ -9,9 +9,9 @@ export default function CardArtcile({ item }) {
     setLike(!like);
   };
   return (
-    <div className="slide justify-center relative md:w-72 w-full p-5 md:p-8 overflow-hidden">
+    <div className="slide justify-center relative md:w-[320px] w-[320px] p-5 md:p-10 overflow-hidden">
       <div className="relative">
-        <Image src={item.img} alt="Slide" className="w-full" />
+        <Image src={item.img} alt="Slide" className="w-full h-[460px]" />
         <div
           onClick={handleLike}
           className="absolute right-5 bottom-8 w-8 flex items-center justify-center bg-white h-8 rounded-full cursor-pointer"

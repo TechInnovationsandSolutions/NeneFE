@@ -35,14 +35,13 @@ const data = [
 const FirstSlider = () => {
   const settings = {
     dots: true,
-    speed: 500,
     slidesToShow: 2,
     slidesToScroll: 1,
     initialSlide: 0,
     infinite: true,
     autoplay: true,
-    speed: 6000,
-    autoplaySpeed: 6000,
+    speed: 7000,
+    autoplaySpeed: 7000,
 
     responsive: [
       {
