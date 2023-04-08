@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 pm2 kill
 sudo rm -rf /home/ubuntu/NeneFE/node_modules
