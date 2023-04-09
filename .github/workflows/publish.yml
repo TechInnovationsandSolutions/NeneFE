@@ -72,3 +72,4 @@ jobs:
                 git fetch --all
                 git reset --hard origin/dev
                 git pull origin dev
+                sudo systemctl restart NeneFE.service
