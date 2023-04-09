@@ -74,4 +74,4 @@ jobs:
                 git pull origin dev
                 sudo systemctl restart NeneFE.service
                 cd ..
-                sudo ./deploy.sh
+                sudo ./deploy.sh 
