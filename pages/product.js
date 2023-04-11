@@ -10,10 +10,10 @@ import WI from '../public/assets/svgs/Like.svg'
 function Product() {
   console.log(typeof img1);
   return (
-    <article className='text-lg mx-5 md:mx-24 font-sans'>
-        <p className='max-w-[650px] m-auto my-9'><span className='text-[#7D7878]'>Home / Clothes / Dresses /</span> Zara Twist Front Textured Slinky Ruched Midi Dress </p>
+    <article className='text-lg mx-[8%] lg:mx-24 font-sans font-[400]'>
+        <p className='max-w-[650px] m-auto mt-9 mb-16'><span className='text-[#7D7878]'>Home / Clothes / Dresses /</span> Zara Twist Front Textured Slinky Ruched Midi Dress </p>
       <section>
-        <div className='flex flex-col md:flex-row  my-9  gap-6' >
+        <div className='flex flex-col md:flex-row  my-9  gap-6 text-[#3E3E3E]' >
           <div className='flex md:flex-row flex-col-reverse gap-6'>
             <div className='flex md:flex-col gap-4 m-auto md:m-0'>
               <div className='min-w-[50px] max-w-[100px]'>
@@ -29,7 +29,7 @@ function Product() {
                 <Image src={dbress} width={100} height={100} />
               </div>
             </div>
-            <div className='min-width-[355px] min-h-[400px] m-auto md:m-0'>
+            <div className='min-w-[280px] min-h-[400px] m-auto md:m-0'>
               <Image src={dbress}  />
             </div>
           </div>
@@ -53,7 +53,7 @@ function Product() {
             </div>
             <div className='mt-5'>
               <p className='font-bold my-2'>UK Size:</p>
-              <div className='flex gap-3 md:flex-row flex-row'>
+              <div className='flex gap-3 lg:flex-row flex-col'>
                 <div className='flex gap-2'>
                   <div className='p-1 w-9 h-9 border-black border flex justify-center'>6</div>
                   <div className='p-1 w-9 h-9 border-black border flex justify-center'>7</div>
@@ -61,7 +61,7 @@ function Product() {
                   <div className='p-1 w-9 h-9 border-black border flex justify-center'>9</div>
                   <div className='p-1 w-9 h-9 border-black border flex justify-center'>10</div>
                 </div>
-                <div className='flex gap-1 items-center'>
+                <div className='flex gap-1 items-center my-2 md:my-0'>
                   <Image src={anger} />
                   <p className='text-sm min-w-[119px]'>What's My Size?</p>
                 </div>
@@ -72,53 +72,68 @@ function Product() {
               <div className='p-1 w-20 h-9 border-black border flex justify-center'>8</div>
             </div>
             <div className='mt-5 flex gap-10'>
-              <Button type={'button'} variant={'black'} text='Add To Shopping Bag'/>
+              <Button type={'button'} customClassName={'text-xs  md:text-base '} variant={'black'} text='Add To Shopping Bag'/>
               <Image src={WI}/>
             </div>
           </div>
         </div>
       </section>
-      <section>
+      <section className='my-12'>
         <div>
-          <h5>Description:</h5>
-          <p>Fabric with cotton. Shirt-style. Lapel-collar. Long sleeve with buttoned cuffs. Loops. Adjustable belt. Side pockets. Decorative pleats at front. Concealed button fastening. Inner lining.
+          <h5 className='font-bold mt-5'>Description:</h5>
+          <p className='text-[#616161]'>Fabric with cotton. Shirt-style. Lapel-collar. Long sleeve with buttoned cuffs. Loops. Adjustable belt. Side pockets. Decorative pleats at front. Concealed button fastening. Inner lining.
           </p>
         </div>
         <div>
-          <h5>Size:</h5>
-          <p>Model wears: UK 8/ EU 36/ US 4
+          <h5 className='font-bold mt-5'>Size:</h5>
+          <p className='text-[#616161]'>Model wears: UK 8/ EU 36/ US 4
           Model's height: 173cm/5'8"</p>
         </div>
         <div>
-          <h5>Material and washing instructions:</h5>
-          <p>Composition: 98% cotton,2% elastane. Lining: 80% polyester,20% cotton</p>
+          <h5 className='font-bold mt-5'>Material and washing instructions:</h5>
+          <p className='text-[#616161]'>Composition: 98% cotton,2% elastane. Lining: 80% polyester,20% cotton</p>
         </div>
       </section>
       <section>
-        <div>
-          <div>
-            <h3>Similar Pieces</h3>
-            <div>
-              <Image src={img1} />
+        <div className='my-9'>
+          <div className='mt-16'>
+            <h3 className='font-medium text-2xl mb-6 text-center sm:text-left'>Similar Pieces</h3>
+            <div className='gap-3 flex flex-col'>
+              <div className=''>
+                <Image src={img1} />
+              </div>
+              <p className='text-sm text-[#3E3E3E] w-[280px]'>Zara Twist Front Textured Slinky Ruched Midi Dress </p>
+              <h4 className='font-bold'>N 3,000</h4>
             </div>
-            <p>Zara Twist Front Textured Slinky Ruched Midi Dress </p>
-            <h4>N 3,000</h4>
           </div>
-          <div>
-            <h3>You Might Also Like</h3>
-            <div>
-              <Image src={img1} />
+          <div className='mt-16'>
+            <h3 className='font-medium text-2xl mb-6 text-center sm:text-left'>You Might Also Like</h3>
+            <div className='gap-3 flex flex-col'>
+              <div className=''>
+                <Image src={img1} />
+              </div>
+              <p className='text-sm text-[#3E3E3E] w-[280px]'>Zara Twist Front Textured Slinky Ruched Midi Dress </p>
+              <h4 className='font-bold'>N 3,000</h4>
             </div>
-            <p>Zara Twist Front Textured Slinky Ruched Midi Dress </p>
-            <h4>N 3,000</h4>
           </div>
-          <div>
-            <h3>Complete Your Outfit</h3>
-            <div>
-              <Image src={img1} />
+          <div className='mt-16'>
+            <h3 className='font-medium text-2xl mb-6 text-center sm:text-left'>Complete Your Outfit</h3>
+            <div className='flex flex-col sm:flex-row gap-5'>
+              <div className='gap-3 flex flex-col'>
+                <div className=''>
+                  <Image src={img1} />
+                </div>
+                <p className='text-sm text-[#3E3E3E] w-[280px]'>Zara Twist Front Textured Slinky Ruched Midi Dress </p>
+                <h4 className='font-bold'>N 3,000</h4>
+              </div>
+              <div className='gap-3 flex flex-col'>
+                <div className=''>
+                  <Image src={img1} />
+                </div>
+                <p className='text-sm text-[#3E3E3E] w-[280px]'>Zara Twist Front Textured Slinky Ruched Midi Dress </p>
+                <h4 className='font-bold'>N 3,000</h4>
+              </div>
             </div>
-            <p>Zara Twist Front Textured Slinky Ruched Midi Dress </p>
-            <h4>N 3,000</h4>
           </div>
         </div>
       </section>
