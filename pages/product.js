@@ -6,11 +6,41 @@ import img1 from "../public/assets/homePage1/s1.png"
 import dbress from '../public/assets/homePage1/bdress.png';
 import anger from '../public/assets/svgs/anger.svg'
 import WI from '../public/assets/svgs/Like.svg'
+import close from '../public/assets/svgs/close icon.svg'
 
 function Product() {
   console.log(typeof img1);
   return (
     <article className='text-lg mx-[8%] lg:mx-24 font-sans font-[400]'>
+      <section>
+        <div>
+          <div>
+            <h3>Shopping Bag (1)</h3>
+            <Image src={close} />
+          </div>
+          <div>
+            <div className='max-w-[100px]'>
+                <Image src={dbress} width={100} height={100} />
+            </div>
+            <div>
+              <p>Zara Twist Front Textured Slinky Ruched Midi Dress </p>
+              <p>Color: Black</p>
+              <p>UK Size: 6</p>
+              <div>
+                <p>Quantity: 1</p>
+                <h5>N 3,000</h5>
+              </div>
+            </div>
+            <div></div>
+            <div>
+              <p>Total</p>
+              <h4>N 3,000</h4>
+            </div>
+            <Button type={'button'} customClassName={'text-xs'} variant={'black'} text='Checkout'/>
+            <Button type={'button'} customClassName={'text-xs'} variant={'white'} text='View Bag'/>
+          </div>
+        </div>
+      </section>
         <p className='max-w-[650px] m-auto mt-9 mb-16'><span className='text-[#7D7878]'>Home / Clothes / Dresses /</span> Zara Twist Front Textured Slinky Ruched Midi Dress </p>
       <section>
         <div className='flex flex-col md:flex-row  my-9  gap-6 text-[#3E3E3E]' >
