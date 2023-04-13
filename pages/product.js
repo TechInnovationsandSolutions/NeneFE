@@ -5,7 +5,7 @@ import Button from '../components/button/button'
 import img1 from "../public/assets/homePage1/s1.png"
 import dbress from '../public/assets/homePage1/bdress.png';
 import anger from '../public/assets/svgs/anger.svg'
-import WI from '../public/assets/svgs/Like.svg'
+import WI from '../public/assets/svgs/complete-like.svg'
 import close from '../public/assets/svgs/close icon.svg'
 
 function Product() {
@@ -19,11 +19,11 @@ function Product() {
         <div className='z-20 w-[330px] sm:w-[474px] px-4 py-4 md:px-8 md:py-10 bg-white absolute'>
           <div className='flex justify-between mb-10'>
             <h3 className='font-bold text-2xl'>Shopping Bag (1)</h3>
-            <Image src={close} width={20} onClick={closeModal}/>
+            <Image src={close} width={20} alt='close' onClick={closeModal}/>
           </div>
           <div className='flex gap-4 text-sm sm:text-base'>
             <div className='w-[200px]'>
-                <Image src={dbress} />
+                <Image src={dbress} alt='dress' />
             </div>
             <div>
               <p className='text-[#3E3E3E] sm:text-lg'>Zara Twist Front Textured Slinky Ruched Midi Dress </p>
@@ -52,27 +52,27 @@ function Product() {
             <div className='flex md:flex-col gap-2 m-auto md:m-0'>
               <div className='p-1 border border-black'>
                 <div className={`lg:w-[110px] lg:h-[110px] sm:w-[90px] sm:h-[90px] w-[50px] h-[50px] min-[400px]:w-[70px] min-[400px]:h-[70px] relative ${isOpen && 'opacity-0 md:opacity-50' }`}>
-                  <Image src={dbress} fill style={{objectFit:"fill"}} />
+                  <Image src={dbress} fill style={{objectFit:"fill"}} alt='' />
                 </div>
               </div>
               <div className='p-1 '>
                 <div className={`lg:w-[110px] lg:h-[110px] sm:w-[90px] sm:h-[90px] w-[50px] h-[50px] min-[400px]:w-[70px] min-[400px]:h-[70px] relative ${isOpen && 'opacity-0 md:opacity-50' }`}>
-                  <Image src={dbress} fill style={{objectFit:"fill"}} />
+                  <Image src={dbress} fill style={{objectFit:"fill"}} alt='' />
                 </div>
               </div>
               <div className='p-1'>
                 <div className={`lg:w-[110px] lg:h-[110px] sm:w-[90px] sm:h-[90px] w-[50px] h-[50px] min-[400px]:w-[70px] min-[400px]:h-[70px] relative ${isOpen && 'opacity-0 md:opacity-50' }`}>
-                  <Image src={dbress} fill style={{objectFit:"fill"}} />
+                  <Image src={dbress} fill style={{objectFit:"fill"}} alt='' />
                 </div>
               </div>
               <div className='p-1'>
                 <div className={`lg:w-[110px] lg:h-[110px] sm:w-[90px] sm:h-[90px] w-[50px] h-[50px] min-[400px]:w-[70px] min-[400px]:h-[70px] relative ${isOpen && 'opacity-0 md:opacity-50' }`}>
-                  <Image src={dbress} fill style={{objectFit:"fill"}} />
+                  <Image src={dbress} fill style={{objectFit:"fill"}} alt='' />
                 </div>
               </div>
             </div>
             <div className='min-w-[280px] min-h-[400px] m-auto md:m-0 md:min-w-[300px] lg:min-w-[350px] '>
-              <Image src={dbress}  />
+              <Image src={dbress} alt=''  />
             </div>
           </div>
           <div className=''>
@@ -104,7 +104,7 @@ function Product() {
                   <div className='p-1 w-9 h-9 border-black border flex justify-center'>10</div>
                 </div>
                 <div className='flex gap-1 items-center my-2 md:my-0'>
-                  <Image src={anger} />
+                  <Image src={anger} alt='' />
                   <p className='text-sm min-w-[119px]'>What's My Size?</p>
                 </div>
               </div>
@@ -115,7 +115,7 @@ function Product() {
             </div>
             <div className='mt-5 flex gap-10'>
               <Button type={'button'} customClassName={'text-xs  lg:text-sm'} variant={'black'} text='Add To Shopping Bag' onClick={closeModal}/>
-              <Image src={WI}/>
+              <Image src={WI} alt='' />
             </div>
           </div>
         </div>
@@ -142,7 +142,7 @@ function Product() {
             <h3 className='font-medium text-2xl mb-6 text-center sm:text-left'>Similar Pieces</h3>
             <div className='gap-3 flex flex-col'>
               <div className=''>
-                <Image src={img1} />
+                <Image src={img1} alt='' />
               </div>
               <p className='text-sm text-[#3E3E3E] w-[280px]'>Zara Twist Front Textured Slinky Ruched Midi Dress </p>
               <h4 className='font-bold'>N 3,000</h4>
@@ -152,7 +152,7 @@ function Product() {
             <h3 className='font-medium text-2xl mb-6 text-center sm:text-left'>You Might Also Like</h3>
             <div className='gap-3 flex flex-col'>
               <div className=''>
-                <Image src={img1} />
+                <Image src={img1} alt='' />
               </div>
               <p className='text-sm text-[#3E3E3E] w-[280px]'>Zara Twist Front Textured Slinky Ruched Midi Dress </p>
               <h4 className='font-bold'>N 3,000</h4>
@@ -163,14 +163,14 @@ function Product() {
             <div className='flex flex-col sm:flex-row gap-5'>
               <div className='gap-3 flex flex-col'>
                 <div className=''>
-                  <Image src={img1} />
+                  <Image src={img1} alt='' />
                 </div>
                 <p className='text-sm text-[#3E3E3E] w-[280px]'>Zara Twist Front Textured Slinky Ruched Midi Dress </p>
                 <h4 className='font-bold'>N 3,000</h4>
               </div>
               <div className='gap-3 flex flex-col'>
                 <div className=''>
-                  <Image src={img1} />
+                  <Image src={img1} alt='' />
                 </div>
                 <p className='text-sm text-[#3E3E3E] w-[280px]'>Zara Twist Front Textured Slinky Ruched Midi Dress </p>
                 <h4 className='font-bold'>N 3,000</h4>
