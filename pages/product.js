@@ -1,6 +1,6 @@
 import ProductCard from '@/components/productCard/productCard'
 import Image from 'next/image';
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../components/button/button'
 import img1 from "../public/assets/homePage1/s1.png"
 import dbress from '../public/assets/homePage1/bdress.png';
@@ -9,14 +9,17 @@ import WI from '../public/assets/svgs/Like.svg'
 import close from '../public/assets/svgs/close icon.svg'
 
 function Product() {
-  console.log(typeof img1);
+  const [isOpen, setIsOpen] = useState(false)
+  const closeModal = () => setIsOpen(prevState => !prevState)
+
   return (
     <article className='text-lg mx-[8%] lg:mx-24 font-sans font-[400]'>
-      <section className='fixed z-10 bg-black/[0.5] inset-0'>
-        <div className='z-20 w-[300px] sm:w-[474px] px-4 py-4 md:px-8 md:py-10 bg-white absolute'>
+      <section className={` fixed ${isOpen ? 'flex': 'hidden' }    justify-center items-center md:justify-end md:items-start inset-0`}  >
+        <div className='fixed bg-black/[0.5] inset-0 z-10' onClick={closeModal}></div>
+        <div className='z-20 w-[330px] sm:w-[474px] px-4 py-4 md:px-8 md:py-10 bg-white absolute'>
           <div className='flex justify-between mb-10'>
             <h3 className='font-bold text-2xl'>Shopping Bag (1)</h3>
-            <Image src={close} width={20} />
+            <Image src={close} width={20} onClick={closeModal}/>
           </div>
           <div className='flex gap-4 text-sm sm:text-base'>
             <div className='w-[200px]'>
@@ -26,9 +29,9 @@ function Product() {
               <p className='text-[#3E3E3E] sm:text-lg'>Zara Twist Front Textured Slinky Ruched Midi Dress </p>
               <p className='text-[#979797] mt-1 sm:mt-4 text-sm'>Color: Black</p>
               <p className='text-[#979797] mt-1 sm:mt-4 text-sm'>UK Size: 6</p>
-              <div className='flex justify-between'>
+              <div className='flex flex-col sm:flex-row justify-between'>
                 <p className='text-[#979797] mt-1 sm:mt-4 text-sm'>Quantity: 1</p>
-                <h5 className='mt-1 sm:mt-4  font-bold'>N 3,000</h5>
+                <h5 className='mt-3 sm:mt-4  font-bold'>N 3,000</h5>
               </div>
             </div>
           </div>
@@ -44,30 +47,38 @@ function Product() {
       </section>
         <p className='max-w-[650px] m-auto mt-9 mb-16'><span className='text-[#7D7878]'>Home / Clothes / Dresses /</span> Zara Twist Front Textured Slinky Ruched Midi Dress </p>
       <section>
-        <div className='flex flex-col md:flex-row  my-9  gap-6 text-[#3E3E3E]' >
-          <div className='flex md:flex-row flex-col-reverse gap-6'>
-            <div className='flex md:flex-col gap-4 m-auto md:m-0'>
-              <div className='min-w-[50px] max-w-[100px]'>
-                <Image src={dbress} width={100} height={100} />
+        <div className='flex flex-col md:flex-row md:items-center  my-9  gap-6 text-[#3E3E3E]' >
+          <div className='flex md:flex-row flex-col-reverse gap-3 '>
+            <div className='flex md:flex-col gap-2 m-auto md:m-0'>
+              <div className='p-1 border border-black'>
+                <div className={`lg:w-[110px] lg:h-[110px] sm:w-[90px] sm:h-[90px] w-[50px] h-[50px] min-[400px]:w-[70px] min-[400px]:h-[70px] relative ${isOpen && 'opacity-0 md:opacity-50' }`}>
+                  <Image src={dbress} fill style={{objectFit:"fill"}} />
+                </div>
               </div>
-              <div className='min-w-[50px] max-w-[100px]'>
-                <Image src={dbress} width={100} height={100} />
+              <div className='p-1 '>
+                <div className={`lg:w-[110px] lg:h-[110px] sm:w-[90px] sm:h-[90px] w-[50px] h-[50px] min-[400px]:w-[70px] min-[400px]:h-[70px] relative ${isOpen && 'opacity-0 md:opacity-50' }`}>
+                  <Image src={dbress} fill style={{objectFit:"fill"}} />
+                </div>
               </div>
-              <div className='min-w-[50px] max-w-[100px]'>
-                <Image src={dbress} width={100} height={100} />
+              <div className='p-1'>
+                <div className={`lg:w-[110px] lg:h-[110px] sm:w-[90px] sm:h-[90px] w-[50px] h-[50px] min-[400px]:w-[70px] min-[400px]:h-[70px] relative ${isOpen && 'opacity-0 md:opacity-50' }`}>
+                  <Image src={dbress} fill style={{objectFit:"fill"}} />
+                </div>
               </div>
-              <div className='min-w-[50px] max-w-[100px]'>
-                <Image src={dbress} width={100} height={100} />
+              <div className='p-1'>
+                <div className={`lg:w-[110px] lg:h-[110px] sm:w-[90px] sm:h-[90px] w-[50px] h-[50px] min-[400px]:w-[70px] min-[400px]:h-[70px] relative ${isOpen && 'opacity-0 md:opacity-50' }`}>
+                  <Image src={dbress} fill style={{objectFit:"fill"}} />
+                </div>
               </div>
             </div>
-            <div className='min-w-[280px] min-h-[400px] m-auto md:m-0'>
+            <div className='min-w-[280px] min-h-[400px] m-auto md:m-0 md:min-w-[300px] lg:min-w-[350px] '>
               <Image src={dbress}  />
             </div>
           </div>
-          <div>
+          <div className=''>
             <p> Zara Twist Front Textured Slinky Ruched Midi Dress </p>
             <p className='text-sm text-[#7D7878]'>Product Code: 3B33R4T6</p>
-            <p className='my-7 text-3xl font-bold'>N 3,000</p>
+            <p className='my-3 lg:my-7 text-3xl font-bold'>N 3,000</p>
             <div>
               <p><span className='font-bold'>Color:</span> Black</p>
               <div className='flex gap-4 mt-2'>
@@ -82,7 +93,7 @@ function Product() {
                 </div>
               </div>
             </div>
-            <div className='mt-5'>
+            <div className='mt-3 lg:mt-5'>
               <p className='font-bold my-2'>UK Size:</p>
               <div className='flex gap-3 lg:flex-row flex-col'>
                 <div className='flex gap-2'>
@@ -98,12 +109,12 @@ function Product() {
                 </div>
               </div>
             </div>
-            <div className='mt-5'>
+            <div className='mt-3 lg:mt-5'>
               <p className='font-bold my-2'>Quantity:</p>
               <div className='p-1 w-20 h-9 border-black border flex justify-center'>8</div>
             </div>
             <div className='mt-5 flex gap-10'>
-              <Button type={'button'} customClassName={'text-xs  md:text-base '} variant={'black'} text='Add To Shopping Bag'/>
+              <Button type={'button'} customClassName={'text-xs  lg:text-sm'} variant={'black'} text='Add To Shopping Bag' onClick={closeModal}/>
               <Image src={WI}/>
             </div>
           </div>
