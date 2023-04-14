@@ -1,48 +1,25 @@
 import Button from "@/components/button/button";
-import ProductImg from "../public/assets/billing/billingImg.png";
+import Cart from "@/components/billing/cart";
+import MasterCard from "../public/assets/svgs/mastercard 1.svg";
+import Visa from "../public/assets/svgs/visa 1.svg";
+import Paypal from "../public/assets/svgs/paypal 1.svg";
 import Image from "next/image";
 
 const Billing = () => {
-  const cartItems = [
-    {
-      id: 1,
-      img: ProductImg,
-      title: "Zara Twist Front Textured Slinky Ruched Midi Dress",
-      color: "Black",
-      size: 6,
-      quantity: 1,
-      price: "3,000",
-    },
-    {
-      id: 2,
-      img: ProductImg,
-      title: "Zara Twist Front Skirt",
-      color: "Blue",
-      size: 4,
-      quantity: 1,
-      price: "4,000",
-    },
-    {
-      id: 3,
-      img: ProductImg,
-      title: "Zara Twist Front Textured Top",
-      color: "Pink",
-      size: 5,
-      quantity: 1,
-      price: "2,000",
-    },
-  ];
   return (
-    <div className="w-full h-auto flex flex-col px-[6.25rem] justify-center items-center ">
+    <div className="w-full max-w-[1440px] m-auto h-auto flex flex-col px-5 lg:px-[6.25rem] justify-center items-center ">
       <h1 className="font-sans font-bold text-[1.5rem] leading-8 text-center py-[2.5rem] text-[#3E3E3E] w-full ">
         Billing & Payment
       </h1>
-      <div className="w-full h-auto flex flex-col gap-[6.5625rem] lg:flex-row ">
+
+      {/* First Upper Section */}
+
+      <div className="w-full h-auto flex flex-col-reverse gap-[48px] lg:gap-[6.5625rem] lg:flex-row ">
         {/* Adrress Section */}
         <section className="w-full h-auto flex flex-col">
           {/* Delivery Adrress Section */}
           <h2 className={sectionHeadingStyle}>Delivery Address</h2>
-          <div className="flex flex-col px-[1.875rem] pt-[1.875rem] pb-[3.125rem] ">
+          <div className="flex flex-col px-0 lg:px-[1.875rem] pt-[24px] lg:pt-[1.875rem] pb-[48px] lg:pb-[3.125rem] ">
             <p className={paraText}>Feranmi Olowookere</p>
             <p className={paraText}>56, Promise Road, Ikeja, Lagos</p>
             <p className={paraText}>Lagos, Nigeria</p>
@@ -50,25 +27,21 @@ const Billing = () => {
           </div>
           {/* Billing Adrress Section */}
           <h2 className={sectionHeadingStyle}>Billing Address</h2>
-          <form className="flex flex-col w-full gap-[25px] pt-[2.8125rem] pb-[3.125rem] ">
+          <form className="flex flex-col w-full gap-[25px] pt-[24px] lg:pt-[1.875rem] pb-[48px] lg:pb-[3.125rem] ">
             {/* Name */}
             <div className="flex flex-col">
-              <label className="text-[#3E3E3E] text-[1.125rem] font-normal pb-[10px] ">
-                Contact Name
-              </label>
+              <label className={labelStyle}>Contact Name</label>
               <input
-                className="w-full pt-[0.75rem] pb-[0.6875rem] px-[1.25rem] border rounded-md placeholder-black"
+                className={inputStyle}
                 type="text"
                 placeholder="Feranmi Olowookere"
               />
             </div>
             {/* Street Address */}
             <div className="flex flex-col">
-              <label className="text-[#3E3E3E] text-[1.125rem] font-normal pb-[10px] ">
-                Street Address
-              </label>
+              <label className={labelStyle}>Street Address</label>
               <input
-                className="w-full pt-[0.75rem] pb-[0.6875rem] px-[1.25rem] border rounded-md placeholder-black"
+                className={inputStyle}
                 type="text"
                 placeholder="56, Promise Road, Ikeja, Lagos, Nigeria
                 10001"
@@ -76,33 +49,26 @@ const Billing = () => {
             </div>
             {/* Country */}
             <div className="flex flex-col">
-              <label className="text-[#3E3E3E] text-[1.125rem] font-normal pb-[10px] ">
-                Country
-              </label>
-              <input
-                className="w-full pt-[0.75rem] pb-[0.6875rem] px-[1.25rem] border rounded-md placeholder-black"
-                type="text"
-                placeholder="Nigeria"
-              />
+              <label className={labelStyle}>Country</label>
+              <input className={inputStyle} type="text" placeholder="Nigeria" />
             </div>
             {/* Phone Number */}
             <div className="flex flex-col">
-              <label className="text-[#3E3E3E] text-[1.125rem] font-normal pb-[10px] ">
-                Phone Number
-              </label>
+              <label className={labelStyle}>Phone Number</label>
               <input
-                className="w-full pt-[0.75rem] pb-[0.6875rem] px-[1.25rem] border rounded-md placeholder-black"
+                className={inputStyle}
                 type="number"
                 placeholder="+2348129086629"
               />
             </div>
           </form>
         </section>
+
         {/* Order Summary Section */}
-        <section className="w-full h-auto flex flex-col">
-          <div className="w-full h-auto py-[0.4375rem] px-[1.875rem] bg-[#E8E8E8] flex justify-between items-center">
+        <section className="w-full h-auto  flex flex-col">
+          <div className="w-full h-auto py-[0.4375rem] lg:px-[1.875rem] lg:bg-[#E8E8E8] flex justify-between items-center">
             {/* Section Heading */}
-            <h2 className="font-bold text-[1.125rem] text-[#3E3E3E]">
+            <h2 className="font-bold text-[14px] leading-5 lg:text-[1.125rem] text-[#3E3E3E] uppercase">
               Order Summary
             </h2>
             <Button
@@ -110,57 +76,124 @@ const Billing = () => {
               variant="black"
               type="button"
               size="small"
+              id="editBTN"
             />
+            <button
+              className="text-black font-bold hidden underline text-[14px] leading-[18px]"
+              type="submit"
+              id="billingBtnMobile"
+            >
+              Edit Bag
+            </button>
           </div>
+
           {/* All Order Infos */}
-          <div className="w-full max-h-[350px] overflow-y-scroll pt-[2rem] ">
-            {/* Individual Order Information */}
-            {cartItems.map((item) => {
-              return (
-                <div
-                  key={item.id}
-                  className="flex gap-[1.5625rem] pb-[3rem] pr-4 "
-                >
-                  <Image src={item.img} width={182} height={226} alt="" />
-                  <div className="flex flex-col pt-8 max-w-[60%] w-full ">
-                    <h3 className="text-[18px] font-sans font-normal pb-[1.875rem] ">
-                      {item.title}
-                    </h3>
-                    {/* Extra Info */}
-                    <div className="flex justify-between items-end">
-                      <div className="">
-                        <p>
-                          {" "}
-                          <span>
-                            <b>Color:</b>
-                          </span>{" "}
-                          {item.color}
-                        </p>
-                        <p>
-                          {" "}
-                          <span>
-                            {" "}
-                            <b>UK Size:</b>
-                          </span>{" "}
-                          {item.size}
-                        </p>
-                        <p>
-                          {" "}
-                          <span>
-                            <b>Quantity:</b>
-                          </span>{" "}
-                          {item.quantity}
-                        </p>
-                      </div>
-                      {/* Price */}
-                      <p>N {item.price}</p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+          <div className="w-full max-h-[175px] lg:max-h-[258px] overflow-y-scroll pt-[2rem] ">
+            <Cart />
+          </div>
+
+          {/* Order Total */}
+          <div className="w-full h-auto flex gap-[20px] flex-col  p-[1.875rem] bg-[#E8E8E8] mt-5 lg:mt-[3rem] ">
+            <h3 className="w-full font-bold text-[14px] leading-5 lg:text-[1.125rem] lg:leading-6 flex justify-between">
+              Subtotal <span>N 3,000</span>{" "}
+            </h3>
+            <h3 className="w-full text-[14px] leading-5 lg:text-[1.125rem] lg:leading-6 flex justify-between">
+              Standard delivery <span>N 1,000</span>{" "}
+            </h3>
+            <div className="h-[0.7px] w-full  bg-[#979797]"></div>
+            <h2 className="w-full font-bold text-[14px] leading-5 lg:text-[1.125rem] lg:leading-6 flex justify-between">
+              Order Total <span>N 4,000</span>
+            </h2>
+            <p className="text-[14px] leading-5 lg:text-[1.125rem] lg:leading-6 text-[#666666] pb-[1.4375rem]">
+              *All taxes are included in product prices
+            </p>
           </div>
         </section>
+      </div>
+
+      {/* Second Lower Section */}
+
+      <div className="w-full h-auto flex flex-col gap-12 lg:gap-[6.5625rem] lg:flex-row  pb-[65px]">
+        {/* Payment Method Section */}
+        <section className="w-full h-auto flex flex-col ">
+          <h2 className={sectionHeadingStyle}>Payment Method</h2>
+          <div className="w-full h-auto flex flex-col pt-6 lg:pt-[1.875rem]">
+            <p className="text-[14px] leading-5 lg:text-[1.125rem] lg:leading-6 text-[#3E3E3E] pb-[1.4375rem] ">
+              Complete your payment through the following means:
+            </p>
+
+            {/* Select Payment Method of Choice */}
+            <form className="flex flex-col w-full ">
+              <>
+                {/* Payment by card */}
+                <div className="flex gap-[25px]  w-full h-auto">
+                  <input type="radio" name="payChoice" className="bg-black" />{" "}
+                  <label className="lg:text-[1.3125rem] lg:leading-7 text-[14px] leading-5 ">
+                    Pay by Card
+                  </label>
+                </div>
+
+                <div className="flex flex-col gap-3 pt-2 lg:pt-3 pl-9">
+                  <p className="text-[14px] leading-5 lg:text-[1rem] lg:leading-6 text-[#979797]">
+                    Card payments are supported by all banks
+                  </p>
+                  <div className="flex gap-7">
+                    <Image src={MasterCard} alt="" width={45} height={45} />
+                    <Image src={Visa} alt="" width={45} height={45} />
+                    <Image src={Paypal} alt="" width={45} height={45} />
+                  </div>
+                </div>
+              </>
+
+              {/* Payment on delivery */}
+              <div className="flex gap-[25px] w-full h-auto pt-[25px] lg:pt-[54px] ">
+                <input type="radio" name="payChoice" className="bg-black" />{" "}
+                <label className="lg:text-[1.3125rem] lg:leading-7 text-[14px] leading-5 ">
+                  Pay on Delivery
+                </label>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        {/* Card Details Section */}
+        <section className="w-full h-auto flex flex-col ">
+          <h2 className={sectionHeadingStyle}>Card Details</h2>
+          <form className="w-full h-auto flex gap-[25px] flex-col pt-6 lg:pt-[2.1875rem]">
+            <div className="flex flex-col">
+              <label className={labelStyle}>Card Number</label>
+              <input type="text" className={inputStyle} />
+            </div>
+
+            <div className="flex flex-col">
+              <label className={labelStyle}>Expiry Date</label>
+              <div className="flex gap-[10px]">
+                <input
+                  type="text"
+                  className={`${inputStyle} max-w-[88px] placeholder-[#979797] `}
+                  placeholder="MM"
+                />
+                <input
+                  type="text"
+                  className={`${inputStyle} max-w-[88px] placeholder-[#979797]`}
+                  placeholder="YYYY"
+                />
+                <input
+                  type="text"
+                  className={`${inputStyle} lg:ml-[45px] max-w-[88px] placeholder-[#979797]`}
+                />
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+      <div className="w-full pb-[100px]">
+        <Button
+          text="Complete Order"
+          variant="black"
+          type="submit"
+          size="small"
+        />
       </div>
     </div>
   );
@@ -169,6 +202,10 @@ const Billing = () => {
 export default Billing;
 
 const sectionHeadingStyle =
-  "w-full h-auto py-[1.1875rem] px-[1.875rem] bg-[#E8E8E8] font-bold text-[1.125rem] text-[#3E3E3E] ";
+  "w-full h-auto lg:py-[1.1875rem] lg:px-[1.875rem] lg:bg-[#E8E8E8] font-bold text-[14px] leading-5 lg:text-[1.125rem] text-[#3E3E3E] uppercase ";
 const paraText =
-  "font-sans font-normal text-[1.125rem] leading-[1.4375rem] text-[ #3E3E3E] pb-4 ";
+  "font-sans font-normal text-[14px] leading-5 lg:text-[1.125rem] lg:leading-[1.4375rem] text-[ #3E3E3E] pb-4 ";
+const inputStyle =
+  "w-full px-[1rem] py-[13px]  text-[14px] leading-5 lg:text-[1.125rem] lg:leading-[1.4375rem border border-[#C4C4C4] rounded placeholder-black";
+const labelStyle =
+  "text-[#3E3E3E] text-[14px] leading-5 lg:text-[1.125rem] font-normal pb-[10px] ";
