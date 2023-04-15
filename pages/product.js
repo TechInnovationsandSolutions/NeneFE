@@ -48,7 +48,7 @@ function Product() {
         <p className='max-w-[650px] m-auto mt-9 mb-16'><span className='text-[#7D7878]'>Home / Clothes / Dresses /</span> Zara Twist Front Textured Slinky Ruched Midi Dress </p>
       <section>
         <div className='flex flex-col md:flex-row md:items-center  my-9  gap-6 text-[#3E3E3E]' >
-          <div className='flex md:flex-row flex-col-reverse gap-3 '>
+          <div className='flex md:flex-row md:self-start flex-col-reverse gap-3 '>
             <div className='flex md:flex-col gap-2 m-auto md:m-0'>
               <div className='p-1 border border-black'>
                 <div className={`lg:w-[110px] lg:h-[110px] sm:w-[90px] sm:h-[90px] w-[50px] h-[50px] min-[400px]:w-[70px] min-[400px]:h-[70px] relative ${isOpen && 'opacity-0 md:opacity-50' }`}>
@@ -71,7 +71,7 @@ function Product() {
                 </div>
               </div>
             </div>
-            <div className='min-w-[280px] min-h-[400px] m-auto md:m-0 md:min-w-[300px] lg:min-w-[350px] '>
+            <div className=' lg:min-w-[370px] lg:max-w-[474px] md:min-h-[400px] m-auto md:m-0 md:min-w-[350px] max-w-[350px]'>
               <Image src={dbress} alt=''  />
             </div>
           </div>
@@ -113,14 +113,14 @@ function Product() {
               <p className='font-bold my-2'>Quantity:</p>
               <div className='p-1 w-20 h-9 border-black border flex justify-center'>8</div>
             </div>
-            <div className='mt-5 flex gap-10'>
+            <div className='mt-5 flex gap-6'>
               <Button type={'button'} customClassName={'text-xs  lg:text-sm'} variant={'black'} text='Add To Shopping Bag' onClick={closeModal}/>
               <Image src={WI} alt='' />
             </div>
           </div>
         </div>
       </section>
-      <section className='my-12'>
+      <section className='my-12 text-sm lg:text-lg'>
         <div>
           <h5 className='font-bold mt-5'>Description:</h5>
           <p className='text-[#616161]'>Fabric with cotton. Shirt-style. Lapel-collar. Long sleeve with buttoned cuffs. Loops. Adjustable belt. Side pockets. Decorative pleats at front. Concealed button fastening. Inner lining.
