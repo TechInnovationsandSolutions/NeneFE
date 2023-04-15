@@ -13,7 +13,7 @@ function Product() {
   const closeModal = () => setIsOpen(prevState => !prevState)
 
   return (
-    <article className='text-lg mx-[8%] lg:mx-24 font-sans font-[400]'>
+    <article className='text-lg mx-[30px] lg:mx-24 font-sans font-[400]'>
       <section className={` fixed ${isOpen ? 'flex': 'hidden' }    justify-center items-center md:justify-end md:items-start inset-0`}  >
         <div className='fixed bg-black/[0.5] inset-0 z-10' onClick={closeModal}></div>
         <div className='z-20 w-[330px] sm:w-[474px] px-4 py-4 md:px-8 md:py-10 bg-white absolute'>
