@@ -8,6 +8,7 @@ const Button = ({
   customClassName = "",
   onClick,
 
+  id = "",
 }) => {
   const className = useMemo(() => {
     const baseClassName = "py-[0.8125rem] px-[2.625rem] rounded ";
@@ -21,7 +22,7 @@ const Button = ({
   }, [size, variant]);
 
   return (
-    <button type={type} onClick={onClick}  className={`${className} ${customClassName}`}>
+    <button type={type} onClick={onClick}  id={id} className={`${className} ${customClassName}`}>
       {text}
     </button>
   );
