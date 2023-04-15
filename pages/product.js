@@ -105,7 +105,7 @@ function Product() {
                 </div>
                 <div className='flex gap-1 items-center my-2 md:my-0'>
                   <Image src={anger} alt='' />
-                  <p className='text-sm min-w-[119px]'>What's My Size?</p>
+                  <p className='text-sm min-w-[119px]'>What&#39;s My Size?</p>
                 </div>
               </div>
             </div>
@@ -129,7 +129,7 @@ function Product() {
         <div>
           <h5 className='font-bold mt-5'>Size:</h5>
           <p className='text-[#616161]'>Model wears: UK 8/ EU 36/ US 4
-          Model's height: 173cm/5'8"</p>
+          Model&#39;s height: 173cm/5&#39;8&#34;</p>
         </div>
         <div>
           <h5 className='font-bold mt-5'>Material and washing instructions:</h5>
