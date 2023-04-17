@@ -53,8 +53,6 @@ jobs:
   Deploy_to_EC2:
     name: Deploy to server
     runs-on: ubuntu-latest
-    env:
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     environment: staging
 
     needs: build
@@ -78,7 +76,9 @@ jobs:
                 cd ..
                 sudo ./deploy.sh                                 
                 
-      - name: slack notifications  
+      - name: slack notifications
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}  
         uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
