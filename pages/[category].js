@@ -64,6 +64,7 @@ function Category() {
                 img={product.img}
                 name={product.name}
                 price={product.price}
+                newNow={true}
                 key={index}
               />
             );
@@ -117,7 +118,6 @@ function Category() {
 }
 
 export default Category;
-
 
 const products = [
   {

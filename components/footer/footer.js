@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="bg-black text-white px-[8%]  lg:px-[3%] flex flex-col gap-5  pt-5 pb-2 ">
+    <footer className="bg-black  text-white px-[8%]  lg:px-[3%] flex flex-col gap-5  pt-5 pb-2 ">
       <div>
         {" "}
         <p className="text-center text-3xl font-alegreya "> Nene</p>{" "}
