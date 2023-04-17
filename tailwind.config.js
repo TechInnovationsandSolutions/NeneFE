@@ -11,7 +11,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'black':'#000000'
+        'black':'#000000',
+        'header':{
+'gray':'#757575'
+        }
       },
       fontFamily:{
         'sans':'DM Sans,sans-serif',
