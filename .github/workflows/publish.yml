@@ -76,13 +76,11 @@ jobs:
                 cd ..
                 sudo ./deploy.sh 
 
-                
-      - name: slack notifications  
-        uses: 8398a7/action-slack@v3
+      - name: Slack notifications
+        uses: act10ns/slack@v1
         with:
           status: ${{ job.status }}
-          fields: repo,message,author,action,eventName,ref,workflow,job,took,pullRequest # selectable (default: repo,message)
-        env:
-            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
-        if: always() # Pick up events even if the job fails or is canceled.
-              
+          steps: ${{ toJson(steps) }}
+          channel: '#github-notifications'
+        if: always()
+            
