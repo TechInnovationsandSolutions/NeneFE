@@ -75,6 +75,8 @@ jobs:
                 sudo systemctl restart NeneFE.service
                 cd ..
                 sudo ./deploy.sh 
+                
+                
       - name: slack notifications  
         uses: 8398a7/action-slack@v3
         with:
