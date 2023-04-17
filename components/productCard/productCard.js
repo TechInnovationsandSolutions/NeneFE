@@ -1,16 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 
-function ProductCard({ name, img, price }) {
+function ProductCard({ name, img, price, newNow }) {
   return (
     <div className="w-64 flex flex-col m-5">
       <div className="relative w-full h-[512px] overflow-hidden">
-        <Link href='#'>
+        <Link href="#">
           <Image src={img} fill className="object-cover" alt="dress" />
         </Link>
-        <p className="text-white font-medium absolute left-4 bottom-6">
-          NEW NOW
-        </p>
+        {newNow && (
+          <p className="text-white font-medium absolute left-4 bottom-6">
+            NEW NOW
+          </p>
+        )}
         <div className="inline-flex rounded-full p-[6px] bg-white z-10 absolute right-4 bottom-6">
           <Image
             src="/assets/svgs/wishlistIcon.svg"

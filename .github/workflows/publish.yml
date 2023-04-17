@@ -74,8 +74,8 @@ jobs:
                 git pull origin dev
                 sudo systemctl restart NeneFE.service
                 cd ..
-                sudo ./deploy.sh 
-
+                sudo ./deploy.sh                 
+                
                 
       - name: slack notifications  
         uses: 8398a7/action-slack@v3
