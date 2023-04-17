@@ -31,7 +31,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [18.x]
 
     steps:
       - name: Checkout
@@ -47,7 +47,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: build
-        run: npm run dev
+        run: npm run build
       
     
   Deploy_to_EC2:
