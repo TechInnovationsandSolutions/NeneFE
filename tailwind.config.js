@@ -11,15 +11,26 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'black':'#000000',
-        'header':{
-'gray':'#757575'
-        }
+        black: "#000000",
+        header: {
+          gray: "#757575",
+        },
+        lightPink: "hsl(var(--lightPink))",
       },
-      fontFamily:{
-        'sans':'DM Sans,sans-serif',
-        'alegreya':'Alegreya,sans-serif', 
-      }
+      fontFamily: {
+        sans: "DM Sans,sans-serif",
+        alegreya: "Alegreya,sans-serif",
+        rouge: ["var(--font-rouge)"],
+      },
+      fontSize: {
+        x2Large: "var(--fs-xxl)",
+        xLarge: "var(--fs-xl)",
+        large: "var(--fs-lg)",
+        medium: "var(--fs-md)",
+        normal: "var(--fs)",
+        small: "var(--fs-sm)",
+        xSmall: "var(--fs-xs)",
+      },
     },
   },
   plugins: [require("tailwind-scrollbar-hide")],
