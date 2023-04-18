@@ -55,8 +55,8 @@ function Product() {
         <div className='flex flex-col md:flex-row md:items-center max-w-[1057px] md:justify-center  my-9  gap-6 text-[#3E3E3E]' >
           <div className='flex md:flex-row md:self-start flex-col-reverse gap-3 '>
             <div className='flex md:flex-col gap-2 m-auto md:m-0'>
-              {picArray.map(item => (
-                <div className={`p-1 ${currentPic == item && 'border border-black'}`}>
+              {picArray.map((item, i) => (
+                <div className={`p-1 ${currentPic == item && 'border border-black'}`} key={i}>
                   <div className='lg:w-[110px] lg:h-[110px] sm:w-[90px] sm:h-[90px] w-[50px] h-[50px] min-[400px]:w-[70px] min-[400px]:h-[70px] cursor-pointer' onClick={() => setCurrentPic(item)} >
                     <Image src={item} style={{objectFit:"cover",objectPosition: 'top', width:'100%', height:'100%', }} alt='' quality={100} />
                   </div>
@@ -64,7 +64,7 @@ function Product() {
               ))}
             </div>
             <div className=' lg:min-w-[370px] lg:max-w-[474px] m-auto md:m-0 md:min-w-[350px] max-h-[600px]'>
-              <Image src={currentPic} cover alt=''style={{objectFit:"cover", width:'100%', height:'100%'}} quality={100} />
+              <Image src={currentPic} alt=''style={{objectFit:"cover", width:'100%', height:'100%'}} quality={100} />
             </div>
           </div>
           <div className=''>
