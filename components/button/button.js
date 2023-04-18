@@ -6,6 +6,8 @@ const Button = ({
   size = "small",
   type = "button",
   customClassName = "",
+  onClick,
+
   id = "",
 }) => {
   const className = useMemo(() => {
@@ -20,7 +22,7 @@ const Button = ({
   }, [size, variant]);
 
   return (
-    <button type={type} id={id} className={`${className} ${customClassName}`}>
+    <button type={type} onClick={onClick}  id={id} className={`${className} ${customClassName}`}>
       {text}
     </button>
   );
