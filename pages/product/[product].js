@@ -1,16 +1,21 @@
-import ProductCard from '@/components/productCard/productCard'
 import Image from 'next/image';
 import React, { useState } from 'react'
-import Button from '../components/button/button'
-import img1 from "../public/assets/homePage1/s1.png"
-import dbress from '../public/assets/homePage1/bdress.png';
-import anger from '../public/assets/svgs/anger.svg'
-import WI from '../public/assets/svgs/complete-like.svg'
-import close from '../public/assets/svgs/close icon.svg'
+import Button from '../../components/button/button'
+import img1 from "../../public/assets/homePage1/s1.png"
+import dbress from '../../public/assets/homePage1/bdress.png';
+import dress1 from '../../public/assets/images/dress1.webp'
+import dress2 from '../../public/assets/images/dress2.webp'
+import dress4 from '../../public/assets/images/dress4.webp'
+import anger from '../../public/assets/svgs/anger.svg'
+import WI from '../../public/assets/svgs/complete-like.svg'
+import close from '../../public/assets/svgs/close icon.svg'
 
 function Product() {
+  
   const [isOpen, setIsOpen] = useState(false)
   const closeModal = () => setIsOpen(prevState => !prevState)
+  const picArray = [dress1,dress2,dress4,img1]
+  const [currentPic, setCurrentPic] = useState(picArray[0])
 
   return (
     <article className='text-lg mx-[30px] lg:mx-24 font-sans font-[400]'>
@@ -21,9 +26,9 @@ function Product() {
             <h3 className='font-bold text-2xl'>Shopping Bag (1)</h3>
             <Image src={close} width={20} alt='close' onClick={closeModal}/>
           </div>
-          <div className='flex gap-4 text-sm sm:text-base'>
-            <div className='w-[200px]'>
-                <Image src={dbress} alt='dress' />
+          <div className='flex items-center gap-4 text-sm sm:text-base'>
+            <div className='w-[117px] h-[152px]'>
+                <Image src={currentPic} alt='dress' />
             </div>
             <div>
               <p className='text-[#3E3E3E] sm:text-lg'>Zara Twist Front Textured Slinky Ruched Midi Dress </p>
@@ -47,32 +52,19 @@ function Product() {
       </section>
         <p className='max-w-[650px] m-auto mt-9 mb-16'><span className='text-[#7D7878]'>Home / Clothes / Dresses /</span> Zara Twist Front Textured Slinky Ruched Midi Dress </p>
       <section>
-        <div className='flex flex-col md:flex-row md:items-center  my-9  gap-6 text-[#3E3E3E]' >
+        <div className='flex flex-col md:flex-row md:items-center max-w-[1057px] md:justify-center  my-9  gap-6 text-[#3E3E3E]' >
           <div className='flex md:flex-row md:self-start flex-col-reverse gap-3 '>
             <div className='flex md:flex-col gap-2 m-auto md:m-0'>
-              <div className='p-1 border border-black'>
-                <div className={`lg:w-[110px] lg:h-[110px] sm:w-[90px] sm:h-[90px] w-[50px] h-[50px] min-[400px]:w-[70px] min-[400px]:h-[70px] relative ${isOpen && 'opacity-0 md:opacity-50' }`}>
-                  <Image src={dbress} fill style={{objectFit:"fill"}} alt='' />
+              {picArray.map(item => (
+                <div className={`p-1 ${currentPic == item && 'border border-black'}`}>
+                  <div className='lg:w-[110px] lg:h-[110px] sm:w-[90px] sm:h-[90px] w-[50px] h-[50px] min-[400px]:w-[70px] min-[400px]:h-[70px] cursor-pointer' onClick={() => setCurrentPic(item)} >
+                    <Image src={item} style={{objectFit:"cover",objectPosition: 'top', width:'100%', height:'100%', }} alt='' quality={100} />
+                  </div>
                 </div>
-              </div>
-              <div className='p-1 '>
-                <div className={`lg:w-[110px] lg:h-[110px] sm:w-[90px] sm:h-[90px] w-[50px] h-[50px] min-[400px]:w-[70px] min-[400px]:h-[70px] relative ${isOpen && 'opacity-0 md:opacity-50' }`}>
-                  <Image src={dbress} fill style={{objectFit:"fill"}} alt='' />
-                </div>
-              </div>
-              <div className='p-1'>
-                <div className={`lg:w-[110px] lg:h-[110px] sm:w-[90px] sm:h-[90px] w-[50px] h-[50px] min-[400px]:w-[70px] min-[400px]:h-[70px] relative ${isOpen && 'opacity-0 md:opacity-50' }`}>
-                  <Image src={dbress} fill style={{objectFit:"fill"}} alt='' />
-                </div>
-              </div>
-              <div className='p-1'>
-                <div className={`lg:w-[110px] lg:h-[110px] sm:w-[90px] sm:h-[90px] w-[50px] h-[50px] min-[400px]:w-[70px] min-[400px]:h-[70px] relative ${isOpen && 'opacity-0 md:opacity-50' }`}>
-                  <Image src={dbress} fill style={{objectFit:"fill"}} alt='' />
-                </div>
-              </div>
+              ))}
             </div>
-            <div className=' lg:min-w-[370px] lg:max-w-[474px] md:min-h-[400px] m-auto md:m-0 md:min-w-[350px] max-w-[350px]'>
-              <Image src={dbress} alt=''  />
+            <div className=' lg:min-w-[370px] lg:max-w-[474px] m-auto md:m-0 md:min-w-[350px] max-h-[600px]'>
+              <Image src={currentPic} cover alt=''style={{objectFit:"cover", width:'100%', height:'100%'}} quality={100} />
             </div>
           </div>
           <div className=''>
@@ -83,13 +75,13 @@ function Product() {
               <p><span className='font-bold'>Color:</span> Black</p>
               <div className='flex gap-4 mt-2'>
                 <div className='p-1 border w-9 h-9 border-black'>
-                  <div className='w-full h-full bg-black'></div>
+                  <div className='w-full h-full bg-black cursor-pointer'></div>
                 </div>
                 <div className='p-1 w-9 h-9 '>
-                  <div className='w-full h-full bg-[#B81919]'></div>
+                  <div className='w-full h-full bg-[#B81919] cursor-pointer'></div>
                 </div>
                 <div className='p-1 w-9 h-9'>
-                  <div className='w-full h-full bg-[#AFF9F4]'></div>
+                  <div className='w-full h-full bg-[#AFF9F4] cursor-pointer'></div>
                 </div>
               </div>
             </div>
