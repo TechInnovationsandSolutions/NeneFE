@@ -15,12 +15,14 @@ html {
     /* fonts */
     /* 44px - 98px */
     --fs-xxl: clamp(2.75rem, 1rem + 4vw, 6rem);
-    --fs-xl: clamp(2rem, 1rem + 2.2vw, 3.5rem);
+    /* 24px - 44px*/
+    --fs-xl: clamp(1.5rem, 1rem + 2.2vw, 3rem);
     /* 20.4px - 36px */
     --fs-lg: clamp(1.275rem, 1rem + 1.5vw, 2.25rem);
     /* 20.4px - 28.8 */
     --fs-md: clamp(1.275rem, 1rem + 1vw, 1.8rem);
-    --fs: clamp(1rem, 0.75rem + 1vw, 1.215rem);
+    /* 16px - */
+    --fs: clamp(1rem, 0.75rem + 1vw, 1.415rem);
     --fs-sm: clamp(0.85rem, 0.7rem + 1vw, 1.1rem);
     --fs-xs: clamp(0.75rem, 0.5rem + 1vw, 0.85rem);
     @apply text-base;
@@ -39,6 +41,14 @@ html {
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.bred {
+  @apply border-2 border-red-500;
+}
+
+.bYellow {
+  @apply border border-yellow-500;
 }
 
 @media (max-width: 1024px) {
