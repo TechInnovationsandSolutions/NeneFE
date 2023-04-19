@@ -8,7 +8,7 @@ import Button from "../button/button";
 
 const DiscoverFeelShopSection = () => {
   return (
-    <section className='md:border border-[#8b82824a]'>
+    <section className='md:border border-[#8b82822b]'>
       <div className='mx-auto w-11/12 2xl:w-4/6 flex flex-col md:flex-row md:items-end justify-center md:justify-between text-center'>
         <div className='md:pr-10 md:border-r border-r-[#8b82824a] md:pb-12 flex flex-col items-center w-full '>
           <Image

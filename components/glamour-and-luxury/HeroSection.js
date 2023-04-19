@@ -17,10 +17,7 @@ function GlamourLuxury() {
           src={heroImage}
           alt='Hero Background'
           fill
-          style={{
-            objectFit: "cover",
-            objectPosition: "center",
-          }}
+          className='object-cover object-center '
         />
         <div className='absolute inset-0 flex flex-col justify-center items-center z-10'>
           <h1 className='text-x2Large font-normal text-white text-center max-w-3xl'>
