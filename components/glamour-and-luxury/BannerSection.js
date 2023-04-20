@@ -3,7 +3,7 @@ import Image from "next/image";
 import { banner, louisVuitton } from "@/public/assets/glamour-and-luxury";
 import Button from "../button/button";
 
-const Banner = () => {
+const BannerSection = () => {
   return (
     <section className='relative h-[180px] sm:h-[203px] md:h-[251px] lg:h-[321px] 2xl:h-[481px] mt-12 lg:mt-20'>
       <Image
@@ -37,4 +37,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default BannerSection;

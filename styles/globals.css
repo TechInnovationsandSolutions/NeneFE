@@ -11,6 +11,7 @@ html {
   :root {
     /* colors */
     --lightPink: 350deg 100% 88%; /* #FFC0CB*/
+    --lightGray: 0deg 4% 53%; /* #8B8282 */
 
     /* fonts */
     /* 44px - 98px */
@@ -21,8 +22,8 @@ html {
     --fs-lg: clamp(1.275rem, 1rem + 1.5vw, 2.25rem);
     /* 20.4px - 28.8 */
     --fs-md: clamp(1.275rem, 1rem + 1vw, 1.8rem);
-    /* 16px - */
-    --fs: clamp(1rem, 0.75rem + 1vw, 1.415rem);
+    /* 16px - 24px*/
+    --fs: clamp(1rem, 0.75rem + 1vw, 1.5rem);
     --fs-sm: clamp(0.85rem, 0.7rem + 1vw, 1.1rem);
     --fs-xs: clamp(0.75rem, 0.5rem + 1vw, 0.85rem);
     @apply text-base;
