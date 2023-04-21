@@ -110,17 +110,21 @@ const Header = () => {
         <button
           onClick={() => setDropdown(false)}
           className={`${
-            dropdown ? "flex absolute m-0 right-4 -top-2 pr-5 " : "hidden"
+            dropdown ? "flex absolute m-0 right-4 -top-2 pr-4 " : "hidden"
           }  `}
         >
-          <img src="/assets/svgs/X.svg" alt="" />
+          <img src="/assets/svgs/X.svg" alt="" className="w-[24px]" />
         </button>
         <button
           className={`${
             dropdown ? "hidden  " : "flex"
-          } ml-auto mr-5 sm:mr-10 lg:hidden`}
+          } ml-auto mr-5 sm:mr-14 lg:hidden`}
         >
-          <img src="/assets/svgs/search.svg" alt="" />
+          <img
+            src="/assets/svgs/search.svg"
+            alt=""
+            className="h-full w-[24px]"
+          />
         </button>
         <nav
           className={`${
