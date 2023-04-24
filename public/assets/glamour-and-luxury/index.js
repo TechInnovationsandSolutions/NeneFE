@@ -6,6 +6,9 @@ import onlineExclusive from "./online-exclusive.png";
 import janelleMakeup from "./janelle-makeup-collection.png";
 import banner from "./banner.png";
 import louisVuitton from "./louis-vuitton-logo-white-original-louis-vuitton-logo.png";
+import latestShoeStyles from "./latest-shoe-styles.png";
+import luxuryBrands from "./luxury-brands.png";
+import featuredStyles from "./featured-styles.png";
 
 export {
   ladyBack,
@@ -16,4 +19,7 @@ export {
   janelleMakeup,
   banner,
   louisVuitton,
+  latestShoeStyles,
+  luxuryBrands,
+  featuredStyles,
 };
