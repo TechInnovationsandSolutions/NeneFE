@@ -13,7 +13,12 @@ import NeedhelpImg from "../../../public/assets/account/need_help.svg";
 import WhereissMyOrderImg from "../../../public/assets/account/where's_my_order.svg";
 import signoutImg from "../../../public/assets/account/signout.svg";
 
+import { stateContext } from "../../../components/stateContext/stateProvider";
+import { useContext } from "react";
+
 const SideBar = () => {
+  const [accountTab, setAccountTab] = useContext(stateContext);
+
   const details = [
     {
       text: "My details",
@@ -61,6 +66,7 @@ const SideBar = () => {
       last: true,
     },
   ];
+
   return (
     <div className="bg-medGray h-auto min-w-[80px] flex flex-col gap-2">
       {/* Profile Image Section */}
@@ -80,28 +86,54 @@ const SideBar = () => {
 
       {/* Other Links */}
 
-      {/* Account overview */}
-      <section className={sectionStyles}>
+      {/* Account overview Tab */}
+      <section
+        className={
+          accountTab === "Account overview"
+            ? activeSectionStyles
+            : sectionStyles
+        }
+        onClick={() => {
+          setAccountTab("Account overview");
+        }}
+      >
         <Image src={AccOverview} alt="" width={24} height={24} />
         <h3 className={sectionText}>Account Overview</h3>
       </section>
 
-      {/* My Orders */}
-      <section className={activeSectionStyles}>
+      {/* My Orders TAb */}
+      <section
+        className={
+          accountTab === "My orders" ? activeSectionStyles : sectionStyles
+        }
+        onClick={() => {
+          setAccountTab("My orders");
+        }}
+      >
         <Image src={MyOrderImg} alt="" width={24} height={24} />
-        <h3 className={sectionText}>My Orders</h3>
+        <h3 className={sectionText}>My orders</h3>
       </section>
 
       {/* Details */}
       <section className="flex flex-col bg-white">
         {details.map((detail) => {
           return (
-            <div className={sectionStyles} key={detail.text}>
+            <div
+              className={
+                accountTab === detail.text
+                  ? `${activeSectionStyles} pr-0 pb-0`
+                  : `${sectionStyles} pr-0 pb-0`
+              }
+              onClick={() => {
+                setAccountTab(detail.text);
+              }}
+              key={detail.text}
+            >
               <Image src={detail.img} alt="" width={24} height={24} />
               <h3
                 className={
                   detail.last
-                    ? `${sectionText} w-full pb-5 border-[rgba(0,0,0,0.3)]`
+                    ? `${sectionText} w-full pb-5`
                     : `${sectionText} w-full pb-5 border-b-2 border-[rgba(0,0,0,0.3)]`
                 }
               >
@@ -113,7 +145,14 @@ const SideBar = () => {
       </section>
 
       {/* Gift Cards and Vouchers */}
-      <section className={sectionStyles}>
+      <section
+        className={
+          accountTab === "Gift cards" ? activeSectionStyles : sectionStyles
+        }
+        onClick={() => {
+          setAccountTab("Gift cards");
+        }}
+      >
         <Image src={GiftImg} alt="" width={24} height={24} />
         <h3 className={sectionText}>Gift cards & vouchers</h3>
       </section>
@@ -122,12 +161,22 @@ const SideBar = () => {
       <section className="flex flex-col bg-white">
         {helpList.map((help) => {
           return (
-            <div className={`${sectionStyles}`} key={help.text}>
+            <div
+              className={
+                accountTab === help.text
+                  ? `${activeSectionStyles} pr-0 pb-0`
+                  : `${sectionStyles} pr-0 pb-0`
+              }
+              onClick={() => {
+                setAccountTab(help.text);
+              }}
+              key={help.text}
+            >
               <Image src={help.img} alt="" width={24} height={24} />
               <h3
                 className={
                   help.last
-                    ? `${sectionText} w-full pb-5 border-[rgba(0,0,0,0.3)]`
+                    ? `${sectionText} w-full pb-5`
                     : `${sectionText} w-full pb-5 border-b-2 border-[rgba(0,0,0,0.3)]`
                 }
               >

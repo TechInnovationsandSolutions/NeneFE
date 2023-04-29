@@ -3,9 +3,10 @@ import { createContext, useState } from "react";
 export const stateContext = createContext();
 
 const StateProvider = (props) => {
-  const [check, setCheck] = useState();
+  const [accountTab, setAccountTab] = useState("Account overview");
+
   return (
-    <stateContext.Provider value={[check, setCheck]}>
+    <stateContext.Provider value={[accountTab, setAccountTab]}>
       {props.children}
     </stateContext.Provider>
   );
