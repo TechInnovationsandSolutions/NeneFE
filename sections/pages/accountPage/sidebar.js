@@ -17,7 +17,7 @@ import { stateContext } from "../../../components/stateContext/stateProvider";
 import { useContext } from "react";
 
 const SideBar = () => {
-  const [accountTab, setAccountTab] = useContext(stateContext);
+  const { accountTab, setAccountTab } = useContext(stateContext);
 
   const details = [
     {

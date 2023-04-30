@@ -7,7 +7,14 @@ import Accessories from "../header-categories/acessories";
 import BrandsTab from "../header-categories/brands";
 import FeaturedTab from "../header-categories/featured";
 import HeaderProfile from "../headerProfileBox";
+import Signin from "../verifications/signin";
+import { stateContext } from "../stateContext/stateProvider";
+import { useContext } from "react";
+import SignIn from "../verifications/signin";
+
 const Header = () => {
+  const { isSignin, setIsSignin } = useContext(stateContext);
+
   const [dropdown, setDropdown] = useState(false);
   const [screenWidth, setScreenWidth] = useState(0);
   const [profileClick, setProfileClick] = useState(false);
@@ -154,7 +161,12 @@ const Header = () => {
             <img src="/assets/svgs/navIcon4.svg" alt="nationale" />
           </button>
           {profileClick ? (
-            <HeaderProfile close={() => setProfileClick(false)} />
+            <HeaderProfile
+              close={() => {
+                setProfileClick(false);
+                console.log("closed");
+              }}
+            />
           ) : null}
         </nav>
 
@@ -245,6 +257,7 @@ const Header = () => {
           );
         })}
       </div>
+      {isSignin ? <SignIn /> : ""}
     </header>
   );
 };

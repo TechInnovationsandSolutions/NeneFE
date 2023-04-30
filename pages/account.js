@@ -6,7 +6,7 @@ import MyAccount from "../sections/pages/accountPage/myaccount";
 import MyDetails from "@/sections/pages/accountPage/mydetails";
 
 const Account = () => {
-  const [accountTab, setAccountTab] = useContext(stateContext);
+  const { accountTab, setAccountTab } = useContext(stateContext);
 
   return (
     <div className='w-full h-full flex flex-col bg-medGray px-5 py-5 lg:px-[100px] lg:py-[80px]'>
