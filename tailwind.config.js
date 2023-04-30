@@ -18,6 +18,7 @@ module.exports = {
         },
         lightPink: "hsl(var(--lightPink))",
         lightGray: "hsl(var(--lightGray))",
+        medGray: "var(--medGray)",
       },
       fontFamily: {
         sans: "DM Sans,sans-serif",
