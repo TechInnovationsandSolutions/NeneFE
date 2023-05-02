@@ -15,7 +15,7 @@ const Header = () => {
   const [toggleNumber, setToggleNumber] = useState(null);
   const listClass = `${
     dropdown ? "flex w-full justify-between " : ""
-  }  flex space-x-1  ${toggleNumber ? "py-2" : ""} px-2 `;
+  }  flex space-x-1  px-2 `;
   const categoryWrapper = `lg:absolute z-10  right-0 top-[150px]  bottom-0  left-0 max-h-full lg:bg-[#00000059]`;
 
   const category = [
@@ -110,17 +110,21 @@ const Header = () => {
         <button
           onClick={() => setDropdown(false)}
           className={`${
-            dropdown ? "flex absolute m-0 right-4 -top-2 pr-5 " : "hidden"
+            dropdown ? "flex absolute m-0 right-4 -top-2 pr-4 " : "hidden"
           }  `}
         >
-          <img src="/assets/svgs/X.svg" alt="" />
+          <img src="/assets/svgs/X.svg" alt="" className="w-[24px]" />
         </button>
         <button
           className={`${
             dropdown ? "hidden  " : "flex"
-          } ml-auto mr-5 sm:mr-10 lg:hidden`}
+          } ml-auto mr-5 sm:mr-14 lg:hidden`}
         >
-          <img src="/assets/svgs/search.svg" alt="" />
+          <img
+            src="/assets/svgs/search.svg"
+            alt=""
+            className="h-full w-[24px]"
+          />
         </button>
         <nav
           className={`${
