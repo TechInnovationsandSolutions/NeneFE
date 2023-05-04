@@ -4,7 +4,7 @@ import {
   janelleMakeup,
 } from "@/public/assets/glamour-and-luxury";
 import Image from "next/image";
-import Button from "../button/button";
+import Button from "../../../components/button/button";
 
 const DiscoverFeelShopSection = () => {
   return (
@@ -14,6 +14,7 @@ const DiscoverFeelShopSection = () => {
           <Image
             src={onlineExclusive}
             alt='Online Exclusive'
+            placeholder='blur'
             className='md:mt-12'
           />
           <h3 className='text-normal font-bold mt-4 md:mt-6'>
@@ -31,6 +32,7 @@ const DiscoverFeelShopSection = () => {
             src={janelleMakeup}
             alt='Online Exclusive'
             className='mt-6 md:mt-16'
+            placeholder='blur'
           />
           <h3 className='text-normal font-bold mt-4 md:mt-6'>
             Janelle&apos;s Makeup Collection

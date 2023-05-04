@@ -1,12 +1,12 @@
-import Image from 'next/image'
-import React from 'react'
-import delivery from '../../../public/assets/svgs/delivery.svg'
-import order from '../../../public/assets/svgs/order.svg'
-import product from '../../../public/assets/svgs/product.svg'
-import settings from '../../../public/assets/svgs/settings.svg'
-import shipment from '../../../public/assets/svgs/shipment.svg'
-import contact from '../../../public/assets/images/contact.png'
-import arrow from '../../../public/assets/svgs/help-arrow-right.svg'
+import Image from "next/image";
+import React from "react";
+import delivery from "../../../public/assets/svgs/delivery.svg";
+import order from "../../../public/assets/svgs/order.svg";
+import product from "../../../public/assets/svgs/product.svg";
+import settings from "../../../public/assets/svgs/settings.svg";
+import shipment from "../../../public/assets/svgs/shipment.svg";
+import contact from "../../../public/assets/images/contact.png";
+import arrow from "../../../public/assets/svgs/help-arrow-right.svg";
 
 const HelpInfo = () => {
   return (
@@ -92,15 +92,15 @@ const HelpInfo = () => {
           <div className='px-4 bg-[#E8E8E8] h-full'>
             <div className='py-6 px-2 border-b border-black flex justify-between items-center'>
               <p>What is your Returns Policy?</p>
-              <Image src={arrow} alt='arrow right3'/>
+              <Image src={arrow} alt='arrow right3' />
             </div>
             <div className='py-6 px-2 border-b border-black flex justify-between items-center'>
               <p>Can I track the delivery of my order?</p>
-              <Image src={arrow} alt='arrow right2'/>
+              <Image src={arrow} alt='arrow right2' />
             </div>
             <div className='py-6 px-2 border-b border-black flex justify-between items-center'>
               <p>Will my parcel be charged customs and import charges?</p>
-              <Image src={arrow} alt='arrow right1'/>
+              <Image src={arrow} alt='arrow right1' />
             </div>
             <div className='py-6 px-2 border-b flex justify-between items-center'>
               <p>Can I cancel my order after I've placed it?</p>
@@ -123,7 +123,7 @@ const HelpInfo = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default HelpInfo
+export default HelpInfo;
