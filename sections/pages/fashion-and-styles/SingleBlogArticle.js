@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { ladyBlue } from "@/public/assets/fashion-and-styles";
 
-function BlogArticle() {
+function SingleBlogArticle() {
   return (
     <article className='relative w-full md:flex items-center gap-7'>
       <div className='relative w-full md:w-1/3 h-[260px] sm:h-[330px]'>
@@ -45,4 +45,4 @@ function BlogArticle() {
   );
 }
 
-export default BlogArticle;
+export default SingleBlogArticle;

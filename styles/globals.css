@@ -22,12 +22,13 @@ html {
     --fs-xl: clamp(1.5rem, 1rem + 2.2vw, 3rem);
     /* 20.4px - 36px */
     --fs-lg: clamp(1.275rem, 1rem + 1.5vw, 2.25rem);
-    /* 20.4px - 28.8 */
-    --fs-md: clamp(1.275rem, 1rem + 1vw, 1.8rem);
+    /* 20px - 28.8 */
+    --fs-md: clamp(1.25rem, 1rem + 1vw, 1.8rem);
     /* 16px - 24px*/
     --fs: clamp(1rem, 0.75rem + 1vw, 1.5rem);
     /* 14 - 18px*/
     --fs-sm: clamp(0.875rem, 0.7rem + 1vw, 1.125rem);
+    /* 12px - 14px*/
     --fs-xs: clamp(0.75rem, 0.5rem + 1vw, 0.85rem);
     @apply text-base;
   }

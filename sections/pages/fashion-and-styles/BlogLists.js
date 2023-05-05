@@ -1,7 +1,7 @@
 import React from "react";
 import SingleBlogArticle from "./SingleBlogArticle";
 
-function BlogListSection() {
+function BlogLists() {
   return (
     <section>
       <div className='w-11/12 max-w-[1237px] mx-auto flex flex-col items-center justify-center mt-12 lg:mt-20 gap-7 md:gap-[60px] mb-12 lg:mb-20'>
@@ -16,4 +16,4 @@ function BlogListSection() {
   );
 }
 
-export default BlogListSection;
+export default BlogLists;

@@ -2,7 +2,7 @@ import React from "react";
 import {
   SearchFilterSection,
   HeroSection,
-  BlogListSection,
+  BlogLists,
 } from "@/sections/pages/fashion-and-styles";
 
 const fashionAndStyles = () => {
@@ -10,7 +10,7 @@ const fashionAndStyles = () => {
     <div>
       <SearchFilterSection />
       <HeroSection />
-      <BlogListSection />
+      <BlogLists />
     </div>
   );
 };
