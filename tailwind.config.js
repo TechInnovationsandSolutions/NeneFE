@@ -4,7 +4,7 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
-    "./section/**/*.{js,ts,jsx,tsx}",
+    "./sections/**/*.{js,ts,jsx,tsx}",
 
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -18,6 +18,7 @@ module.exports = {
         },
         lightPink: "hsl(var(--lightPink))",
         lightGray: "hsl(var(--lightGray))",
+        priBlack: "hsl(var(--pri-black))",
         medGray: "var(--medGray)",
       },
       fontFamily: {
@@ -34,7 +35,22 @@ module.exports = {
         small: "var(--fs-sm)",
         xSmall: "var(--fs-xs)",
       },
+      animation:{
+        'slide-up': 'slide-up .7s' ,
+      },
+          keyframes: {
+        'slide-up': {
+          '0%': {
+             transform: 'translateY(0%)',
+             opacity:0
+            
+        },
+          '100%': { transform: 'translateY(-100%)',
+          opacity:1
+          },
+        }
+      }
     },
   },
-  plugins: [require("tailwind-scrollbar-hide")],
+  plugins: [require("tailwind-scrollbar-hide"), require("@tailwindcss/forms")],
 };

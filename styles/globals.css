@@ -12,6 +12,7 @@ html {
     /* colors */
     --lightPink: 350deg 100% 88%; /* #FFC0CB*/
     --lightGray: 0deg 4% 53%; /* #8B8282 */
+    --pri-black: 0deg 0% 24%; /* #3E3E3E */
     --medGray: #e8e8e8;
 
     /* fonts */
@@ -25,7 +26,8 @@ html {
     --fs-md: clamp(1.275rem, 1rem + 1vw, 1.8rem);
     /* 16px - 24px*/
     --fs: clamp(1rem, 0.75rem + 1vw, 1.5rem);
-    --fs-sm: clamp(0.85rem, 0.7rem + 1vw, 1.1rem);
+    /* 14 - 18px*/
+    --fs-sm: clamp(0.875rem, 0.7rem + 1vw, 1.125rem);
     --fs-xs: clamp(0.75rem, 0.5rem + 1vw, 0.85rem);
     @apply text-base;
   }
@@ -50,7 +52,7 @@ html {
 }
 
 .bYellow {
-  @apply border border-yellow-500;
+  @apply border-2 border-yellow-500;
 }
 
 @media (max-width: 1024px) {

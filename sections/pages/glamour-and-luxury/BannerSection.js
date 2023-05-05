@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { banner, louisVuitton } from "@/public/assets/glamour-and-luxury";
-import Button from "../button/button";
+import Button from "../../../components/button/button";
 
 const BannerSection = () => {
   return (
@@ -10,12 +10,13 @@ const BannerSection = () => {
         src={banner}
         alt='banner'
         fill
+        placeholder='blur'
         className='object-cover object-center z-0'
       />
       <Image
         src={louisVuitton}
         alt='louis vuitton logo'
-        // fill
+        placeholder='blur'
         className='absolute w-44 sm:w-48 md:w-60 lg:w-80 2xl:w-[400px] top-0 bottom-0 right-0 lg:right-[1%] 2xl:right-[10%]'
       />
       <div className='absolute flex flex-col items-end justify-center top-0 bottom-0 right-0 lg:right-[1%] 2xl:right-[10%] z-10 mr-[5%]'>

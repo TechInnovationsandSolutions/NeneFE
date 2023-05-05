@@ -16,6 +16,7 @@ const FeaturedSection = () => {
               src={latestShoeStyles}
               alt='Latest shoe styles'
               fill
+              placeholder='blur'
               className='object-cover object-center'
             />
           </div>
@@ -27,6 +28,7 @@ const FeaturedSection = () => {
               src={luxuryBrands}
               alt='Luxury brands'
               fill
+              placeholder='blur'
               className='object-cover object-center'
             />
           </div>
@@ -38,6 +40,7 @@ const FeaturedSection = () => {
               src={featuredStyles}
               alt='Featured styles'
               fill
+              placeholder='blur'
               className='object-cover object-center'
             />
           </div>

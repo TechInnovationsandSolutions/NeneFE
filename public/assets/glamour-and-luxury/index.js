@@ -9,6 +9,7 @@ import louisVuitton from "./louis-vuitton-logo-white-original-louis-vuitton-logo
 import latestShoeStyles from "./latest-shoe-styles.png";
 import luxuryBrands from "./luxury-brands.png";
 import featuredStyles from "./featured-styles.png";
+import heroImage from "./glamour-and-image-hero-section.png";
 
 export {
   ladyBack,
@@ -22,4 +23,5 @@ export {
   latestShoeStyles,
   luxuryBrands,
   featuredStyles,
+  heroImage,
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../button/button";
+import Button from "../../../components/button/button";
 import Image from "next/image";
 import {
   ladyBack,
@@ -21,21 +21,25 @@ const GallerySection = () => {
             <Image
               src={ladyWalkingPink}
               alt='Lady walking wearing a pink dress'
+              placeholder='blur'
               className='object-contain object-center xl:w-[350px]'
             />
             <Image
               src={ladyPosingBlue}
               alt='Lady posing on a lue dress'
+              placeholder='blur'
               className='object-contain object-center xl:w-[350px]'
             />
             <Image
               src={ladyStandingRed}
               alt='Lady standing wearing a red gown'
+              placeholder='blur'
               className='object-contain object-center xl:w-[350px]'
             />
             <Image
               src={ladyBack}
               alt='Lady standing facing back'
+              placeholder='blur'
               className='object-contain object-center xl:w-[350px]'
             />
           </div>
