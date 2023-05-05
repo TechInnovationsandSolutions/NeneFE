@@ -21,7 +21,7 @@ const WishList = () => {
         <div className='flex flex-col sm:flex-row sm:justify-center gap-6  my-9 max-w-[1057px]'>
           <div className='flex justify-center items-center gap-3 md:gap-6 text-[#3E3E3E] max-w-[580px]' >
             <div className=' min-w-[117px] md:w-[287px] md:h-[317px] h-[194px] '>
-              <Image src={item.img} alt='' style={{objectFit:'fill',objectPosition:'top', width:'100%' ,height:'100%'}} className quality={100} />
+              <Image src={item.img} alt='' style={{objectFit:'fill',objectPosition:'top', width:'100%' ,height:'100%'}} quality={100} />
             </div>
             <div className=''>
               <p> {item.description} </p>
