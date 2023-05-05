@@ -4,7 +4,7 @@ const HeaderProfile = ({close}) => {
    return (  
 <>
 
-  <div className="absolute z-[11] bg-white text-[.8em] -left-[3em] w-[200px] text-black py-1 px-2 top-[3em]">
+  <div className="absolute z-[11] bg-white text-[.8em] -left-[3em] w-[200px] transition-all duration-300 text-black py-1 px-2 top-[3em]">
     <div className="flex justify-between py-2 border-b border-[#D7D7D7]">
       <button className="border-transparent hover:border-b border-b-[#757575]">Sign In</button>
       <button className="border-transparent hover:border-b border-b-[#757575]">Register</button>

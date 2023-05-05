@@ -35,6 +35,21 @@ module.exports = {
         small: "var(--fs-sm)",
         xSmall: "var(--fs-xs)",
       },
+      animation:{
+        'slide-up': 'slide-up .7s' ,
+      },
+          keyframes: {
+        'slide-up': {
+          '0%': {
+             transform: 'translateY(0%)',
+             opacity:0
+            
+        },
+          '100%': { transform: 'translateY(-100%)',
+          opacity:1
+          },
+        }
+      }
     },
   },
   plugins: [require("tailwind-scrollbar-hide"), require("@tailwindcss/forms")],
