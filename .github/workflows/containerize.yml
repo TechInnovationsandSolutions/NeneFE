@@ -20,7 +20,7 @@ jobs:
 
 
 
-  build:
+  Containerize_image:
     runs-on: ubuntu-latest
     environment: QA
 
