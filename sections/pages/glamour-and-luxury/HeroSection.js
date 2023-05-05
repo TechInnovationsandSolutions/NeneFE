@@ -1,24 +1,26 @@
 import Image from "next/image";
-import heroImage from "../../public/assets/glamour-and-luxury/glamour-and-image-hero-section.png";
+import { heroImage } from "@/public/assets/glamour-and-luxury";
 import localFont from "next/font/local";
 
 const rougeScript = localFont({
-  src: "../../public/fonts/RougeScript-Regular.woff2",
+  src: "../../../public/fonts/RougeScript-Regular.woff2",
   variable: "--font-rouge",
 });
 
-function GlamourLuxury() {
+function HeroSection() {
   return (
     <>
-      <div
+      <section
         className={`relative h-[223px] sm:h-[421px] lg:h-[633px] xl:h-[731px] ${rougeScript.variable} font-rouge`}
       >
         <Image
           src={heroImage}
           alt='Hero Background'
           fill
+          placeholder='blur'
           className='object-cover object-center '
         />
+
         <div className='absolute inset-0 flex flex-col justify-center items-center z-10'>
           <h1 className='text-x2Large font-normal text-white text-center max-w-3xl'>
             Glamour & Luxury
@@ -35,9 +37,9 @@ function GlamourLuxury() {
           <div className='w-2 h-2 md:w-3 md:h-3 bg-white rounded-full'></div>
           <div className='w-2 h-2 md:w-3 md:h-3 bg-white rounded-full'></div>
         </div>
-      </div>
+      </section>
     </>
   );
 }
 
-export default GlamourLuxury;
+export default HeroSection;

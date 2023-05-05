@@ -1,8 +1,10 @@
-import HeroSection from "../components/glamour-and-luxury/HeroSection";
-import GallerySection from "../components/glamour-and-luxury/GallerySection";
-import DiscoverFeelShopSection from "@/components/glamour-and-luxury/DiscoverFeelShopSection";
-import BannerSection from "@/components/glamour-and-luxury/BannerSection";
-import FeaturedSection from "@/components/glamour-and-luxury/FeaturedSection";
+import {
+  HeroSection,
+  GallerySection,
+  DiscoverFeelShopSection,
+  BannerSection,
+  FeaturedSection,
+} from "@/sections/pages/glamour-and-luxury";
 
 function GlamourLuxury() {
   return (
