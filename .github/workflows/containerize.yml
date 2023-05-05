@@ -51,7 +51,7 @@ jobs:
       - name: Run the image in a container
         uses: addnab/docker-run-action@v3
         with:
-          image: ${{ secrets.DOCKER_USERNAME }}/soberpal.frontend:latest
+          image: ${{ secrets.DOCKER_USERNAME }}/nene.node:v1
           run: |
             echo "runing the docker image"
 
