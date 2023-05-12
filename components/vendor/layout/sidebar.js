@@ -1,50 +1,54 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
-import QrCode from '../../../public/assets/svgs/QrCode.svg'
-import CreditCard from '../../../public/assets/svgs/CreditCard.svg'
-import shop from '../../../public/assets/svgs/ShoppingCart.svg'
-import Slideshow from '../../../public/assets/svgs/Slideshow.svg'
-import SignOut from '../../../public/assets/svgs/SignOut.svg'
-import settings from '../../../public/assets/svgs/settings.svg'
 import dress2 from '../../../public/assets/images/dress2.webp'
 import bell from '../../../public/assets/svgs/bell.svg'
 import close from '../../../public/assets/svgs/close icon.svg'
-
+import { ShoppingCart } from '@/public/assets/svgs/js/ShoppingCart'
+import { CreditCard } from '@/public/assets/svgs/js/CreditCard'
+import { SignOut } from '@/public/assets/svgs/js/SignOut'
+import { Settings } from '@/public/assets/svgs/js/Settings'
+import { Slideshow } from '@/public/assets/svgs/js/Slideshow'
+import { QrCode } from '../../../public/assets/svgs/js/QrCode.js'
+import Link from 'next/link'
 
 
 const List = [
   {id:1, page:'Product', icon: QrCode, route:'/product'},
-  {id:2, page:'Orders', icon: shop, route:'/orders'},
+  {id:2, page:'Orders', icon: ShoppingCart, route:'/orders'},
   {id:3, page:'Payments', icon: CreditCard, route:'/payments'},
-  {id:4, page:'Settings', icon: settings, route:'/settings'},
+  {id:4, page:'Settings', icon: Settings, route:'/settings'},
   {id:5, page:'Enable Ads', icon: Slideshow, route:'/ads'},
-  {id:6, page:'Log out', icon: SignOut, route:'/log-out'},
+  {id:6, page:'Log out', icon: SignOut, route:'/product'},
 ]
 
 
 const Sidebar = ({openBar, setOpenBar}) => {
-  
+
   const [current , setCurrent] = useState(List[0].page)
+
   const onsetCurrent = (page) => setCurrent(page)
   const closeBar = () => setOpenBar(false)
+
+
 
   return (
     <div className={`h-screen overflow-y-auto scrollbar-hide lg:pt-[100px] min-w-[288px] fixed lg:border-r border-[#D7D7D7] ${openBar ? 'block' : 'hidden'} ${openBar ? 'z-30' : 'z-0'} lg:block bg-white`}>
       <div className='p-6 flex justify-end pb-0 lg:hidden cursor-pointer' onClick={closeBar}>
         <Image src={close} />  
       </div>
-      <div className='py-6 pr-0 flex flex-col gap-10'  >
+      <div className='py-6 flex flex-col gap-10'  >
         {List.map((list, i) => (
-          <div
-           className={` p-3 px-11  flex gap-8 items-center hover:bg-black/[0.05] ${current == list.page && 'lg:border-r border-black text-black '} text-[#757575] cursor-pointer text-sm font-medium`} 
-           key={i} 
-           onClick={e => onsetCurrent(list.page)}
-          >
+          <Link href={`/vendor${list.route}`} onClick={closeBar} >
+            <div
+            className={` p-3 px-11  flex gap-8 items-center hover:bg-black/[0.05] ${current == list.page && 'lg:border-r border-black max-lg:border-l  text-black '} text-[#757575] cursor-pointer text-sm font-medium`} 
+            key={i} 
+            onClick={e => onsetCurrent(list.page)}
+            >
+              <list.icon color={current == list.page ? '#000000' : '#cfcfcf'} />
+              <p>{list.page}</p>
 
-            <Image src={list.icon} color='red' />
-            <p>{list.page}</p>
-
-          </div>
+            </div>
+          </Link>
         ))}
       </div>
       <div className='flex flex-col gap-7 p-8 border-t border-[#D7D7D7] lg:hidden '>
