@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     // <Provider store={store}>
-    // <StateProvider>
+    <StateProvider>
     <div>
       {pathname.startsWith('/vendor') ? (
         <VendorLayout>
@@ -24,7 +24,7 @@ export default function App({ Component, pageProps }) {
         </Layout>
       )}
       </div>
-    // </StateProvider>
+    </StateProvider>
     // </Provider>
   );
 }

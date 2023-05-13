@@ -30,7 +30,7 @@ const Sidebar = ({openBar, setOpenBar}) => {
 
   useEffect(() => {
     setCurrent(path[2])
-  }, [])
+  }, [path])
 
 
   const [current , setCurrent] = useState(List[0].route)
