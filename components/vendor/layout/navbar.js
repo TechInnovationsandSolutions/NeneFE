@@ -16,17 +16,17 @@ const Navbar = ({setOpenBar}) => {
         <div>
           <div className='h-10 xl:w-[400px]  flex px-5 py-2 bg-[#F2F2F2] rounded-sm'>
             <input className='w-full bg-inherit h-full outline-none' placeholder='search . . .'/>
-            <Image src={search} />     
+            <Image src={search} alt='search' />     
           </div>
         </div>
         <div className='flex gap-7'>
           <div className='flex justify-between items-center gap-7 '>
-            <Image src={bell} />
+            <Image src={bell} alt='bell' />
             <span className='h-7 border-r border-black'></span>
           </div>
           <div className='flex gap-3'>
             <div className='w-11 h-11 rounded-full overflow-hidden'>
-              <Image src={dress2} />
+              <Image src={dress2} alt='profile' />
             </div>
             <div>
               <p className='font-medium text-base'>Namegoes here</p>
@@ -36,8 +36,8 @@ const Navbar = ({setOpenBar}) => {
         </div>
       </div>
       <div className='flex lg:hidden ml-auto p-5 gap-10 items-center'>
-        <Image src={handburger} onClick={e => setOpenBar(prev => !prev)} />
-        <Image src={search} />
+        <Image src={handburger} alt='menu' onClick={e => setOpenBar(prev => !prev)} />
+        <Image src={search} alt='search' />
       </div>
     </nav>
   )
