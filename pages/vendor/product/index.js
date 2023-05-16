@@ -2,12 +2,9 @@ import React from 'react'
 
 const VendorProduct = () => {
   return (
-      <>
-        <div>
-        VendorProduct
-        </div>
-      </>
-    
+    <div>
+      VendorProduct
+    </div>
   )
 }
 

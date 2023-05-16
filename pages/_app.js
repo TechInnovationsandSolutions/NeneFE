@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }) {
     // <Provider store={store}>
     <StateProvider>
     <div>
-      {pathname.startsWith('/vendor') ? (
+      {pathname.includes('/vendor') ? (
         <VendorLayout>
           <Component {...pageProps} />
         </VendorLayout>
