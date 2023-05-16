@@ -19,6 +19,8 @@ module.exports = {
         lightPink: "hsl(var(--lightPink))",
         lightGray: "hsl(var(--lightGray))",
         priBlack: "hsl(var(--pri-black))",
+        grayBg: "hsl(var(--gray-bg))",
+        grayDivider: "hsl(var(--gray-divider))",
         medGray: "var(--medGray)",
       },
       fontFamily: {
@@ -35,22 +37,23 @@ module.exports = {
         small: "var(--fs-sm)",
         xSmall: "var(--fs-xs)",
       },
-      animation:{
-        'slide-up': 'slide-up .7s' ,
+      animation: {
+        "slide-up": "slide-up .7s",
       },
-          keyframes: {
-        'slide-up': {
-          '0%': {
-             transform: 'translateY(0%)',
-             opacity:0
-            
-        },
-          '100%': { transform: 'translateY(-100%)',
-          opacity:1
+      keyframes: {
+        "slide-up": {
+          "0%": {
+            transform: "translateY(0%)",
+            opacity: 0,
           },
-        }
-      }
+          "100%": { transform: "translateY(-100%)", opacity: 1 },
+        },
+      },
     },
   },
-  plugins: [require("tailwind-scrollbar-hide"), require("@tailwindcss/forms")],
+  plugins: [
+    require("tailwind-scrollbar-hide"),
+    require("@tailwindcss/forms"),
+    require("tailwind-scrollbar"),
+  ],
 };
