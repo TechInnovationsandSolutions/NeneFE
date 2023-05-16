@@ -24,7 +24,7 @@ const SearchFilter = () => {
         <div className='w-11/12 mt-5 mx-auto flex flex-col items-center justify-center space-y-5 '>
           {/* Search bar */}
           <div
-            className='group relative flex items-center justify-between rounded-3xl border border-lightGray overflow-hidden'
+            className='relative flex items-center justify-between rounded-3xl border border-lightGray overflow-hidden'
             style={{
               width: "clamp(20.9rem, 1rem + 70vw, 44.6rem)",
             }}
@@ -35,7 +35,7 @@ const SearchFilter = () => {
               onChange={handleChange}
               value={searchParameters.search}
               placeholder='Search for article'
-              className='group-focus:border-red-500 px-4 py-2 w-[93%] rounded-0 border-0 focus:outline-none placeholder:text-lightGray'
+              className='px-4 py-2 w-[93%] rounded-0 border-0 placeholder:text-lightGray focus:ring-black'
             />
 
             <button className='mx-4'>
