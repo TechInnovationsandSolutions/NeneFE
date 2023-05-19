@@ -9,7 +9,7 @@ function Cart() {
     {
       name: "Zara Twist Cute Dress",
       price: 3000,
-      img: "/assets/images/dress1.webp",
+      img: "/assets/images/dress4.webp",
       quantity: 1,
       code: "0836752D",
     },
@@ -115,7 +115,7 @@ function Cart() {
             You Recently Viewed
           </h3>
           <div className="flex flex-wrap max-sm:justify-center">
-            {[0, 1, 3].map((i) => (
+            {[3, 1, 3].map((i) => (
               <ProductCard
                 name={products[i].name}
                 img={products[i].img}
