@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function ProductCard({ name, img, price, newNow }) {
   return (
-    <div className="w-64 flex flex-col m-5">
+    <div className="w-64 flex flex-col my-5 mx-[20px]">
       <div className="relative w-full h-[512px] overflow-hidden">
         <Link href="#">
           <Image src={img} fill className="object-cover" alt="dress" />

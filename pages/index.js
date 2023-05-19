@@ -19,7 +19,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="font-sans">
-        <div className="w-full md:w-9/12 mx-auto mb-5">
+        <div className="w-full md:w-9/12 mx-auto mb-5 overflow-hidden">
           <FirstSlider />
         </div>
         <section className="md:pt-10 pt-10 mb-2 pb-10 overflow-hidden">

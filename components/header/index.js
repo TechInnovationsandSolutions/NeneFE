@@ -92,7 +92,7 @@ const Header = () => {
     <header
       className={`${
         dropdown
-          ? "w-full h-full overflow-y-scroll transition-all duration-700  fixed z-10 flex-col "
+          ? "w-full h-full overflow-y-scroll transition-all duration-700  fixed z-20 flex-col "
           : ""
       } bg-black  text-white `}
     >

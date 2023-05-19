@@ -50,6 +50,10 @@ html {
   scrollbar-width: none;
 }
 
+.text-border-white {
+  -webkit-text-stroke: 1px white;
+}
+
 .bred {
   @apply border-2 border-red-500;
 }
