@@ -120,9 +120,9 @@ function FeaturedIcon() {
 
       <div className="bg-[#FFC0CB] w-full py-10 px-8 md:px-16 my-16">
         <h2 className="text-2xl md:text-4xl font-bold text-center text-[#3E3E3E]">
-          " Our major focus is to provide continuous training to upskill our
+        &ldquo; Our major focus is to provide continuous training to upskill our
           craftsmen to be able to produce world-class products and increase
-          their employability."
+          their employability. &ldquo;
         </h2>
       </div>
 
