@@ -17,7 +17,7 @@ const GalleryItem = ({ img }) => {
     setCurrentId(id);
   }
   function handleToCollectionPage() {
-    router.push(`/gallery/${img.id}`);
+    router.push(`/scrapbook/${img.id}`);
   }
 
   return (
