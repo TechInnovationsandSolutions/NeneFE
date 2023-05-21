@@ -180,7 +180,7 @@ const Header = () => {
               key={index}
               className={`${
                 toggleNumber === index
-                  ? "bg-white transition-all duration-300 text-black"
+                  ? "bg-white transition-all duration-300 pb-2 text-black"
                   : ""
               }  flex flex-col`}
             >

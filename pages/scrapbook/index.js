@@ -1,4 +1,3 @@
-import { useState } from "react";
 import img1 from "../../public/assets/gallery/Rectangle 373.png";
 import GalleryItem from "@/components/galleryItem";
 const Scrapbook = () => {
