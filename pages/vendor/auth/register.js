@@ -59,7 +59,7 @@ const VendorRegister = () => {
     formState: { errors },
   } = useForm();
   return (
-    <div className="py-5 px-4 md:p-0 relative   flex flex-col md:gap-5 md:grid grid-cols-2 ">
+    <div className="py-5 px-4 md:p-0 relative max-h-fit  flex flex-col md:gap-x-5 md:grid grid-cols-2 ">
       <main className=" flex flex-col gap-8 md:py-5 md:px-8">
         <span className="font-alegreya">Nene</span>
         <div className="flex justify-between">
@@ -194,7 +194,7 @@ const VendorRegister = () => {
       <aside className="relative">
         <Image
           className="hidden w-full md:flex md:h-[150vh]  lg:h-[155vh] "
-          objectFit="contain"
+          // objectFit="contain"
           src={HeroImg}
           alt="hero image"
         ></Image>

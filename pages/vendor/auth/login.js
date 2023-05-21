@@ -18,7 +18,7 @@ const VendorLogin = () => {
     formState: { errors },
   } = useForm();
   return (
-    <div className="py-5 px-4 md:p-0    flex flex-col md:gap-5 md:grid grid-cols-2 ">
+    <div className="py-5 px-4 md:p-0    flex flex-col md:gap-x-5 md:grid grid-cols-2 ">
       <main className=" flex flex-col gap-8 md:py-5 md:px-8">
         <span className="font-alegreya">Nene</span>
 
