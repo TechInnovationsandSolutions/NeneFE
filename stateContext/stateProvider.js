@@ -1,14 +1,24 @@
 import { createContext, useState } from "react";
+import { orderList } from "@/mockData/orders";
+
 
 export const stateContext = createContext();
 
 const StateProvider = (props) => {
-  const [accountTab, setAccountTab] = useState("Account overview");
   const [isSignin, setIsSignin] = useState(false);
+  const [isOrders, setIsOrders] = useState(true);
+  const [orders, setOrders] = useState(orderList);
 
   return (
     <stateContext.Provider
-      value={{ accountTab, setAccountTab, isSignin, setIsSignin }}
+      value={{
+        isSignin,
+        setIsSignin,
+        isOrders,
+        setIsOrders,
+        orders,
+        setOrders,
+      }}
     >
       {props.children}
     </stateContext.Provider>

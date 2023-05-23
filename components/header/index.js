@@ -8,7 +8,7 @@ import BrandsTab from "../header-categories/brands";
 import FeaturedTab from "../header-categories/featured";
 import HeaderProfile from "../headerProfileBox";
 import Signin from "../verifications/signin";
-import { stateContext } from "../stateContext/stateProvider";
+import { stateContext } from "@/stateContext/stateProvider";
 import { useContext } from "react";
 import SignIn from "../verifications/signin";
 
