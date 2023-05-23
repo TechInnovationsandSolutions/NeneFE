@@ -1,32 +1,34 @@
 import React from "react";
 import Image from "next/image";
-import { ladyInBlueBig } from "@/public/assets/fashion-and-styles";
 
-function SingleBlogHeroSection() {
+function SingleBlogHeroSection({
+  imageData2,
+  alt,
+  blogText,
+  photoAttribution,
+}) {
+  const blogTextChunk1 = blogText.substring(0, 234);
+  const blogTextChunk2 = blogText.substring(234);
+
   return (
     <section className='w-full flex flex-col items-center justify-center'>
       <div className='relative w-full flex flex-col items-center mt-4 md:mt-10'>
         <Image
-          src={ladyInBlueBig}
-          placeholder='blur'
+          src={imageData2}
+          placeholder={imageData2?.blurData}
           className='object-center object-contain'
-          alt='Lady in blue'
+          priority
+          alt={alt}
         />
       </div>
       <small className='text-small text-lightGray mt-2'>
-        PHOTO: Jay Mcklurins
+        {photoAttribution}
       </small>
       <p className='mt-4 text-small'>
-        Every year, it&apos;s as if the seasonal switch to cold weather happens
-        overnight. One minute we&apos;re bragging about not needing a jacket in
-        the middle of October, and the next, we&apos;re breaking out puffers and
-        scarves, trekking through snow.
+        {blogTextChunk1}
         <br />
         <br />
-        Still, summer ending doesn&apos;t mean we should pack up every piece of
-        warm weather gear. We&apos;re firm believers in seasonless fashion, and
-        there are at least three items from our June through August rotation
-        that will help punch up fall and winter staples.
+        {blogTextChunk2}
       </p>
     </section>
   );
