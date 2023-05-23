@@ -1,48 +1,55 @@
 import Image from "next/image";
-import ProfileImg from "../../../public/assets/account/profile_image.png";
-import AccOverview from "../../../public/assets/account/account_overview.svg";
-import MyOrderImg from "../../../public/assets/account/my_orders.svg";
-import MyDetailsImg from "../../../public/assets/account/my_details.svg";
-import ChangePasswordImg from "../../../public/assets/account/change_password.svg";
-import AddressBookImg from "../../../public/assets/account/address_book.svg";
-import PaymentImg from "../../../public/assets/account/payment_methods.svg";
-import ContactImg from "../../../public/assets/account/contact_preferences.svg";
-import SocialImg from "../../../public/assets/account/social_accounts.svg";
-import GiftImg from "../../../public/assets/account/gift_cards.svg";
-import NeedhelpImg from "../../../public/assets/account/need_help.svg";
-import WhereissMyOrderImg from "../../../public/assets/account/where's_my_order.svg";
-import signoutImg from "../../../public/assets/account/signout.svg";
+import ProfileImg from "@/public/assets/account/profile_image.png";
+import AccOverview from "@/public/assets/account/account_overview.svg";
+import MyOrderImg from "@/public/assets/account/my_orders.svg";
+import MyDetailsImg from "@/public/assets/account/my_details.svg";
+import ChangePasswordImg from "@/public/assets/account/change_password.svg";
+import AddressBookImg from "@/public/assets/account/address_book.svg";
+import PaymentImg from "@/public/assets/account/payment_methods.svg";
+import ContactImg from "@/public/assets/account/contact_preferences.svg";
+import SocialImg from "@/public/assets/account/social_accounts.svg";
+import GiftImg from "@/public/assets/account/gift_cards.svg";
+import NeedhelpImg from "@/public/assets/account/need_help.svg";
+import WhereissMyOrderImg from "@/public/assets/account/where's_my_order.svg";
+import signoutImg from "@/public/assets/account/signout.svg";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
-import { stateContext } from "../../../components/stateContext/stateProvider";
-import { useContext } from "react";
 
 const SideBar = () => {
-  const [accountTab, setAccountTab] = useContext(stateContext);
+  const router = useRouter();
+  const activeRoute = router.pathname;
 
   const details = [
     {
       text: "My details",
       img: MyDetailsImg,
+      link: "details",
     },
     {
       text: "Change password",
       img: ChangePasswordImg,
+      link: "",
     },
     {
       text: "Address book",
       img: AddressBookImg,
+      link: "",
     },
     {
       text: "Payment method",
       img: PaymentImg,
+      link: "",
     },
     {
       text: "Contact preferences",
       img: ContactImg,
+      link: "",
     },
     {
       text: "Social accounts",
       img: SocialImg,
+      link: "",
       last: true,
     },
   ];
@@ -51,18 +58,22 @@ const SideBar = () => {
     {
       text: "Need help",
       img: NeedhelpImg,
+      link: "",
     },
     {
       text: "Where's my order",
       img: WhereissMyOrderImg,
+      link: "",
     },
     {
       text: "How do I make a return",
       img: WhereissMyOrderImg,
+      link: "",
     },
     {
       text: "I need a new return's note",
       img: WhereissMyOrderImg,
+      link: "",
       last: true,
     },
   ];
@@ -87,46 +98,40 @@ const SideBar = () => {
       {/* Other Links */}
 
       {/* Account overview Tab */}
-      <section
+      <Link
         className={
-          accountTab === "Account overview"
-            ? activeSectionStyles
-            : sectionStyles
+          activeRoute === "/account" ? activeSectionStyles : sectionStyles
         }
-        onClick={() => {
-          setAccountTab("Account overview");
-        }}
+        href={"/account"}
       >
         <Image src={AccOverview} alt="" width={24} height={24} />
         <h3 className={sectionText}>Account Overview</h3>
-      </section>
+      </Link>
 
       {/* My Orders TAb */}
-      <section
+      <Link
         className={
-          accountTab === "My orders" ? activeSectionStyles : sectionStyles
+          activeRoute === "/account/my-orders"
+            ? activeSectionStyles
+            : sectionStyles
         }
-        onClick={() => {
-          setAccountTab("My orders");
-        }}
+        href={"/account/my-orders"}
       >
         <Image src={MyOrderImg} alt="" width={24} height={24} />
         <h3 className={sectionText}>My orders</h3>
-      </section>
+      </Link>
 
       {/* Details */}
       <section className="flex flex-col bg-white">
         {details.map((detail) => {
           return (
-            <div
+            <Link
+              href={`/account/${detail.link}`}
               className={
-                accountTab === detail.text
+                activeRoute === `/account/${detail.link}`
                   ? `${activeSectionStyles} pr-0 pb-0`
                   : `${sectionStyles} pr-0 pb-0`
               }
-              onClick={() => {
-                setAccountTab(detail.text);
-              }}
               key={detail.text}
             >
               <Image src={detail.img} alt="" width={24} height={24} />
@@ -139,37 +144,33 @@ const SideBar = () => {
               >
                 {detail.text}
               </h3>
-            </div>
+            </Link>
           );
         })}
       </section>
 
       {/* Gift Cards and Vouchers */}
-      <section
+      <Link
+        href={"/account"}
         className={
-          accountTab === "Gift cards" ? activeSectionStyles : sectionStyles
+          activeRoute === "/account" ? activeSectionStyles : sectionStyles
         }
-        onClick={() => {
-          setAccountTab("Gift cards");
-        }}
       >
         <Image src={GiftImg} alt="" width={24} height={24} />
         <h3 className={sectionText}>Gift cards & vouchers</h3>
-      </section>
+      </Link>
 
       {/* Help */}
       <section className="flex flex-col bg-white">
         {helpList.map((help) => {
           return (
-            <div
+            <Link
+              href={`/account/${help.link}`}
               className={
-                accountTab === help.text
+                activeRoute === `/account/${help.link}`
                   ? `${activeSectionStyles} pr-0 pb-0`
                   : `${sectionStyles} pr-0 pb-0`
               }
-              onClick={() => {
-                setAccountTab(help.text);
-              }}
               key={help.text}
             >
               <Image src={help.img} alt="" width={24} height={24} />
@@ -182,7 +183,7 @@ const SideBar = () => {
               >
                 {help.text}
               </h3>
-            </div>
+            </Link>
           );
         })}
       </section>

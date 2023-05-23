@@ -6,6 +6,7 @@ const Button = ({
   size = "small",
   type = "button",
   customClassName = "",
+  disabled = false,
   onClick,
 
   id = "",
@@ -15,14 +16,21 @@ const Button = ({
     const buttonWidth = size === "small" ? "w-fit" : "w-full";
     const buttonVariant = `bg-${variant}`;
     const buttonTextColor = variant === "black" ? "text-white" : "text-black";
+    const isDisabledStyle = disabled ? "bg-gray-400 text-white" : "";
 
-    const className = `${baseClassName} ${buttonWidth} ${buttonVariant} ${buttonTextColor}`;
+    const className = `${baseClassName} ${buttonWidth} ${buttonVariant} ${buttonTextColor} ${isDisabledStyle}`;
 
     return className;
-  }, [size, variant]);
+  }, [size, variant, disabled]);
 
   return (
-    <button type={type} onClick={onClick}  id={id} className={`${className} ${customClassName}`}>
+    <button
+      type={type}
+      disabled={disabled}
+      onClick={onClick}
+      id={id}
+      className={`${className} ${customClassName}`}
+    >
       {text}
     </button>
   );

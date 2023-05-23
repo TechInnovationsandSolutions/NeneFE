@@ -4,7 +4,6 @@ import Head from "next/head";
 import peso from "../public/assets/homePage1/persone.png";
 import Image from "next/image";
 import Brands from "@/components/homePage1/brand";
-
 import { bags, shirt, shoes } from "@/components/homePage1/data";
 import Carrousel from "@/components/homePage1/slider";
 import MobileCaroussel from "@/components/homePage1/mobileArticles";
