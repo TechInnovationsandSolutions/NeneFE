@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { stateContext } from "@/stateContext/stateProvider";
 import Image from "next/image";
 import Button from "@/components/button/button";
+import { useRouter } from "next/router";
 
 const OrderList = () => {
   const tabStyles = "text-[18px] leading-6 py-4 cursor-pointer min-w-[107px]";
@@ -10,7 +11,8 @@ const OrderList = () => {
 
   const [isActiveTab, setIsActiveTab] = useState("delivered");
   const { orders, setOrders } = useContext(stateContext);
-  
+
+  const router = useRouter();
 
   const tabData = [
     {
@@ -26,7 +28,6 @@ const OrderList = () => {
       count: orders.filter((order) => order.status === "failed").length,
     },
   ];
-
 
   return (
     <div className="w-full min-h-[60vh] h-auto py-12 px-6 bg-white">
@@ -92,6 +93,9 @@ const OrderList = () => {
                       type="button"
                       size="small"
                       customClassName="border border-black text-[#1a1a1a] text leading-5 px-5"
+                      onClick={() => {
+                        router.push(`/account/my-orders/${order.orderId}`);
+                      }}
                     />
                   </div>
                 </div>

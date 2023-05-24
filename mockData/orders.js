@@ -6,6 +6,7 @@ export const orderList = [
     productImage: ProductImg,
     orderId: "1625534122",
     orderDate: "4th May, 2023",
+    quantity: 2,
     status: "delivered",
   },
   {
@@ -13,6 +14,7 @@ export const orderList = [
     productImage: ProductImg,
     orderId: "1625534123",
     orderDate: "4th May, 2023",
+    quantity: 2,
     status: "delivered",
   },
   {
@@ -20,6 +22,7 @@ export const orderList = [
     productImage: ProductImg,
     orderId: "1625534124",
     orderDate: "4th May, 2023",
+    quantity: 2,
     status: "delivered",
   },
   {
@@ -27,6 +30,7 @@ export const orderList = [
     productImage: ProductImg,
     orderId: "1625534125",
     orderDate: "4th May, 2023",
+    quantity: 2,
     status: "delivered",
   },
   {
@@ -34,6 +38,8 @@ export const orderList = [
     productImage: ProductImg,
     orderId: "1625534126",
     orderDate: "4th May, 2023",
+    quantity: 2,
+
     status: "delivered",
   },
   {
@@ -41,6 +47,7 @@ export const orderList = [
     productImage: ProductImg,
     orderId: "1625534127",
     orderDate: "4th May, 2023",
+    quantity: 2,
     status: "delivered",
   },
   {
@@ -48,6 +55,7 @@ export const orderList = [
     productImage: ProductImg,
     orderId: "1625534128",
     orderDate: "4th May, 2023",
+    quantity: 2,
     status: "pending",
   },
   {
@@ -55,6 +63,7 @@ export const orderList = [
     productImage: ProductImg,
     orderId: "1625534129",
     orderDate: "4th May, 2023",
+    quantity: 2,
     status: "pending",
   },
   {
@@ -69,6 +78,7 @@ export const orderList = [
     productImage: ProductImg,
     orderId: "1625534131",
     orderDate: "4th May, 2023",
+    quantity: 2,
     status: "pending",
   },
   {
@@ -76,6 +86,7 @@ export const orderList = [
     productImage: ProductImg,
     orderId: "1625534132",
     orderDate: "4th May, 2023",
+    quantity: 2,
     status: "failed",
   },
   {
@@ -83,6 +94,7 @@ export const orderList = [
     productImage: ProductImg,
     orderId: "1625534133",
     orderDate: "4th May, 2023",
+    quantity: 2,
     status: "failed",
   },
   {
@@ -90,6 +102,7 @@ export const orderList = [
     productImage: ProductImg,
     orderId: "1625534134",
     orderDate: "4th May, 2023",
+    quantity: 2,
     status: "failed",
   },
 ];
