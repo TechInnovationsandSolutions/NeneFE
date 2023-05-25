@@ -1,6 +1,6 @@
 import React from "react";
 import SingleBlogArticle from "./SingleBlogArticle";
-import { blogData } from "@/mock-data/blogData";
+import { blogData } from "@/mockData/blogData";
 
 function BlogLists() {
   const blogLists = blogData.map((blogItem) => {

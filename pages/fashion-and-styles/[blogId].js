@@ -4,7 +4,7 @@ import {
   SingleBlogTitleSection,
   SingleBlogArticle,
 } from "@/sections/pages/fashion-and-styles";
-import { blogData } from "@/mock-data/blogData";
+import { blogData } from "@/mockData/blogData";
 
 function SingleBlogPage({ individualBlogData }) {
   const {
