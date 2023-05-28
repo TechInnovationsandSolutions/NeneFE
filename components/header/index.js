@@ -27,7 +27,7 @@ const Header = () => {
   const categoryWrapper = `lg:absolute z-10  right-0 top-[150px]  bottom-0  left-0 max-h-full lg:bg-[#00000059]`;
 
   const category = [
-    "News",
+    "New",
     "Shoes",
     "Clothes",
     "Beauty",
@@ -183,8 +183,8 @@ const Header = () => {
       </div>
       <div
         className={`${
-          dropdown ? "flex flex-col space-y-5 px-[8%] " : "hidden"
-        }  py-[1.1875rem]  lg:flex justify-between px-[4em]  `}
+          dropdown ? "flex flex-col space-y-5 px-[8%]  " : "hidden"
+        }  py-[1.1875rem]  lg:flex justify-between px-[4em] md:py-0  `}
       >
         {category.map((items, index) => {
           return (
@@ -192,9 +192,9 @@ const Header = () => {
               key={index}
               className={`${
                 toggleNumber === index
-                  ? "bg-white transition-all duration-300 pb-2 text-black"
+                  ? "bg-white transition-all  md:px-3   duration-300 text-black"
                   : ""
-              }  flex flex-col`}
+              }  flex md:py-3 flex-col`}
             >
               <div className={listClass}>
                 <span>{items}</span>

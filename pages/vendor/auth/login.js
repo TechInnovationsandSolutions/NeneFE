@@ -1,25 +1,54 @@
 import { useForm } from "react-hook-form";
 import Button from "@/components/button/button";
 import { VendLogin } from "@/store/vendorSlice";
+import { useState } from "react";
+import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import Link from "next/link";
 import Image from "next/image";
 import HeroImg from "@/public/assets/vendor-onboard/login2bg.png";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const VendorLogin = () => {
-  console.log(useForm);
   const dispatch = useDispatch();
-  function handleLogin(data) {
-    dispatch(VendLogin(data)).then((res) => console.log(res));
+  const router = useRouter();
+
+  const [submit, setSubmit] = useState(false);
+  async function handleLogin(data) {
+    try {
+      const action = await dispatch(VendLogin(data));
+      if (action.payload) {
+        toast.success("Login Successful", {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 3000,
+        });
+        router.push("/vendor/product");
+        reset();
+      } else {
+        console.log(action);
+        toast.error("Login Failed", {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 3000,
+        });
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("An error occurred", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 3000,
+      });
+    }
   }
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    reset,
+    formState: { errors, isSubmitting },
   } = useForm();
   return (
     <div className="py-5 px-4 md:p-0    flex flex-col md:gap-x-5 md:grid grid-cols-2 ">
-      <main className=" flex flex-col gap-8 md:py-5 md:px-8">
+      <main className=" flex flex-col gap-12 md:py-5 md:px-8">
         <span className="font-alegreya">Nene</span>
 
         <div className="flex justify-between">
@@ -31,7 +60,7 @@ const VendorLogin = () => {
         </div>
 
         <form
-          className="flex flex-col gap-4"
+          className="flex flex-col gap-8"
           onSubmit={handleSubmit(handleLogin)}
         >
           <div className="flex flex-col">
@@ -56,10 +85,20 @@ const VendorLogin = () => {
             />
           </div>
           <span>
-            <Link href="/">Forgot Password</Link>
+            <Link
+              href="/"
+              className="border border-transparent hover:border box-border  hover:border-solid hover:border-b-black "
+            >
+              Forgot Password
+            </Link>
           </span>
 
-          <Button type="submit" text="Sign In" variant="black" size="large" />
+          <Button
+            type="submit"
+            text={isSubmitting ? "Loading..." : "Sign In"}
+            variant="black"
+            size="large"
+          />
         </form>
       </main>
       <aside>
@@ -72,6 +111,7 @@ const VendorLogin = () => {
           ></Image>
         </div>
       </aside>
+      <ToastContainer />
     </div>
   );
 };
