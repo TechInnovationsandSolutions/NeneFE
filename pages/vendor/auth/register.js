@@ -9,10 +9,16 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ModalContainer from "@/components/modal/modalContainer";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 const RegisterModal = ({ closeModal }) => {
+  const router = useRouter();
+  function handleCloseModal() {
+    closeModal();
+    router.push("/vendor/auth/login");
+  }
   return (
-    <div className="bg-white p-4 gap-4 w-[40%] h-fit flex flex-col justify-self-center self-center ">
+    <div className="bg-white p-4 gap-4 w-[90%] md:w-[40%]  h-fit flex flex-col justify-self-center self-center ">
       <div className="flex justify-between">
         <span>Account Pending</span>
         <span> X </span>
@@ -23,7 +29,7 @@ const RegisterModal = ({ closeModal }) => {
         reviewed and will be approved within 24 hours. You will receive an email
         notification once your account is approved.
       </p>
-      <Button variant="black" onClick={closeModal} text="Okay" />
+      <Button variant="black" onClick={handleCloseModal} text="Okay" />
     </div>
   );
 };
@@ -32,31 +38,39 @@ const VendorRegister = () => {
   const [showModal, setShowModal] = useState(false);
 
   const dispatch = useDispatch();
-  function handleLogin(data) {
-    delete data.confirmPassword;
-    dispatch(VendRegister(data))
-      .then((res) => {
-        console.log(res);
-        toast.success(res?.payload?.data?.msg, {
+  async function handleLogin(data) {
+    try {
+      delete data.confirmPassword;
+      const action = await dispatch(VendRegister(data));
+      console.log(action);
+      if (action.payload) {
+        toast.success(action?.payload?.data?.msg, {
           position: toast.POSITION.TOP_RIGHT,
           autoClose: 3000,
         });
-        res?.type.includes("fulfilled") && setShowModal(true);
-      })
-      .catch((err) => {
-        console.log(err);
-        toast.error(err, {
+         setShowModal(true);
+        reset();
+      } else {
+        toast.error(action.error, {
           position: toast.POSITION.TOP_RIGHT,
-          autoClose: 3000, // Duration in milliseconds
+          autoClose: 3000, 
         });
+      }
+    } catch (err) {
+      console.log(err);
+      toast.error(err, {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 3000, 
       });
+    }
   }
   const {
     register,
     handleSubmit,
     control,
+    reset,
     watch,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm();
   return (
     <div className="py-5 px-4 md:p-0 relative max-h-fit  flex flex-col md:gap-x-5 md:grid grid-cols-2 ">
@@ -78,6 +92,7 @@ const VendorRegister = () => {
             <label htmlFor="">First Name</label>
             <input
               type="text"
+              disabled={isSubmitting}
               className="border rounded-md border-[#979797]"
               placeholder="Enter First Name"
               {...register("firstName", { required: true })}
@@ -87,6 +102,7 @@ const VendorRegister = () => {
             <label htmlFor="">Last Name</label>
             <input
               type="text"
+              disabled={isSubmitting}
               className="border rounded-md border-[#979797]"
               placeholder="Enter Last Name"
               {...register("lastName", { required: true })}
@@ -96,6 +112,7 @@ const VendorRegister = () => {
             <label htmlFor="">Name of Business</label>
             <input
               type="text"
+              disabled={isSubmitting}
               className="border rounded-md border-[#979797]"
               placeholder="Enter Business Name"
               {...register("businessName", { required: true })}
@@ -105,6 +122,7 @@ const VendorRegister = () => {
             <label htmlFor="">Address</label>
             <input
               type="text"
+              disabled={isSubmitting}
               className="border rounded-md border-[#979797]"
               placeholder="Enter Address"
               {...register("address", { required: true })}
@@ -114,6 +132,7 @@ const VendorRegister = () => {
             <label htmlFor="">Phone No.</label>
             <input
               type="tel"
+              disabled={isSubmitting}
               className="border rounded-md border-[#979797]"
               placeholder="Enter Phone Number"
               {...register("phone", { required: true })}
@@ -124,6 +143,7 @@ const VendorRegister = () => {
             <label htmlFor="">Email Address</label>
             <input
               placeholder="Enter Email Address"
+              disabled={isSubmitting}
               className="border rounded-md border-[#979797]"
               type="email"
               {...register("email", { required: true })}
@@ -147,6 +167,7 @@ const VendorRegister = () => {
               render={({ field }) => (
                 <input
                   type="password"
+                  disabled={isSubmitting}
                   placeholder="Enter Password"
                   className="border rounded-md border-[rgb(151,151,151)]"
                   {...field}
@@ -173,6 +194,7 @@ const VendorRegister = () => {
               render={({ field }) => (
                 <input
                   type="password"
+                  disabled={isSubmitting}
                   className="border rounded-md border-[#979797]"
                   placeholder="Confirm Password"
                   {...field}
@@ -188,13 +210,18 @@ const VendorRegister = () => {
             &nbsp;<strong>Terms of Use</strong>
           </p>
 
-          <Button type="submit" text="Register" variant="black" size="large" />
+          <Button
+            type="submit"
+            disabled={isSubmitting}
+            text={isSubmitting ? "Loading..." : "Register"}
+            variant="black"
+            size="large"
+          />
         </form>
       </main>
       <aside className="relative">
         <Image
           className="hidden w-full md:flex md:h-[150vh]  lg:h-[155vh] "
-          // objectFit="contain"
           src={HeroImg}
           alt="hero image"
         ></Image>
