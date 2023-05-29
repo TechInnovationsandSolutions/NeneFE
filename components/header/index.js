@@ -24,7 +24,7 @@ const Header = () => {
   const listClass = `${
     dropdown ? "flex w-full justify-between " : ""
   }  flex space-x-1  px-2 `;
-  const categoryWrapper = `lg:absolute z-10  right-0 top-[150px]  bottom-0  left-0 max-h-full lg:bg-[#00000059]`;
+  const categoryWrapper = `lg:absolute z-10  right-0 top-[148px]  bottom-0  left-0 max-h-full lg:bg-[#00000059]`;
 
   const category = [
     "New",
