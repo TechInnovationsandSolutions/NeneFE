@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { stateContext } from "@/stateContext/stateProvider";
+import { stateContext } from "@/context/accountProvider";
 import { useContext } from "react";
 import MyOrderImg from "@/public/assets/account/my_orders.svg";
 import NoOrder from "./noorder";

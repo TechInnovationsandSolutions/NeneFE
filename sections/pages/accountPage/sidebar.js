@@ -152,9 +152,11 @@ const SideBar = () => {
 
       {/* Gift Cards and Vouchers */}
       <Link
-        href={"/account"}
+        href={"/account/giftcards-and-vouchers"}
         className={
-          activeRoute === "/account" ? activeSectionStyles : sectionStyles
+          activeRoute === "/account/gift-and-vouchers"
+            ? activeSectionStyles
+            : sectionStyles
         }
       >
         <Image src={GiftImg} alt="" width={24} height={24} />

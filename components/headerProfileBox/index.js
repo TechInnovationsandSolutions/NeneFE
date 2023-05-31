@@ -1,5 +1,5 @@
 // import Signin from "../verifications/signin";
-import { stateContext } from "@/stateContext/stateProvider";
+import { stateContext } from "@/context/accountProvider";
 import { useContext } from "react";
 
 const HeaderProfile = ({ close }) => {
