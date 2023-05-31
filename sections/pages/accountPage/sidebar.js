@@ -1,20 +1,21 @@
 import Image from "next/image";
-import ProfileImg from "@/public/assets/account/profile_image.png";
-import AccOverview from "@/public/assets/account/account_overview.svg";
-import MyOrderImg from "@/public/assets/account/my_orders.svg";
-import MyDetailsImg from "@/public/assets/account/my_details.svg";
-import ChangePasswordImg from "@/public/assets/account/change_password.svg";
-import AddressBookImg from "@/public/assets/account/address_book.svg";
-import PaymentImg from "@/public/assets/account/payment_methods.svg";
-import ContactImg from "@/public/assets/account/contact_preferences.svg";
-import SocialImg from "@/public/assets/account/social_accounts.svg";
-import GiftImg from "@/public/assets/account/gift_cards.svg";
-import NeedhelpImg from "@/public/assets/account/need_help.svg";
-import WhereissMyOrderImg from "@/public/assets/account/where's_my_order.svg";
-import signoutImg from "@/public/assets/account/signout.svg";
+import {
+  ProfileImg,
+  AccOverview,
+  MyOrderImg,
+  MyDetailsImg,
+  ChangePasswordImg,
+  AddressBookImg,
+  PaymentImg,
+  ContactImg,
+  SocialImg,
+  GiftImg,
+  NeedhelpImg,
+  WhereissMyOrderImg,
+  signoutImg,
+} from "@/public/assets/account";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
 
 const SideBar = () => {
   const router = useRouter();
@@ -49,7 +50,7 @@ const SideBar = () => {
     {
       text: "Social accounts",
       img: SocialImg,
-      link: "",
+      link: "social",
       last: true,
     },
   ];
@@ -151,9 +152,11 @@ const SideBar = () => {
 
       {/* Gift Cards and Vouchers */}
       <Link
-        href={"/account"}
+        href={"/account/giftcards-and-vouchers"}
         className={
-          activeRoute === "/account" ? activeSectionStyles : sectionStyles
+          activeRoute === "/account/gift-and-vouchers"
+            ? activeSectionStyles
+            : sectionStyles
         }
       >
         <Image src={GiftImg} alt="" width={24} height={24} />

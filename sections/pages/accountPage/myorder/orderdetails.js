@@ -151,7 +151,7 @@ const OrderDetails = ({ currentOrder }) => {
                   variant="black"
                   type="button"
                   size="big"
-                  customClassName="border border-[#AAAAAA] text-[#1a1a1a] text leading-5 px-5 max-w-[60%]"
+                  customClassName="border border-[#AAAAAA] text-[#1a1a1a] text leading-5 max-w-[68%]"
                   onClick={() => {}}
                 />
                 <Button
@@ -159,7 +159,7 @@ const OrderDetails = ({ currentOrder }) => {
                   variant="white"
                   type="button"
                   size="big"
-                  customClassName="border border-[#AAAAAA] text-[#1a1a1a] text leading-5 px-5 max-w-[60%]"
+                  customClassName="border border-[#AAAAAA] text-[#1a1a1a] text leading-5  max-w-[68%]"
                   onClick={() => {}}
                 />
               </div>

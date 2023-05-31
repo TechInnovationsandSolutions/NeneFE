@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { stateContext } from "@/stateContext/stateProvider";
+import { stateContext } from "@/context/accountProvider";
 import Image from "next/image";
 import Button from "@/components/button/button";
 import { useRouter } from "next/router";

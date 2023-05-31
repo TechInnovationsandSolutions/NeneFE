@@ -3,7 +3,7 @@ import { store } from "../store/store";
 import { Provider } from "react-redux";
 import Layout from "@/layout/layout";
 import VendorLayout from "@/components/vendor/layout";
-import StateProvider from "@/stateContext/stateProvider";
+import StateProvider from "@/context/accountProvider";
 import { useRouter } from "next/router";
 
 export default function App({ Component, pageProps }) {
