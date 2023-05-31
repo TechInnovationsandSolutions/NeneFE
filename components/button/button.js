@@ -12,7 +12,7 @@ const Button = ({
   id = "",
 }) => {
   const className = useMemo(() => {
-    const baseClassName = "py-[0.8125rem] px-[2.625rem] rounded ";
+    const baseClassName = "py-[0.8rem] px-5 lg:py-[0.8125rem] lg:px-[2.625rem] rounded ";
     const buttonWidth = size === "small" ? "w-fit" : "w-full";
     const buttonVariant = `bg-${variant}`;
     const buttonTextColor = variant === "black" ? "text-white" : "text-black";
