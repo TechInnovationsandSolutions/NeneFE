@@ -9,23 +9,19 @@ const OrderList = () => {
   const activeTabStyles = "text-black border-b border-black";
   const nonActiveTabStyles = "text-header-gray";
 
-  const [isActiveTab, setIsActiveTab] = useState("delivered");
+  const [isActiveTab, setIsActiveTab] = useState("orders");
   const { orders, setOrders } = useContext(stateContext);
 
   const router = useRouter();
 
   const tabData = [
     {
-      name: "delivered",
-      count: orders.filter((order) => order.status === "delivered").length,
+      name: "orders",
+      count: orders.filter((order) => order.category === "orders").length,
     },
     {
-      name: "pending",
-      count: orders.filter((order) => order.status === "pending").length,
-    },
-    {
-      name: "failed",
-      count: orders.filter((order) => order.status === "failed").length,
+      name: "returns",
+      count: orders.filter((order) => order.category === "returns").length,
     },
   ];
 
@@ -54,13 +50,13 @@ const OrderList = () => {
       <div className="flex flex-col gap-6 pt-6 w-full max-h-[570px] lg:min-h-[790px] overflow-scroll scrollbar-hide">
         {orders
           .filter((order) => {
-            return order.status === isActiveTab;
+            return order.category === isActiveTab;
           })
           .map((order) => {
             return (
               <div
                 key={order.orderId}
-                className="flex flex-col lg:flex-row gap-4 w-full"
+                className="flex flex-col lg:flex-row gap-4 w-full border border-[#c7c7c7] p-4"
               >
                 <Image
                   src={order.productImage}
@@ -79,11 +75,18 @@ const OrderList = () => {
                       Order {order.orderId}
                     </p>
                     <p className="text-[#757575] text-[14px] leading-4">
-                      {isActiveTab === "delivered"
-                        ? `Delivered on ${order.orderDate}`
-                        : isActiveTab === "pending"
-                        ? `Pending delivery on ${order.orderDate}`
-                        : `Failed on ${order.orderDate}`}
+                      <span className="font-bold text-black">
+                        {order.status === "delivered"
+                          ? `Delivered `
+                          : order.status === "in progress"
+                          ? `In Progress`
+                          : `Cancelled`}
+                      </span>
+                      {order.status === "delivered"
+                        ? ` on ${order.orderDate}`
+                        : order.status === "in progress"
+                        ? ` `
+                        : ` `}
                     </p>
                   </div>
                   <div className=" flex items-center">
@@ -92,7 +95,7 @@ const OrderList = () => {
                       variant="white"
                       type="button"
                       size="small"
-                      customClassName="border border-black text-[#1a1a1a] text leading-5 px-5"
+                      customClassName="border border-[#AAAAAA] text-[#1a1a1a] text leading-5 px-5"
                       onClick={() => {
                         router.push(`/account/my-orders/${order.orderId}`);
                       }}

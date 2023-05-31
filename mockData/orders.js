@@ -6,7 +6,8 @@ export const orderList = [
     productImage: ProductImg,
     orderId: "1625534122",
     orderDate: "4th May, 2023",
-    quantity: 2,
+    quantity: 1,
+    category: "orders",
     status: "delivered",
   },
   {
@@ -15,6 +16,7 @@ export const orderList = [
     orderId: "1625534123",
     orderDate: "4th May, 2023",
     quantity: 2,
+    category: "orders",
     status: "delivered",
   },
   {
@@ -23,7 +25,8 @@ export const orderList = [
     orderId: "1625534124",
     orderDate: "4th May, 2023",
     quantity: 2,
-    status: "delivered",
+    category: "orders",
+    status: "in progress",
   },
   {
     productTitle: "Zara Twist Front Textured Slinky Ruched Midi Dress ",
@@ -31,7 +34,8 @@ export const orderList = [
     orderId: "1625534125",
     orderDate: "4th May, 2023",
     quantity: 2,
-    status: "delivered",
+    category: "orders",
+    status: "in progress",
   },
   {
     productTitle: "Zara Twist Front Textured Slinky Ruched Midi Dress ",
@@ -39,8 +43,8 @@ export const orderList = [
     orderId: "1625534126",
     orderDate: "4th May, 2023",
     quantity: 2,
-
-    status: "delivered",
+    category: "orders",
+    status: "in progress",
   },
   {
     productTitle: "Zara Twist Front Textured Slinky Ruched Midi Dress ",
@@ -48,6 +52,7 @@ export const orderList = [
     orderId: "1625534127",
     orderDate: "4th May, 2023",
     quantity: 2,
+    category: "orders",
     status: "delivered",
   },
   {
@@ -56,7 +61,8 @@ export const orderList = [
     orderId: "1625534128",
     orderDate: "4th May, 2023",
     quantity: 2,
-    status: "pending",
+    category: "returns",
+    status: "cancelled",
   },
   {
     productTitle: "Zara Twist Front Textured Slinky Ruched Midi Dress ",
@@ -64,14 +70,16 @@ export const orderList = [
     orderId: "1625534129",
     orderDate: "4th May, 2023",
     quantity: 2,
-    status: "pending",
+    category: "returns",
+    status: "cancelled",
   },
   {
     productTitle: "Zara Twist Front Textured Slinky Ruched Midi Dress ",
     productImage: ProductImg,
     orderId: "1625534130",
     orderDate: "4th May, 2023",
-    status: "pending",
+    category: "returns",
+    status: "cancelled",
   },
   {
     productTitle: "Zara Twist Front Textured Slinky Ruched Midi Dress ",
@@ -79,30 +87,7 @@ export const orderList = [
     orderId: "1625534131",
     orderDate: "4th May, 2023",
     quantity: 2,
-    status: "pending",
-  },
-  {
-    productTitle: "Zara Twist Front Textured Slinky Ruched Midi Dress ",
-    productImage: ProductImg,
-    orderId: "1625534132",
-    orderDate: "4th May, 2023",
-    quantity: 2,
-    status: "failed",
-  },
-  {
-    productTitle: "Zara Twist Front Textured Slinky Ruched Midi Dress ",
-    productImage: ProductImg,
-    orderId: "1625534133",
-    orderDate: "4th May, 2023",
-    quantity: 2,
-    status: "failed",
-  },
-  {
-    productTitle: "Zara Twist Front Textured Slinky Ruched Midi Dress ",
-    productImage: ProductImg,
-    orderId: "1625534134",
-    orderDate: "4th May, 2023",
-    quantity: 2,
-    status: "failed",
+    category: "returns",
+    status: "cancelled",
   },
 ];
