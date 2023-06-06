@@ -64,7 +64,7 @@ const SideBar = () => {
     {
       text: "Where's my order",
       img: WhereissMyOrderImg,
-      link: "",
+      link: "where-is-my-order",
     },
     {
       text: "How do I make a return",
