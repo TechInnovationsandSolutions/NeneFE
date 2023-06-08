@@ -1,5 +1,3 @@
-import arrowRight from "./arrow-right.svg";
-import arrowLeft from "./arrow-left.svg";
 import longarrowleft from "./longarrowleft.svg";
 import orderProcessing from "./orderProcessing.svg";
 import orderDispatched from "./orderDispatched.svg";
@@ -15,8 +13,6 @@ import settingsIcon from "./settingsIcon.svg";
 import searchIcon from "./searchicon.svg";
 
 export {
-  arrowLeft,
-  arrowRight,
   longarrowleft,
   orderProcessing,
   orderDispatched,
@@ -31,3 +27,10 @@ export {
   settingsIcon,
   searchIcon,
 };
+
+export { default as arrowRight } from "./arrow-right.svg";
+export { default as arrowLeft } from "./arrow-left.svg";
+export { default as creditCard } from "./credit-card.svg";
+export { default as shoppingBag } from "./shoppingBag.svg";
+export { default as binoculars } from "./binoculars.svg";
+export { default as plus } from "./plus.svg";

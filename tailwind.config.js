@@ -22,6 +22,7 @@ module.exports = {
         priBlack: "hsl(var(--pri-black))",
         grayBg: "hsl(var(--gray-bg))",
         grayDivider: "hsl(var(--gray-divider))",
+        grayTableHeader: "hsl(var(--gray-table-header))",
         medGray: "var(--medGray)",
       },
       fontFamily: {
