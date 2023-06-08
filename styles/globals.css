@@ -16,6 +16,7 @@ html {
     --gray-bg: 0deg 0% 91%; /* #E8E8E8 */
     --gray-divider: 0deg 0% 60%; /* #989898 */
     --medGray: #e8e8e8;
+    --gray-table-header: 0deg 0% 46%; /* #757575 */
 
     /* fonts */
     /* 44px - 98px */
@@ -38,6 +39,13 @@ html {
     @apply bg-[#fff] text-base;
     min-width: 320px;
     position: relative;
+  }
+
+  select > option:checked {
+    @apply bg-black text-white;
+  }
+  select > option:hover {
+    @apply bg-black text-white;
   }
 }
 

@@ -84,7 +84,7 @@ function DeliveryAddressSection() {
           <Input
             label='Phone Number'
             name='phoneNumber'
-            type='number'
+            type='tel'
             errorMessage='Phone number is required'
             register={register}
             errors={errors}
