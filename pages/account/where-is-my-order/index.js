@@ -1,7 +1,8 @@
 import OrderFaqLayout from "@/layout/order-faq";
+import OrderFAQ from "@/sections/pages/accountPage/where-is-my-order/orderFAQ";
 
 const WhereIsMyOrder = () => {
-  return <h1>Where is MyOrder</h1>;
+  return <OrderFAQ />;
 };
 
 WhereIsMyOrder.getLayout = (Page) => <OrderFaqLayout>{Page}</OrderFaqLayout>;

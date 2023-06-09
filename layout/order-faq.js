@@ -1,4 +1,7 @@
 import SideBar from "@/sections/pages/accountPage/where-is-my-order/sidebar";
+import Image from "next/image";
+import { deliveryBg } from "@/public/assets/account";
+
 
 const OrderFaqLayout = ({children}) => {
     return (
@@ -6,6 +9,15 @@ const OrderFaqLayout = ({children}) => {
         <div className=" w-full h-auto flex flex-col lg:flex-row gap-6 lg:gap-[5%] bg-medGray ">
           {/* Where is my order main page section */}
           <div className="w-full lg:w-[70%]">
+            {/* Header */}
+            <Image
+              src={deliveryBg}
+              alt=""
+              priority
+              width={924}
+              height={202}
+              className="w-full h-auto mb-5"
+            />
             {children}
           </div>
 
@@ -14,14 +26,14 @@ const OrderFaqLayout = ({children}) => {
             <SideBar />
           </section>
         </div>
-        <div className="flex justify-center items-center bg-[#FFC0CB] mt-[120px] p-16 ">
+        <div className="flex justify-center items-center bg-[#FFC0CB] mt-[120px] py-6 px-4 lg:p-16 ">
           <h3 className="text-2xl lg:text-[36px] flex flex-col lg:leading-[45px]">
-            <p>“</p>
+            <p>&ldquo;</p>
             <p className="text-[#3e3e3e] font-bold text-center">
               We are still in business cause we never take for granted our
               customers’ experience. Stay with us, this is the beginning yet.
             </p>
-            <p className="self-end">“</p>
+            <p className="self-end">&ldquo;</p>
           </h3>
         </div>
       </div>

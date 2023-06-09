@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import { orderList } from "@/mockData/orders";
+import { faqDataList } from "@/mockData/faqHelpData";
 
 export const stateContext = createContext();
 
@@ -8,6 +9,7 @@ const StateProvider = (props) => {
   const [isOrders, setIsOrders] = useState(true);
   const [isGiftCards, setIsGiftCards] = useState(false);
   const [orders, setOrders] = useState(orderList);
+  const [faqList, setFaqList] = useState(faqDataList);
 
   return (
     <stateContext.Provider
@@ -20,6 +22,8 @@ const StateProvider = (props) => {
         setOrders,
         isGiftCards,
         setIsGiftCards,
+        faqList,
+        setFaqList,
       }}
     >
       {props.children}
