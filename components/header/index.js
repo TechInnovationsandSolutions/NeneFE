@@ -27,7 +27,7 @@ const Header = () => {
   const categoryWrapper = `lg:absolute z-10  right-0 top-[148px]  bottom-0  left-0 max-h-full lg:bg-[#00000059]`;
 
   const category = [
-    "New",
+    "New In",
     "Shoes",
     "Clothes",
     "Beauty",
