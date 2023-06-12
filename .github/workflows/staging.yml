@@ -1,0 +1,65 @@
+name: Deploy to staging
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: |
+       npm install
+       npm run build
+       
+  Deploy_to_EC2:
+    name: Deploy to server
+    runs-on: ubuntu-latest
+    environment: staging
+
+    needs: build
+
+    steps:
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@v0.1.9
+        with:
+            host : ${{ secrets.SSH_HOST  }}
+            username : ${{ secrets.USERNAME  }}
+            key: ${{ secrets.SSH_PRIVATEKEY  }}
+            port: ${{ secrets.PORT }}
+            script: |
+                pwd
+                cd NeneFE/
+                git checkout dev 
+                git fetch --all
+                git reset --hard origin/dev
+                git pull origin dev
+                sudo systemctl restart NeneFE.service
+                cd ..
+                sudo ./deploy.sh
+        
+      - name: slack notifications
+        uses: act10ns/slack@v1
+        with:
+          status: ${{ job.status }}
+          steps: ${{ toJson(steps) }}
+          channel: '#nene_be'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}  
+        if: always()
+            
