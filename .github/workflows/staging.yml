@@ -2,9 +2,9 @@ name: Deploy to staging1
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "dev, devops" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "dev" ]
 
 jobs:
   build:
