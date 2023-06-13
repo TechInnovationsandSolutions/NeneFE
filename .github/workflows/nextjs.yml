@@ -85,23 +85,49 @@ jobs:
           path: ./out
 
   # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    env:
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
-      - name: Slack notifications
-        uses: act10ns/slack@v1
-        with:
-          status: ${{ job.status }}
-          steps: ${{ toJson(steps) }}
-          channel: '#github-notifications'
-        if: always()
+#   deploy:
+#     environment:
+#       name: github-pages
+#       url: ${{ steps.deployment.outputs.page_url }}
+#     runs-on: ubuntu-latest
+#     env:
+#       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+#     needs: build
+#     steps:
+#       - name: Deploy to GitHub Pages
+#         id: deployment
+#         uses: actions/deploy-pages@v1
+#       - name: Slack notifications
+#         uses: act10ns/slack@v1
+#         with:
+#           status: ${{ job.status }}
+#           steps: ${{ toJson(steps) }}
+#           channel: '#github-notifications'
+#         if: always()
       
+  Deploy_to_EC2:
+    name: Deploy to server
+    runs-on: ubuntu-latest
+    environment: staging
+
+    needs: build
+
+    steps:
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@v0.1.9
+        with:
+            host : ${{ secrets.SSH_HOST  }}
+            username : ${{ secrets.USERNAME  }}
+            key: ${{ secrets.SSH_PRIVATEKEY  }}
+            port: ${{ secrets.PORT }}
+            script: |
+                pwd
+                cd NeneFE/
+                git checkout dev 
+                git fetch --all
+                git reset --hard origin/dev
+                git pull origin dev
+                sudo systemctl restart NeneFE.service
+                cd ..
+                sudo ./deploy.sh                                 
+ 
