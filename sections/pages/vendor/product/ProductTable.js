@@ -1,54 +1,7 @@
-import React, { useMemo, useState } from "react";
-import {
-  flexRender,
-  getCoreRowModel,
-  getSortedRowModel,
-  useReactTable,
-} from "@tanstack/react-table";
-import productData from "@/mockData/productData.json";
-import { COLUMNS } from "./columns";
+import React from "react";
+import { flexRender } from "@tanstack/react-table";
 
-const ProductTable = ({ tableClass }) => {
-  const columns = useMemo(() => COLUMNS, []);
-  const [data, setData] = useState(() => [...productData].slice(0, 5));
-  const [sorting, setSorting] = useState();
-  const [isCellEditing, SetIsCellEditing] = useState(false);
-
-  const table = useReactTable({
-    data,
-    columns,
-    columnResizeMode: "onChange",
-    state: {
-      sorting,
-    },
-    onSortingChange: setSorting,
-    getSortedRowModel: getSortedRowModel(),
-    getCoreRowModel: getCoreRowModel(),
-    meta: {
-      updateData: (rowIndex, columnId, value) => {
-        setData((old) =>
-          old.map((row, index) => {
-            if (index === rowIndex) {
-              return {
-                ...old[rowIndex],
-                [columnId]: value,
-              };
-            }
-            return row;
-          })
-        );
-      },
-      isCellEditing,
-      SetIsCellEditing,
-      handleEditCellData: () => {
-        SetIsCellEditing(!isCellEditing);
-      },
-      deleteRow: (rowIndex) => {
-        setData(data.filter((product, i) => i !== rowIndex));
-      },
-    },
-  });
-
+const ProductTable = ({ tableClass, table }) => {
   return (
     <>
       <table className={tableClass}>

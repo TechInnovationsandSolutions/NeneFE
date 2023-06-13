@@ -28,6 +28,7 @@ const quantityCellRenderer = (info) => {
 
     const toggleInStock = () => {
       setInStock(!inStock);
+      inStock ? setQuantity(0) : setQuantity(initialValue);
     };
 
     return (
@@ -45,23 +46,23 @@ const quantityCellRenderer = (info) => {
             quantity
           )}
         </div>
-        {inStock ? (
-          <div
-            className='hidden group-hover:flex items-center justify-center bg-white py-1 px-4 rounded-3xl space-x-2 cursor-pointer'
-            onClick={toggleInStock}
-          >
-            <FiEyeOff className='text-lightGray' />
-            <p className='text-sm'> In stock</p>
-          </div>
-        ) : (
-          <div
-            className='hidden group-hover:flex items-center justify-center bg-white py-1 px-4 rounded-3xl space-x-2 cursor-pointer'
-            onClick={toggleInStock}
-          >
-            <FiEye className='text-lightGray' />
-            <p className='text-sm'> Out of stock</p>
-          </div>
-        )}
+        <div
+          className='hidden group-hover:flex items-center justify-center bg-white py-1 px-4 rounded-3xl space-x-2 cursor-pointer'
+          onClick={toggleInStock}
+        >
+          {inStock ? (
+            <>
+              <FiEyeOff className='text-lightGray' />
+              <p className='text-sm'> In stock</p>
+            </>
+          ) : (
+            <>
+              {" "}
+              <FiEye className='text-lightGray' />
+              <p className='text-sm'> Out of stock</p>
+            </>
+          )}
+        </div>
       </div>
     );
   };
