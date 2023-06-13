@@ -7,7 +7,14 @@ import Accessories from "../header-categories/acessories";
 import BrandsTab from "../header-categories/brands";
 import FeaturedTab from "../header-categories/featured";
 import HeaderProfile from "../headerProfileBox";
+import Signin from "../verifications/signin";
+import { stateContext } from "@/context/accountProvider";
+import { useContext } from "react";
+import SignIn from "../verifications/signin";
+
 const Header = () => {
+  const { isSignin, setIsSignin } = useContext(stateContext);
+
   const [dropdown, setDropdown] = useState(false);
   const [screenWidth, setScreenWidth] = useState(0);
   const [profileClick, setProfileClick] = useState(false);
@@ -17,10 +24,10 @@ const Header = () => {
   const listClass = `${
     dropdown ? "flex w-full justify-between " : ""
   }  flex space-x-1  px-2 `;
-  const categoryWrapper = `lg:absolute z-10  right-0 top-[150px]  bottom-0  left-0 max-h-full lg:bg-[#00000059]`;
+  const categoryWrapper = `lg:absolute z-10  right-0 top-[148px]  bottom-0  left-0 max-h-full lg:bg-[#00000059]`;
 
   const category = [
-    "News",
+    "New In",
     "Shoes",
     "Clothes",
     "Beauty",
@@ -92,7 +99,7 @@ const Header = () => {
     <header
       className={`${
         dropdown
-          ? "w-full h-full overflow-y-scroll transition-all duration-700  fixed z-10 flex-col "
+          ? "w-full h-full overflow-y-scroll transition-all duration-700  fixed z-20 flex-col "
           : ""
       } bg-black  text-white `}
     >
@@ -154,7 +161,12 @@ const Header = () => {
             <img src="/assets/svgs/navIcon4.svg" alt="nationale" />
           </button>
           {profileClick ? (
-            <HeaderProfile close={() => setProfileClick(false)} />
+            <HeaderProfile
+              close={() => {
+                setProfileClick(false);
+                console.log("closed");
+              }}
+            />
           ) : null}
         </nav>
 
@@ -171,8 +183,8 @@ const Header = () => {
       </div>
       <div
         className={`${
-          dropdown ? "flex flex-col space-y-5 px-[8%] " : "hidden"
-        }  py-[1.1875rem]  lg:flex justify-between px-[4em]  `}
+          dropdown ? "flex flex-col space-y-5 px-[8%]  " : "hidden"
+        }  py-[1.1875rem]  lg:flex justify-between px-[4em] md:py-0  `}
       >
         {category.map((items, index) => {
           return (
@@ -180,9 +192,9 @@ const Header = () => {
               key={index}
               className={`${
                 toggleNumber === index
-                  ? "bg-white transition-all duration-300 text-black"
+                  ? "bg-white transition-all  md:px-3   duration-300 text-black"
                   : ""
-              }  flex flex-col`}
+              }  flex md:py-3 flex-col`}
             >
               <div className={listClass}>
                 <span>{items}</span>
@@ -245,6 +257,7 @@ const Header = () => {
           );
         })}
       </div>
+      {isSignin ? <SignIn /> : ""}
     </header>
   );
 };

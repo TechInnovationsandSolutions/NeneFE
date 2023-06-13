@@ -15,7 +15,7 @@ const MyDetails = () => {
         </p>
       </div>
       <form className="flex flex-col w-full h-[600px] justify-between gap-4">
-        <div>
+        <div className="flex flex-col gap-5">
           <div className="flex flex-col gap-2">
             <label className={labelStyle}>FIRST NAME:</label>
             <input className={inputStyle} type="text" value="Chenemi" />

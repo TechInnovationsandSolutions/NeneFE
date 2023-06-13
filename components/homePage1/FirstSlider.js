@@ -77,7 +77,7 @@ const FirstSlider = () => {
   };
 
   return (
-    <div className="slider">
+    <div className="slider relative z-1">
       <Slider {...settings}>
         {data.map((item, index) => (
           <Card index={index} item={item} key={index} />
