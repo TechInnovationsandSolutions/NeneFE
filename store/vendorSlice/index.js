@@ -6,7 +6,6 @@ export const VendRegister = createAsyncThunk('vendors/register',async ( load )=>
       "Content-Type":'application/json'
     }
    })
-   console.log(Register);
 
    return Register
  })
@@ -16,7 +15,6 @@ export const VendRegister = createAsyncThunk('vendors/register',async ( load )=>
      "Content-Type":'application/json'
    }
   })
-  console.log(Login);
   return Login
 })
 

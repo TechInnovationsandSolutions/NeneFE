@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useContext, useState } from "react";
 import Button from "../button/button";
-import { stateContext } from "@/stateContext/stateProvider";
+import { stateContext } from "@/context/accountProvider";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -47,13 +47,13 @@ const SignIn = () => {
       email: data.email,
       password: data.password,
     };
-  
-  //  const userInfo = {
-  //    firstName: "Prisca",
-  //    lastName: "Ebube",
-  //    email: "tonia@gmail.com",
-  //    password: "0987654321",
-  //  };
+
+    //  const userInfo = {
+    //    firstName: "Prisca",
+    //    lastName: "Ebube",
+    //    email: "tonia@gmail.com",
+    //    password: "0987654321",
+    //  };
 
     try {
       const res = await axios.post(
