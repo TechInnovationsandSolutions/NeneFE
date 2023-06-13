@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import img1 from "../../public/assets/homePage1/s1.png";
-import dress1 from "../../public/assets/images/dress1.webp";
+import dress1 from "../../public/assets/images/lady-on-black-palazzo.webp";
 import dress2 from "../../public/assets/images/dress2.webp";
 import dress4 from "../../public/assets/images/dress4.webp";
 import ProductDescription from "@/sections/pages/productPage/productDescription";

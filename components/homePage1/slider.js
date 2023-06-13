@@ -19,7 +19,7 @@ export default function slider({ title, data }) {
 
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1240,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
@@ -28,7 +28,7 @@ export default function slider({ title, data }) {
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 900,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
