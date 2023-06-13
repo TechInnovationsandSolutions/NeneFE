@@ -5,6 +5,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./sections/**/*.{js,ts,jsx,tsx}",
+    "./layout/**/*.{js,ts,jsx,tsx}",
 
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -21,7 +22,9 @@ module.exports = {
         priBlack: "hsl(var(--pri-black))",
         grayBg: "hsl(var(--gray-bg))",
         grayDivider: "hsl(var(--gray-divider))",
+        grayTableHeader: "hsl(var(--gray-table-header))",
         medGray: "var(--medGray)",
+        vendorBoxGray: "#F2F2F2",
       },
       fontFamily: {
         sans: "DM Sans,sans-serif",
@@ -39,6 +42,7 @@ module.exports = {
       },
       animation: {
         "slide-up": "slide-up .7s",
+        "slide-right": "slide-right .5s",
       },
       keyframes: {
         "slide-up": {
@@ -47,6 +51,14 @@ module.exports = {
             opacity: 0,
           },
           "100%": { transform: "translateY(-100%)", opacity: 1 },
+        },
+        "slide-right": {
+          "0%": {
+            transform: "translateX(0%)",
+          },
+          "100%": {
+            transform: "translateX(100%)",
+          },
         },
       },
     },

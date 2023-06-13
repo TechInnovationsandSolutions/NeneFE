@@ -7,7 +7,7 @@ import React from "react";
 export default function MobileCaroussel({ title, data }) {
   const settings = {
     dots: true,
-    slidesToShow: 5,
+    slidesToShow: 1,
     slidesToScroll: 4,
     initialSlide: 0,
     className: "center",
@@ -28,18 +28,18 @@ export default function MobileCaroussel({ title, data }) {
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 831,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 680,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
           initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 831,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
         },
       },
       {
@@ -51,9 +51,10 @@ export default function MobileCaroussel({ title, data }) {
       },
     ],
   };
+  
   return (
     <div className="mb-5 font-sans md:hidden">
-      <Slider {...settings} className="items-center justify-center flex gap-2">
+      <Slider {...settings} className="items-center justify-center flex gap-2 mx-[-10px]">
         {data.map((item) => (
           <CardArtcile item={item} key={item.id} />
         ))}

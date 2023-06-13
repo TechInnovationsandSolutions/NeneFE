@@ -20,7 +20,7 @@ function HeroSection() {
           </div>
 
           <div
-            className=' px-4 py-3 -mt-9 bg-white z-20 sm:drop-shadow sm:-ml-9 sm:-mt-0 sm:pl-8 2xl:pr-16'
+            className=' px-4 py-3 -mt-9 bg-white sm:drop-shadow sm:-ml-9 sm:-mt-0 sm:pl-8 2xl:pr-16'
             style={{
               width: "clamp(18.9rem, 80vw, 50.9rem)",
             }}
