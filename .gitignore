@@ -30,3 +30,17 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# Ignore Terraform-related files and directories
+.github/terraform/.terraform/
+.github/terraform/terraform.tfstate
+.github/terraform/terraform.tfstate.backup
+.github/terraform/.terraform.lock.hcl
+
+
+#Ignore userdata and other config files for infrastructure
+.github/terraform/userdata.tpl
+.github/terraform/windows-ssh-config.tpl
+
+#Ignore cluster provisioning
+.github/k8s/cluster.yaml

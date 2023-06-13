@@ -7,19 +7,27 @@ import Accessories from "../header-categories/acessories";
 import BrandsTab from "../header-categories/brands";
 import FeaturedTab from "../header-categories/featured";
 import HeaderProfile from "../headerProfileBox";
+import Signin from "../verifications/signin";
+import { stateContext } from "@/context/accountProvider";
+import { useContext } from "react";
+import SignIn from "../verifications/signin";
+
 const Header = () => {
+  const { isSignin, setIsSignin } = useContext(stateContext);
+
   const [dropdown, setDropdown] = useState(false);
   const [screenWidth, setScreenWidth] = useState(0);
   const [profileClick, setProfileClick] = useState(false);
+  const [searchMobileClick, setSearchMobileClick] = useState(false);
 
   const [toggleNumber, setToggleNumber] = useState(null);
   const listClass = `${
     dropdown ? "flex w-full justify-between " : ""
   }  flex space-x-1  px-2 `;
-  const categoryWrapper = `lg:absolute z-10  right-0 top-[150px]  bottom-0  left-0 max-h-full lg:bg-[#00000059]`;
+  const categoryWrapper = `lg:absolute z-10  right-0 top-[148px]  bottom-0  left-0 max-h-full lg:bg-[#00000059]`;
 
   const category = [
-    "News",
+    "New In",
     "Shoes",
     "Clothes",
     "Beauty",
@@ -83,26 +91,32 @@ const Header = () => {
       setToggleNumber(null);
     }
   }
+  function handleDropdown(params) {
+    setDropdown(true);
+    setSearchMobileClick(false);
+  }
   return (
     <header
       className={`${
-        dropdown ? "w-full h-full overflow-y-scroll  fixed z-10 flex-col " : ""
+        dropdown
+          ? "w-full h-full overflow-y-scroll transition-all duration-700  fixed z-20 flex-col "
+          : ""
       } bg-black  text-white `}
     >
       <div
-        className={`${
-          dropdown
-            ? "flex flex-col relative space-y-10 items-start"
-            : "items-center"
-        }" flex  border-b px-[8%] md:px-[4em] border-b-[#8B8282] justify-between py-[2em]  "  `}
+        className={`${dropdown ? "flex flex-col  relative space-y-10 " : ""} ${
+          searchMobileClick ? "items-center" : ""
+        } flex  border-b px-[8%] md:px-[4em] border-b-[#8B8282] justify-between py-[2em]  "  `}
       >
         <p> Nene </p>
         <div
-          className={`py-1 px-4 hidden lg:flex bg-white rounded-2xl text-black  w-3/5`}
+          className={`py-2 px-4  ${
+            searchMobileClick ? "flex h-[30px] " : "hidden"
+          }  lg:flex selection: bg-white rounded-3xl text-black  w-3/5`}
         >
           <input
             type="search"
-            className="w-full  outline-none"
+            className=" appearance-none w-full p-0 focus:ring-white focus:outline-white border-0 h-full  outline-0"
             id=""
             placeholder="Search for a Product"
           />
@@ -116,14 +130,17 @@ const Header = () => {
           <img src="/assets/svgs/X.svg" alt="" className="w-[24px]" />
         </button>
         <button
+          onClick={() => setSearchMobileClick(true)}
           className={`${
             dropdown ? "hidden  " : "flex"
-          } ml-auto mr-5 sm:mr-14 lg:hidden`}
+          } ml-auto mr-5 sm:mr-14 lg:hidden ${
+            searchMobileClick ? "hidden  " : "flex"
+          }`}
         >
           <img
-            src="/assets/svgs/search.svg"
+            src="/assets/svgs/searchwhite.svg"
             alt=""
-            className="h-full w-[24px]"
+            className="h-[21px] w-[24px]"
           />
         </button>
         <nav
@@ -132,41 +149,52 @@ const Header = () => {
           } lg:flex justify-between space-x-2 relative lg:w-[15%] `}
         >
           <button onClick={() => setProfileClick(true)}>
-            <img src="/assets/svgs/navIcon1.svg" alt="" />
+            <img src="/assets/svgs/navIcon1.svg" alt="profile" />
           </button>
           <button>
-            <img src="/assets/svgs/navIcon2.svg" alt="" />
+            <img src="/assets/svgs/navIcon2.svg" alt="favourites" />
           </button>
           <button>
-            <img src="/assets/svgs/navIcon3.svg" alt="" />
+            <img src="/assets/svgs/navIcon3.svg" alt="cart" />
           </button>
           <button>
-            <img src="/assets/svgs/navIcon4.svg" alt="" />
+            <img src="/assets/svgs/navIcon4.svg" alt="nationale" />
           </button>
           {profileClick ? (
-            <HeaderProfile close={() => setProfileClick(false)} />
+            <HeaderProfile
+              close={() => {
+                setProfileClick(false);
+                console.log("closed");
+              }}
+            />
           ) : null}
         </nav>
 
         <button
-          onClick={() => setDropdown(true)}
+          onClick={handleDropdown}
           className={`${dropdown ? "hidden" : "flex"} lg:hidden`}
         >
-          <img src="/assets/svgs/icon-hamburger.svg" alt="" />
+          <img
+            src="/assets/svgs/icon-hamburger.svg"
+            className="h-[18px]"
+            alt="open menu"
+          />
         </button>
       </div>
       <div
         className={`${
-          dropdown ? "flex flex-col space-y-5 px-[8%] " : "hidden"
-        }  py-[1.1875rem]  lg:flex justify-between px-[4em]  `}
+          dropdown ? "flex flex-col space-y-5 px-[8%]  " : "hidden"
+        }  py-[1.1875rem]  lg:flex justify-between px-[4em] md:py-0  `}
       >
         {category.map((items, index) => {
           return (
             <div
               key={index}
               className={`${
-                toggleNumber === index ? "bg-white text-black" : ""
-              }  flex flex-col`}
+                toggleNumber === index
+                  ? "bg-white transition-all  md:px-3   duration-300 text-black"
+                  : ""
+              }  flex md:py-3 flex-col`}
             >
               <div className={listClass}>
                 <span>{items}</span>
@@ -229,6 +257,7 @@ const Header = () => {
           );
         })}
       </div>
+      {isSignin ? <SignIn /> : ""}
     </header>
   );
 };
