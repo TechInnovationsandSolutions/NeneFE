@@ -9,11 +9,43 @@ html {
 
 @layer base {
   :root {
+    /* colors */
+    --lightPink: 350deg 100% 88%; /* #FFC0CB*/
+    --lightGray: 0deg 4% 53%; /* #8B8282 */
+    --pri-black: 0deg 0% 24%; /* #3E3E3E */
+    --gray-bg: 0deg 0% 91%; /* #E8E8E8 */
+    --gray-divider: 0deg 0% 60%; /* #989898 */
+    --medGray: #e8e8e8;
+    --gray-table-header: 0deg 0% 46%; /* #757575 */
+
+    /* fonts */
+    /* 44px - 98px */
+    --fs-xxl: clamp(2.75rem, 1rem + 4vw, 6rem);
+    /* 24px - 44px*/
+    --fs-xl: clamp(1.5rem, 1rem + 2.2vw, 3rem);
+    /* 20.4px - 36px */
+    --fs-lg: clamp(1.275rem, 1rem + 1.5vw, 2.25rem);
+    /* 20px - 28.8 */
+    --fs-md: clamp(1.25rem, 1rem + 1vw, 1.8rem);
+    /* 16px - 24px*/
+    --fs: clamp(1rem, 0.75rem + 1vw, 1.5rem);
+    /* 14 - 18px*/
+    --fs-sm: clamp(0.875rem, 0.7rem + 1vw, 1.125rem);
+    /* 12px - 14px*/
+    --fs-xs: clamp(0.75rem, 0.5rem + 1vw, 0.85rem);
     @apply text-base;
   }
   body {
     @apply bg-[#fff] text-base;
     min-width: 320px;
+    position: relative;
+  }
+
+  select > option:checked {
+    @apply bg-black text-white;
+  }
+  select > option:hover {
+    @apply bg-black text-white;
   }
 }
 
@@ -24,6 +56,18 @@ html {
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.text-border-white {
+  -webkit-text-stroke: 1px white;
+}
+
+.bred {
+  @apply border-2 border-red-500;
+}
+
+.bYellow {
+  @apply border-2 border-yellow-500;
 }
 
 @media (max-width: 1024px) {

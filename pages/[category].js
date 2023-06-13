@@ -64,6 +64,7 @@ function Category() {
                 img={product.img}
                 name={product.name}
                 price={product.price}
+                newNow={true}
                 key={index}
               />
             );
@@ -118,12 +119,11 @@ function Category() {
 
 export default Category;
 
-
 const products = [
   {
     name: "Zara Twist Cute Dress",
     price: "3,000",
-    img: "/assets/images/dress1.webp",
+    img: "/assets/images/dress4.webp",
   },
   {
     name: "Zara Twist Cute Dress",
@@ -133,7 +133,7 @@ const products = [
   {
     name: "Zara Twist Cute Dress",
     price: "3,000",
-    img: "/assets/images/dress3.webp",
+    img: "/assets/images/dress2.webp",
   },
   {
     name: "Zara Twist Cute Dress",
@@ -143,7 +143,7 @@ const products = [
   {
     name: "Zara Twist Cute Dress",
     price: "3,000",
-    img: "/assets/images/dress1.webp",
+    img: "/assets/images/dress2.webp",
   },
   {
     name: "Zara Twist Cute Dress",
@@ -153,7 +153,7 @@ const products = [
   {
     name: "Zara Twist Cute Dress",
     price: "3,000",
-    img: "/assets/images/dress3.webp",
+    img: "/assets/images/dress4.webp",
   },
   {
     name: "Zara Twist Cute Dress",

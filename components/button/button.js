@@ -6,21 +6,31 @@ const Button = ({
   size = "small",
   type = "button",
   customClassName = "",
+  disabled = false,
+  onClick,
+
   id = "",
 }) => {
   const className = useMemo(() => {
-    const baseClassName = "py-[0.8125rem] px-[2.625rem] rounded ";
+    const baseClassName = "py-[0.8rem] px-5 lg:py-[0.8125rem] lg:px-[2.625rem] rounded ";
     const buttonWidth = size === "small" ? "w-fit" : "w-full";
     const buttonVariant = `bg-${variant}`;
     const buttonTextColor = variant === "black" ? "text-white" : "text-black";
+    const isDisabledStyle = disabled ? "bg-gray-400 text-white" : "";
 
-    const className = `${baseClassName} ${buttonWidth} ${buttonVariant} ${buttonTextColor}`;
+    const className = `${baseClassName} ${buttonWidth} ${buttonVariant} ${buttonTextColor} ${isDisabledStyle}`;
 
     return className;
-  }, [size, variant]);
+  }, [size, variant, disabled]);
 
   return (
-    <button type={type} id={id} className={`${className} ${customClassName}`}>
+    <button
+      type={type}
+      disabled={disabled}
+      onClick={onClick}
+      id={id}
+      className={`${className} ${customClassName}`}
+    >
       {text}
     </button>
   );
