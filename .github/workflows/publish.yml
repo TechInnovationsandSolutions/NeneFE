@@ -1,4 +1,4 @@
-##workflow for building and deploying to a staging and production server
+#workflow for building and deploying to a staging and production server
 
 name: Deploy to staging
 
