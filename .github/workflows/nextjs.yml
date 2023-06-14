@@ -91,29 +91,57 @@ jobs:
         with:
           path: ./out
 
-  Deploy_to_EC2:
-    name: Deploy to server
-    runs-on: ubuntu-latest
-    environment: staging
 
-    needs: build
+  # Deployment job
+  # Deploy_to_EC2:
+  #   name: Deploy to server
+  #   runs-on: ubuntu-latest
+  #   environment: staging
 
-    steps:
-      - name: executing remote ssh commands using ssh key
-        uses: appleboy/ssh-action@v0.1.9
-        with:
-            host : ${{ secrets.SSH_HOST  }}
-            username : ${{ secrets.USERNAME  }}
-            key: ${{ secrets.SSH_PRIVATEKEY  }}
-            port: ${{ secrets.PORT }}
-            script: |
-                pwd
-                cd NeneFE/
-                git checkout dev 
-                git fetch --all
-                git reset --hard origin/dev
-                git pull origin dev
-                sudo systemctl restart NeneFE.service
-                cd ..
-                sudo ./deploy.sh                                 
+#   Deploy_to_EC2:
+#     name: Deploy to server
+#     runs-on: ubuntu-latest
+#     environment: staging
+
+  #   needs: build
+
+
+  #   steps:
+  #     - name: executing remote ssh commands using ssh key
+  #       uses: appleboy/ssh-action@v0.1.9
+  #       with:
+  #           host : ${{ secrets.SSH_HOST  }}
+  #           username : ${{ secrets.USERNAME  }}
+  #           key: ${{ secrets.SSH_PRIVATEKEY  }}
+  #           port: ${{ secrets.PORT }}
+  #           script: |
+  #               pwd
+  #               cd NeneFE/
+  #               git checkout dev 
+  #               git fetch --all
+  #               git reset --hard origin/dev
+  #               git pull origin dev
+  #               sudo systemctl restart NeneFE.service
+  #               cd ..
+  #               sudo ./deploy.sh                                 
+ 
+
+#     steps:
+#       - name: executing remote ssh commands using ssh key
+#         uses: appleboy/ssh-action@v0.1.9
+#         with:
+#             host : ${{ secrets.SSH_HOST  }}
+#             username : ${{ secrets.USERNAME  }}
+#             key: ${{ secrets.SSH_PRIVATEKEY  }}
+#             port: ${{ secrets.PORT }}
+#             script: |
+#                 pwd
+#                 cd NeneFE/
+#                 git checkout dev 
+#                 git fetch --all
+#                 git reset --hard origin/dev
+#                 git pull origin dev
+#                 sudo systemctl restart NeneFE.service
+#                 cd ..
+#                 sudo ./deploy.sh                                 
 
