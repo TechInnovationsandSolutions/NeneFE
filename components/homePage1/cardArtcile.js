@@ -9,7 +9,7 @@ export default function CardArtcile({ item }) {
     setLike(!like);
   };
   return (
-    <div className="slide justify-center relative md:w-[320px] w-[320px] p-5 md:p-10 overflow-hidden">
+    <div className="slide justify-center relative md:w-[320px] w-[320px] p-5 md:p-10 overflow-hidden flex-shrink-0 mx-[10px]">
       <div className="relative">
         <Image src={item.img} alt="Slide" className="w-full h-[460px]" />
         <div
