@@ -68,10 +68,6 @@ export default function PaginateTable({setCurrentItems, tableData}) {
    setItemOffset(newOffset);
  };
 
-  const handleChange = (event) => {
-    setPerPage(event.target.value);
-  };
-
   const changePageNumber = (e) => {
     setPerPage(e.target.value)
     setBackDrop(false)
@@ -80,18 +76,18 @@ export default function PaginateTable({setCurrentItems, tableData}) {
 
 
   return (
-    <div className='flex justify-between border-y py-5 px-6 items-center'>
-      <div className='flex gap-11 items-center'>
+    <div className='flex justify-between border-y py-5 px-6 sm:items-center flex-col sm:flex-row text-sm md:text-base gap-2'>
+      <div className='flex gap-2 sm:gap-4 sm:items-center flex-col sm:flex-row'>
         <div className="flex items-center gap-3">
             <span>show</span> 
             <span className={`${backDrop ? 'block' : 'hidden'} fixed inset-0  bg-transparent z-10`} onClick={e => setBackDrop(false)}></span>
             <span className='relative z-20'>
               
-              <div className='w-16 flex justify-between border border-black p-2 ' onClick={e => setBackDrop(true)}>
+              <div className='w-10 flex justify-between border border-black p-1 ' onClick={e => setBackDrop(true)}>
                 <p>{PerPage}</p>
                 <Image src={chevronDown} />
               </div>
-              <ul className={`${backDrop ? 'block' : 'hidden'} bg-white border border-black w-16 text-center absolute -top-[74px]`}>
+              <ul className={`${backDrop ? 'block' : 'hidden'} bg-white border border-black w-10 text-center absolute -top-[60px] md:-top-[74px]`}>
                 <li value={5} onClick={changePageNumber} className='cursor-pointer'>5</li>
                 <li value={10} onClick={changePageNumber} className='cursor-pointer'>10</li>
                 <li value={15} onClick={changePageNumber} className='cursor-pointer'>15</li>
