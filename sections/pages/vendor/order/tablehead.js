@@ -22,34 +22,34 @@ const Tablehead = ({tableData, setTableData}) => {
   
   return (
     <tr className='text-xs font-bold text-[#757575] border-b '>
-      <th className='text-left py-5 px-4'>
+      <th className='text-left py-5 px-8'>
         <div>
           <p>ORDER NUMBER</p>
         </div>
       </th>
-      <th className='text-left py-5 px-4'>
+      <th className='text-left py-5 px-8'>
         <div className='flex gap-2' >
           <p>DATE</p>
           <Image src={arrowdownup} width={15} onClick={e => sortDate(tableData)} />
         </div>
       </th>
-      <th className='text-left py-5 px-4'>
+      <th className='text-left py-5 px-8'>
         <div className='flex gap-2'>
           <p>CUSTOMER NAME</p>
           <Image src={arrowdownup} width={15} onClick={e => sortName(tableData)} />
         </div>
       </th>
-      <th className='text-left py-5 px-4'>
+      <th className='text-left py-5 px-8'>
         <div>
           <p>SHIPPING STATUS</p>
         </div>
       </th>
-      <th className='text-left py-5 px-4'>
+      <th className='text-left py-5 px-8'>
         <div>
           <p>PAYMENT STATUS</p>
         </div>
       </th>
-      <th className='text-left py-5 px-4'>
+      <th className='text-left py-5 px-8'>
         <div className='flex gap-2'>
           <p>ORDER TOTAL<span>($)</span></p>
           <Image src={arrowdownup} width={15} onClick={e => sortPrice(tableData)} />

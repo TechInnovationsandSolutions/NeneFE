@@ -1,6 +1,8 @@
 import React from 'react'
+import creditCard  from '@/public/assets/svgs/CreditCard.svg'
+import Image from 'next/image'
 
-const Mobiletable = ({currentItems}) => {
+const MobileTablePayments = ({currentItems}) => {
   return (
     <>
       {currentItems && currentItems.map((row,i) => (
@@ -14,14 +16,10 @@ const Mobiletable = ({currentItems}) => {
             <p className=''>${row.total}</p>
           </div>
           <hr />
-          <div className='flex gap-6 items-center mt-4'>
-            <div className='flex gap-4 items-center '>
-              {/* icon */}l
-              <p className='bg-[#F6F6F6] py-1 px-2 '>{row.shipping}</p>
-            </div>
+          <div className=' mt-4'>
             <div className='flex gap-4 items-center'>
-              {/* icon */}l
-              <p className='bg-[#F6F6F6] py-1 px-2 '>{row.payment}</p>
+              <Image src={creditCard} alt={`payment ${i}`} />
+              <p>{row.payment}</p>
             </div>
           </div>
         </div>
@@ -30,5 +28,4 @@ const Mobiletable = ({currentItems}) => {
     </>
   )
 }
-
-export default Mobiletable
+export default MobileTablePayments
