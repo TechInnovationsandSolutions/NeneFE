@@ -24,6 +24,7 @@ module.exports = {
         grayDivider: "hsl(var(--gray-divider))",
         grayTableHeader: "hsl(var(--gray-table-header))",
         medGray: "var(--medGray)",
+        listHover: "hsl(var(--list-hover))",
         vendorBoxGray: "#F2F2F2",
       },
       fontFamily: {

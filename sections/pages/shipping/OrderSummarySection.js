@@ -12,7 +12,7 @@ function OrderSummarySection() {
           </h3>
         </div>
         {/* Product details */}
-        <div className='flex items-center justify-start gap-3 mt-6 h-[140px]  md:overflow-auto scrollbar-thin scrollbar-thumb-grayBg scrollbar-track-priBlack'>
+        <div className='flex items-center justify-start gap-3 mt-6 h-[140px]  md:overflow-auto '>
           <div className='relative w-[117px] h-[142px] sm:h-[152px] overflow-hidden'>
             <Image
               src={ladyOnBlackPalazzo2}
