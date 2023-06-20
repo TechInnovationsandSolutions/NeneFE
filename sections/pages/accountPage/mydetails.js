@@ -1,11 +1,18 @@
 import Image from "next/image";
 import MyDetailsImg from "../../../public/assets/account/my_details.svg";
-import Button from "../../../components/button/button";
+import { useContext } from "react";
+import { stateContext } from "@/context/accountProvider";
+import Link from "next/link";
 
 const MyDetails = () => {
+
+  const { details, setDetails } = useContext(stateContext);
+  const { firstName, lastName, address, email, password } = details
+  
   return (
-    <div className="w-full min-h-auto lg:min-h-[920px] px-6 pt-[44px] flex flex-col bg-white">
-      <div className="w-full  pb-[51px] ">
+    <div className="w-full min-h-auto lg:min-h-[920px]  flex flex-col">
+      {/* Header Section */}
+      <div className="w-full px-6 pt-[44px] pb-[72.3px] mb-4 bg-white ">
         <Image src={MyDetailsImg} alt="" width={44} height={44} />
         <h2 className="uppercase w-full pt-5 font-bold text-[1.5rem]">
           MY DETAILS
@@ -14,41 +21,46 @@ const MyDetails = () => {
           Feel free to edit any of your details below.
         </p>
       </div>
-      <form className="flex flex-col w-full h-[600px] justify-between gap-4">
-        <div className="flex flex-col gap-5">
-          <div className="flex flex-col gap-2">
-            <label className={labelStyle}>FIRST NAME:</label>
-            <input className={inputStyle} type="text" value="Chenemi" />
-          </div>
-          <div className="flex flex-col gap-2">
-            <label className={labelStyle}>LAST NAME:</label>
-            <input className={inputStyle} type="text" value="Abraham" />
-          </div>
-          <div className="flex flex-col gap-2">
-            <label className={labelStyle}>EMAIL:</label>
-            <input
-              className={inputStyle}
-              type="email"
-              value="chenemiabraham@gmail.com"
-            />
-          </div>
+
+      {/* Details Section */}
+      <section className="flex flex-col gap-6 w-full h-auto min-h-[931px] bg-white py-12 px-6">
+        <div className={sectionStyle}>
+          <h4 className={labelStyles}>First Name</h4>
+          <p className={labelValueStyles}>{firstName}</p>
         </div>
-        <div className="w-full flex justify-center ">
-          <Button
-            text="START SHOPPING"
-            variant="black"
-            type="submit"
-            size="big"
-            customClassName="max-w-[50%]"
-          />
+        <div className={sectionStyle}>
+          <h4 className={labelStyles}>Last Name</h4>
+          <p className={labelValueStyles}>{lastName}</p>
         </div>
-      </form>
+        <div className={sectionStyle}>
+          <h4 className={labelStyles}>Address</h4>
+          <p className={labelValueStyles}>{address}</p>
+        </div>
+        <div className={sectionStyle}>
+          <h4 className={labelStyles}>Email Address</h4>
+          <p className={labelValueStyles}>{email}</p>
+        </div>
+        <div className={sectionStyle}>
+          <h4 className={labelStyles}>Password</h4>
+          <p className={labelValueStyles}>**********</p>
+        </div>
+
+        <Link
+          href="/account/details/edit-details"
+          className="underline text-lg"
+        >
+          Edit
+        </Link>
+      </section>
     </div>
   );
 };
 
 export default MyDetails;
 
-const inputStyle =
-  "placeholder-[#5E5E5E] text-[#5E5E5E] border border-black max-w-[340px] py-4 px-6";
-const labelStyle = "text-black uppercase text-[18px]";
+
+const sectionStyle =
+  "w-full max-w-full xl:max-w-[70%] flex flex-col md:flex-row justify-between items-start gap-3 md:items-center";
+const labelStyles = "text-[14px] lg:text-[18px] leading-6 text-[#757575] ";
+const labelValueStyles =
+  "text-[14px] lg:text-[18px] leading-6 text-[#000000] font-medium ";

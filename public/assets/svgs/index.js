@@ -11,6 +11,13 @@ import productStockIcon from "./productstockicon.svg";
 import carretRightIcon from "./carretright.svg";
 import settingsIcon from "./settingsIcon.svg";
 import searchIcon from "./searchicon.svg";
+import eyeIcon from "./eye.svg";
+import pencilIcon from "./pencil.svg";
+import trashIcon from "./trash.svg";
+import masterCardIcon from "./mastercard.svg";
+import visaIcon from "./visa.svg";
+import closeIcon from "./close icon.svg";
+import EnvelopeIcon from "./envelope.svg";
 
 export {
   longarrowleft,
@@ -26,6 +33,13 @@ export {
   carretRightIcon,
   settingsIcon,
   searchIcon,
+  eyeIcon,
+  pencilIcon,
+  trashIcon,
+  masterCardIcon,
+  visaIcon,
+  closeIcon,
+  EnvelopeIcon,
 };
 
 export { default as arrowRight } from "./arrow-right.svg";

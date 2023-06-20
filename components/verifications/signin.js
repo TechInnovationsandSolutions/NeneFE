@@ -20,7 +20,7 @@ const SignIn = () => {
       password: yup
         .string()
         .required("Password is required")
-        .min(6, "Password must be atleast 6 characters"),
+        .min(9, "Password must be atleast 9 characters, and must be Alphanumeric"),
       confirmPassword: yup
         .string()
         .required("Confirm Password is required")
@@ -47,13 +47,6 @@ const SignIn = () => {
       email: data.email,
       password: data.password,
     };
-
-    //  const userInfo = {
-    //    firstName: "Prisca",
-    //    lastName: "Ebube",
-    //    email: "tonia@gmail.com",
-    //    password: "0987654321",
-    //  };
 
     try {
       const res = await axios.post(
