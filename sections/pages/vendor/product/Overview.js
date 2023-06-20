@@ -6,7 +6,7 @@ const Overview = () => {
   return (
     <>
       <section className=''>
-        <div className='w-11/12 mx-auto lg:mt-9 lg:pb-12 lg:border-b lg:border-[#D7D7D7]'>
+        <div className='w-11/12 mx-auto mt-8 lg:mt-9 lg:pb-12 lg:border-b lg:border-[#D7D7D7]'>
           <div className='w-full flex items-center justify-between'>
             <div className='text-medium'>Overview</div>
             <select

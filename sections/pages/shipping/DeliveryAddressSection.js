@@ -1,7 +1,6 @@
 import React from "react";
 import { Input, Select } from "@/components/form-inputs";
 import { useForm } from "react-hook-form";
-import { DevTool } from "@hookform/devtools";
 
 function DeliveryAddressSection() {
   const formMethods = useForm({
@@ -39,7 +38,7 @@ function DeliveryAddressSection() {
         <form
           onSubmit={handleSubmit(onSubmit, onError)}
           noValidate
-          className='mt-6 md:mt-11'
+          className='mt-6 md:mt-11 space-y-8'
         >
           <Input
             label='Contact Name'
@@ -93,7 +92,6 @@ function DeliveryAddressSection() {
             Proceed to Billing
           </button>
         </form>
-        {/* <DevTool control={control} /> */}
       </section>
     </>
   );

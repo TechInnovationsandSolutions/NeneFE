@@ -9,7 +9,7 @@ export function Select({
   errors,
 }) {
   return (
-    <div className='flex flex-col mt-6'>
+    <div className='flex flex-col'>
       <label htmlFor={name} className='text-small'>
         {label}
       </label>
@@ -25,7 +25,9 @@ export function Select({
           </option>
         ))}
       </select>
-      <p className='text-red-500 text-left mt-2'>{errors[name]?.message}</p>
+      {errors[name]?.message && (
+        <p className='text-red-500 text-left mt-2'>{errors[name]?.message}</p>
+      )}
     </div>
   );
 }

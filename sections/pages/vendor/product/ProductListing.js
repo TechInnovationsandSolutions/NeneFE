@@ -11,6 +11,7 @@ import ProductCard from "./ProductCard";
 import axios from "axios";
 import productData from "@/mockData/productData.json";
 import { COLUMNS } from "./columns";
+import Link from "next/link";
 
 const baseURL = "https://staging.nene.ng/api";
 const payload = "";
@@ -76,10 +77,13 @@ function ProductListing() {
         <div className='w-11/12 mx-auto mt-[52px] lg:mt-9 mb-5'>
           <div className='md:flex items-center justify-between'>
             <p className='text-xl lg:text-2xl font-medium'>Product listing</p>
-            <div className='absolute bottom-[10%] right-[5%] flex items-center justify-evenly bg-black text-white w-[52px] h-[52px] rounded-full z-10 md:relative md:bottom-0 md:right-0 md:w-[233px] md:rounded-[4px] cursor-pointer'>
+            <Link
+              href='/vendor/product/create-product'
+              className='absolute bottom-[10%] right-[5%] flex items-center justify-evenly bg-black text-white w-[52px] h-[52px] rounded-full z-10 md:relative md:bottom-0 md:right-0 md:w-[233px] md:rounded-[4px] cursor-pointer'
+            >
               <Image src={plus} alt='plus icon' className='w-4 h-4' />
               <p className='hidden md:block '>Create New Product</p>
-            </div>
+            </Link>
           </div>
 
           {/* Table */}
