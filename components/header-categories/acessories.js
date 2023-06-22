@@ -18,28 +18,28 @@ const Accessories = () => {
           <Button variant="white" text="Shop Now" />
         </div>
 
-        <nav className="p-[1.8em] lg:relative flex flex-col lg:flex-row w-full lg:h-fit lg:w-[67.5%] h-full  right-0 text-black bg-white ">
-          <div className=" lg:flex border-[#D8D8D8] lg:border-r flex-wrap ">
-            <div className="block border-b  lg:w-1/2  border-[#D8D8D8] lg:border-b-0 py-2 ">
+        <nav className="p-[1.8em] lg:relative  flex flex-col lg:gap-4 lg:flex-row w-full lg:h-fit lg:w-[69.7%] h-full  right-0 text-black bg-white ">
+          <div className=" lg:flex px-3  lg:w-fit border-[#D8D8D8] lg:border-r flex-wrap ">
+            <div className="block border-b  lg:max-h-[40vh] lg:w-[250px] border-[#D8D8D8] lg:border-b-0 py-2 ">
               <h1 className="font-bold">Accessories</h1>
-              <ul className="text-header-gray">
-                <li> New In</li>
-                <li> All Accessories</li>
-                <li> Bags & Purses</li>
-                <li> Belts</li>
-                <li> Fashion Face Masks</li>
-                <li> Gifts & Bridal</li>
-                <li> Hair Accessories</li>
-                <li> Hats</li>
-                <li> Jewellery</li>
-                <li> Scarves</li>
-                <li> Sunglasses</li>
-                <li> Socks & Tights</li>
-                <li> Watches</li>
+              <ul className="text-header-gray h-full w-full flex flex-col flex-wrap ">
+                <li className="w-1/2" > New In</li>
+                <li className="w-1/2"> All Accessories</li>
+                <li className="w-1/2"> Bags & Purses</li>
+                <li className="w-1/2"> Belts</li>
+                <li className="w-1/2"> Fashion Face Masks</li>
+                <li className="w-1/2"> Gifts & Bridal</li>
+                <li className="w-1/2"> Hair Accessories</li>
+                <li className="w-1/2"> Hats</li>
+                <li className="w-1/2"> Jewellery</li>
+                <li className="w-1/2"> Scarves</li>
+                <li className="w-1/2"> Sunglasses</li>
+                <li className="w-1/2"> Socks & Tights</li>
+                <li className="w-1/2"> Watches</li>
               </ul>
             </div>
           </div>
-          <div className="lg:flex justify-between lg:w-4/5 ml-auto border-[#D8D8D8] ">
+          <div className="lg:flex justify-between lg:w-fit border-[#D8D8D8] ">
             <div className="border-b lg:border-b-0 py-2 px-3 w-full border-[#D8D8D8]">
               <h1 className="font-bold">Shop By Brand</h1>
               <section className="grid grid-cols-4 flex-wrap justify-between lg:space-x-0  lg:justify-center text-header-gray">

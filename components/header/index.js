@@ -7,7 +7,6 @@ import Accessories from "../header-categories/acessories";
 import BrandsTab from "../header-categories/brands";
 import FeaturedTab from "../header-categories/featured";
 import HeaderProfile from "../headerProfileBox";
-import Signin from "../verifications/signin";
 import { stateContext } from "@/context/accountProvider";
 import { useContext } from "react";
 import SignIn from "../verifications/signin";
@@ -146,7 +145,7 @@ const Header = () => {
         <nav
           className={`${
             dropdown ? "flex w-4/5 m-auto " : "hidden"
-          } lg:flex justify-between space-x-2 relative lg:w-[15%] `}
+          } lg:flex justify-between space-x-2 flex-shrink-0 relative lg:w-[15%] `}
         >
           <button onClick={() => setProfileClick(true)}>
             <img src="/assets/svgs/navIcon1.svg" alt="profile" />
@@ -183,8 +182,8 @@ const Header = () => {
       </div>
       <div
         className={`${
-          dropdown ? "flex flex-col space-y-5 px-[8%]  " : "hidden"
-        }  py-[1.1875rem]  lg:flex justify-between px-[4em] md:py-0  `}
+          dropdown ? "flex flex-col space-y-5 pl-[8%] pr-[8%]  " : "hidden"
+        }  py-[1.1875rem]  lg:flex justify-between pr-[4em] pl-[3.5em] md:py-0  `}
       >
         {category.map((items, index) => {
           return (
@@ -194,7 +193,7 @@ const Header = () => {
                 toggleNumber === index
                   ? "bg-white transition-all  md:px-3   duration-300 text-black"
                   : ""
-              }  flex md:py-3 flex-col`}
+              }  flex md:py-4 flex-col`}
             >
               <div className={listClass}>
                 <span>{items}</span>

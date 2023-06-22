@@ -8,7 +8,6 @@ const HeaderProfile = ({ close }) => {
   // if statement when authenticated ...
   return (
     <>
-      <div class="">
         <div className="absolute z-[11] bg-white text-[.8em] -left-[3em] w-[200px] text-black py-1 px-2 top-[3em]">
           <div className="flex justify-between py-2 border-b border-[#D7D7D7]">
             <button
@@ -73,7 +72,6 @@ const HeaderProfile = ({ close }) => {
             style={{ borderWidth: "10px 10px 0 0" }}
           ></div>
         </div>
-      </div>
     </>
   );
 };
