@@ -59,7 +59,7 @@ const SignIn = () => {
     }
   };
   return (
-    <div className="w-full h-screen bg-black/70 ml-0 flex justify-end items-center fixed top-0 left-0 z-10000">
+    <div className="w-full h-screen bg-black/70 ml-0 flex justify-end items-center fixed top-0 left-0 z-[100]">
       <div className="bg-white h-screen w-[80%] md:w-[50%] lg:w-[25rem] px-[1.25rem] pt-[1.5rem] pb-[3.4375rem] flex flex-col gap-[3rem] overflow-y-auto scrollbar-hide  ">
         {/* Header */}
         <div className="flex justify-between">

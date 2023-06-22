@@ -17,8 +17,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="font-sans">
-        <div className="w-full md:w-9/12 mx-auto mb-5 overflow-hidden">
+      <main className="font-sans md:p-0">
+        <div className="w-full md:w-9/12 mx-auto p-3 md:p-0  mb-5 overflow-hidden">
           <FirstSlider />
         </div>
         <section className="md:pt-10 pt-10 mb-2 pb-10 overflow-hidden">

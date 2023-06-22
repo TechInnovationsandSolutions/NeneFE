@@ -1,4 +1,4 @@
-import CardArtcile from "./cardArtcile";
+import CardArticle from "./cardArtcile";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -49,7 +49,7 @@ export default function slider({ title, data }) {
       <h3 className="pl-2 md:pl-10 text-2xl mb-2">{title}</h3>
       <Slider {...settings} className="items-center justify-center flex gap-2">
         {data.map((item) => (
-          <CardArtcile item={item} key={item.id} />
+          <CardArticle item={item} key={item.id} />
         ))}
       </Slider>
     </div>

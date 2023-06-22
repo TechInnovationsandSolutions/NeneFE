@@ -2,11 +2,11 @@ import Image from "next/image";
 import Button from "../button/button";
 export default function Card({ item, index }) {
   return (
-    <div className="slide overflow-hidden justify-center flex z-1  relative bg-gray-100 w-full font-sans">
+    <div className="slide overflow-hidden justify-center flex mx-[10px] relative bg-gray-100 w-full font-sans">
       <Image
         src={item.img}
         alt={`Slide ${index}`}
-        className="w-full h-[766px]  overflow-hidden"
+        className="w-full h-[530px]  md:h-[766px]  overflow-hidden"
       />
 
       <div className="absolute flex-col  top-0 left-0 right-0 bottom-0 w-full h-full flex items-center justify-center">

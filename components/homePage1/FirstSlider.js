@@ -64,21 +64,20 @@ const FirstSlider = () => {
       {
         breakpoint: 678,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
-          centerPadding: 45,
-          className: "center",
-          centerMode: true,
+          centerPadding: 78,
+          // className: "center",
+          // centerMode: true,
           pauseOnHover: true,
-          vertical: true,
         },
       },
     ],
   };
 
   return (
-    <div className="slider relative z-1">
-      <Slider {...settings}>
+    <div className="slider relative">
+      <Slider {...settings} className="flex  justify-between mx-[10px] gap-2" >
         {data.map((item, index) => (
           <Card index={index} item={item} key={index} />
         ))}

@@ -7,7 +7,7 @@ const Footer = () => {
       </div>
       <div className="flex flex-col md:grid font-sans md:grid-cols-4 sm:grid sm:grid-cols-2 text-left justify-between lg:justify-items-center gap-y-8  md:w-full">
         <ul className="flex flex-col flex-wrap  w-fit gap-2 ">
-          <p className={pStyle}>ABOUT US</p>
+          <li className={pStyle}>ABOUT US</li>
           <li>
             <a href="#" className={aStyle}>
               {" "}
@@ -33,7 +33,7 @@ const Footer = () => {
         </ul>
 
         <ul className="flex flex-col w-fit gap-2">
-          <p className={pStyle}> QUICK LINKS</p>
+          <li className={pStyle}> QUICK LINKS</li>
           <li>
             <a href="#" className={aStyle}>
               {" "}
@@ -58,7 +58,7 @@ const Footer = () => {
           </li>
         </ul>
         <ul className="flex flex-col w-fit gap-2">
-          <p className={pStyle}>SHOPPING</p>
+          <li className={pStyle}>SHOPPING</li>
           <li>
             <a href="#" className={aStyle}>
               {" "}
@@ -77,7 +77,7 @@ const Footer = () => {
           </li>
         </ul>
         <ul className="flex flex-col w-fit gap-2">
-          <p className={pStyle}>FEATURED</p>
+          <li className={pStyle}>FEATURED</li>
           <li>
             <a href="#" className={aStyle}>
               {" "}
