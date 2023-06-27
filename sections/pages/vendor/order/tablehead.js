@@ -28,7 +28,7 @@ const Tablehead = ({tableData, setTableData}) => {
         </div>
       </th>
       <th className='text-left py-5 px-8'>
-        <div className='flex gap-2' >
+        <div className='flex gap-2 min-w-[70px]' >
           <p>DATE</p>
           <Image src={arrowdownup} width={15} onClick={e => sortDate(tableData)} />
         </div>

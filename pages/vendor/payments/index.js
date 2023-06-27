@@ -5,9 +5,18 @@ import React, { useState } from 'react'
 import piggy from '@/public/assets/svgs/PiggyBank.svg'
 import chevronDown from '@/public/assets/svgs/chevronDown.svg'
 import funnel from '@/public/assets/svgs/FunnelSimple.svg'
+import close from '@/public/assets/svgs/close icon.svg'
+
 
 const Payment = () => {
   const [page, setPage] = useState(true)
+  const [show, setShow] = useState(false)
+  const [period, setPeriod] = useState('All Time')
+  const showDecision = () => setShow(prev => !prev)
+  const pickPeriod = (value) => {
+    setPeriod(value)
+    showDecision();
+  }
 
 
 
@@ -44,12 +53,22 @@ const Payment = () => {
           <p>(18)</p>
         </div>
 
-        <div className='cursor-pointer ml-auto'>
-          <div className='py-1 px-5 lg:flex border justify-center border-[#AAAAAA] gap-3 items-center hidden '>
-            <p className=''>All time</p>
-            <Image src={chevronDown} /> 
+        <div className='cursor-pointer ml-auto relative'>
+          <div className='py-1 px-5 lg:flex border justify-center border-[#AAAAAA]  gap-3 items-center hidden ' >
+            <p className=''>{period}</p>
+            <Image src={chevronDown} onClick={showDecision} />
           </div>
-          <Image src={funnel} className='lg:hidden' />
+          <Image src={funnel} className='lg:hidden' onClick={showDecision} />
+          <div className={`absolute -right-3 -bottom-36 ${show ? 'flex' : 'hidden'} flex-col shadow-md border text-sm bg-white w-44 lg:text-center py-2`}>
+            <div className=' px-2 py-1 my-2 flex items-center lg:hidden  justify-between'>
+              <p>Filters</p>
+              <Image src={close} onClick={showDecision} className='cursor-pointer'/>
+            </div>
+            <p className=' px-2 py-1 border-r text-[#757575]  hover:text-black cursor-pointer' onClick={e => pickPeriod('All Time')}>All Time</p>
+            <p className=' px-2 py-1 border-r text-[#757575]  hover:text-black cursor-pointer' onClick={e => pickPeriod('This Year')}>This Year</p>
+            <p className=' px-2 py-1 text-[#757575]  hover:text-black cursor-pointer' onClick={e => pickPeriod('This Month')}>This Month</p>
+            <p className=' px-2 py-1 text-[#757575]  hover:text-black cursor-pointer' onClick={e => pickPeriod('Today')}>Today</p>
+          </div> 
         </div>
         
       </div>

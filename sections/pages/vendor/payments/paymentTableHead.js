@@ -30,7 +30,7 @@ const PaymentTableHead = ({tableData, setTableData}) => {
         </div>
       </th>
       <th className='text-left py-5 px-10'>
-        <div>
+        <div className='min-w-[80px]'>
           <p>PAYMENT DATE</p>
         </div>
       </th>

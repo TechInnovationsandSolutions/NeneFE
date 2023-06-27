@@ -1,4 +1,8 @@
 import React from 'react'
+import creditCard  from '@/public/assets/svgs/CreditCard.svg'
+import Image from 'next/image'
+import air from '@/public/assets/svgs/AirplaneTakeoff.svg'
+
 
 const Mobiletable = ({currentItems}) => {
   return (
@@ -16,11 +20,11 @@ const Mobiletable = ({currentItems}) => {
           <hr />
           <div className='flex gap-6 items-center mt-4'>
             <div className='flex gap-4 items-center '>
-              {/* icon */}l
+              <Image src={air} />
               <p className='bg-[#F6F6F6] py-1 px-2 '>{row.shipping}</p>
             </div>
             <div className='flex gap-4 items-center'>
-              {/* icon */}l
+              <Image src={creditCard} />
               <p className='bg-[#F6F6F6] py-1 px-2 '>{row.payment}</p>
             </div>
           </div>

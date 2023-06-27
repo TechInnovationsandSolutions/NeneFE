@@ -56,7 +56,6 @@ export default function PaginateTable({setCurrentItems, tableData}) {
  useEffect(() => {
    // Fetch items from another resources.
    const endOffset = Number(itemOffset) + Number(PerPage);
-   console.log(`Loading items from ${itemOffset} to ${Number(itemOffset) + Number(PerPage)}`);
    setCurrentItems(tableData.slice(itemOffset, endOffset));
    setPageCount(Math.ceil(tableData.length / PerPage));
  }, [itemOffset, PerPage,tableData]);
