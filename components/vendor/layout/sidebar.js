@@ -50,11 +50,9 @@ const Sidebar = ({ openBar, setOpenBar }) => {
         {List.map((list, i) => (
           <Link href={`/vendor/${list.route}`} onClick={closeBar} key={i}>
             <div
-              className={` p-3 px-11  flex gap-8 items-center hover:bg-black/[0.05] ${
-                current == list.route &&
-                "lg:border-r border-black max-lg:border-l  text-black "
-              } text-[#757575] cursor-pointer text-sm font-medium`}
-              onClick={(e) => onsetCurrent(list.route)}
+            className={` p-3 px-11  flex gap-8 items-center hover:bg-black/[0.05] ${current == list.route && 'lg:border-r border-black max-lg:border-l  text-black '} text-[#757575] cursor-pointer text-sm font-medium`} 
+            
+            onClick={e => onsetCurrent(list.route)}
             >
               <list.icon
                 color={current == list.route ? "#000000" : "#cfcfcf"}
