@@ -5,6 +5,7 @@ function TableRow({currentItems}) {
 
   return (
     <>
+      <tbody>
       {currentItems && currentItems.map((cell, i) => (
         <tr className='text-sm font-normal hover:bg-[#F6F6F6]' key={i}>
           <td className='py-8 px-8  '>{cell.id}</td>
@@ -15,6 +16,7 @@ function TableRow({currentItems}) {
           <td className='py-8 px-8 '>{cell.total}</td>
         </tr>
       ))}
+      </tbody>
     </>
   )
 }

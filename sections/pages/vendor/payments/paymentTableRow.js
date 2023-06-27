@@ -4,6 +4,7 @@ const PaymentTableRow = ({currentItems}) => {
 
   return (
     <>
+      <tbody>
       {currentItems && currentItems.map((cell, i) => (
         <tr className='text-sm font-normal hover:bg-[#F6F6F6]' key={i}>
           <td className='py-8 px-10  '>{cell.id}</td>
@@ -13,6 +14,7 @@ const PaymentTableRow = ({currentItems}) => {
           <td className='py-8 px-10 '>{cell.total}</td>
         </tr>
       ))}
+      </tbody>
     </>
   )
 }

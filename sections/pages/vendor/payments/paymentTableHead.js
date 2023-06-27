@@ -17,35 +17,39 @@ const PaymentTableHead = ({tableData, setTableData}) => {
 
   
   return (
-    <tr className='text-xs font-bold text-[#757575] border-b '>
-      <th className='text-left py-5 px-10'>
-        <div>
-          <p>ORDER NUMBER</p>
-        </div>
-      </th>
-      <th className='text-left py-5 px-10'>
-        <div className='flex gap-2'>
-          <p>CUSTOMER NAME</p>
-          <Image src={arrowdownup} width={15} onClick={e => sortName(tableData)} />
-        </div>
-      </th>
-      <th className='text-left py-5 px-10'>
-        <div className='min-w-[80px]'>
-          <p>PAYMENT DATE</p>
-        </div>
-      </th>
-      <th className='text-left py-5 px-10'>
-        <div className='flex gap-2'>
-          <p>PAYMENT METHOD<span>($)</span></p>
-          <Image src={arrowdownup} width={15} onClick={e => sortMethod(tableData)} />
-        </div>
-      </th>
-      <th className='text-left py-5 px-10'>
-        <div>
-          <p>AMOUNT</p>
-        </div>
-      </th>
-    </tr>
+    <>
+      <thead>
+        <tr className='text-xs font-bold text-[#757575] border-b '>
+          <th className='text-left py-5 px-10'>
+            <div>
+              <p>ORDER NUMBER</p>
+            </div>
+          </th>
+          <th className='text-left py-5 px-10'>
+            <div className='flex gap-2'>
+              <p>CUSTOMER NAME</p>
+              <Image src={arrowdownup} width={15} onClick={e => sortName(tableData)} />
+            </div>
+          </th>
+          <th className='text-left py-5 px-10'>
+            <div className='min-w-[80px]'>
+              <p>PAYMENT DATE</p>
+            </div>
+          </th>
+          <th className='text-left py-5 px-10'>
+            <div className='flex gap-2'>
+              <p>PAYMENT METHOD<span>($)</span></p>
+              <Image src={arrowdownup} width={15} onClick={e => sortMethod(tableData)} />
+            </div>
+          </th>
+          <th className='text-left py-5 px-10'>
+            <div>
+              <p>AMOUNT</p>
+            </div>
+          </th>
+        </tr>
+      </thead>
+    </>
   )
 }
 
