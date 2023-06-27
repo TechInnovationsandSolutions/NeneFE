@@ -16,6 +16,8 @@ html {
     --gray-bg: 0deg 0% 91%; /* #E8E8E8 */
     --gray-divider: 0deg 0% 60%; /* #989898 */
     --medGray: #e8e8e8;
+    --gray-table-header: 0deg 0% 46%; /* #757575 */
+    --list-hover: 0deg 0% 96%; /* #f5f5f5 */
 
     /* fonts */
     /* 44px - 98px */
@@ -39,6 +41,22 @@ html {
     min-width: 320px;
     position: relative;
   }
+
+  select > option:checked {
+    @apply bg-black text-white;
+  }
+  select > option:hover {
+    @apply bg-black text-white;
+  }
+
+  .shadow {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px,
+      rgba(0, 0, 0, 0.15) 0px 8px 16px;
+  }
+}
+
+.optionList:hover {
+  background-color: #f5f5f5;
 }
 
 .scrollbar-hide::-webkit-scrollbar {

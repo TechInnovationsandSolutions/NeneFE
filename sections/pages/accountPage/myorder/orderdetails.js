@@ -70,7 +70,7 @@ const OrderDetails = ({ currentOrder }) => {
         </div>
 
         {/* Main Order Details */}
-        {currentOrder.status === "cancelled" ? (
+        {currentOrder?.status === "cancelled" ? (
           <div className="flex flex-col w-full pt-9 h-auto ">
             {/* Cancelled status notification box */}
             <div className="flex gap-4 w-full bg-[#f5f5f5]  p-8">
@@ -88,20 +88,20 @@ const OrderDetails = ({ currentOrder }) => {
               <div className="flex flex-col lg:flex-row justify-between mt-3 border border-[#c7c7c7] p-6 items-center">
                 <div className="flex flex-col lg:flex-row gap-4 items-center">
                   <Image
-                    src={currentOrder.productImage}
+                    src={currentOrder?.productImage}
                     alt=""
                     width={88}
                     height={109.27}
                   />
                   <h3 className="text-[18px] max-w-full text-center lg:text-left text-black font-bold leading-6 lg:max-w-[50%]">
                     {" "}
-                    {currentOrder.productTitle}{" "}
+                    {currentOrder?.productTitle}{" "}
                   </h3>
                   <div className="flex gap-4 lg:flex-col">
                     <p className="text-[#757575] text-base">Size: 6</p>
                     <p className="text-[#757575] text-base">Color: Black</p>
                     <p className="text-[#757575] text-base">
-                      Quantity: {currentOrder.quantity}
+                      Quantity: {currentOrder?.quantity}
                     </p>
                   </div>
                 </div>
@@ -131,7 +131,7 @@ const OrderDetails = ({ currentOrder }) => {
             <div className="flex flex-col gap-4 lg:flex-row border-t justify-between border-[#d5d5d5] w-full py-9">
               <div className="flex flex-col gap-2 w-full">
                 <div className="flex justify-between">
-                  <p>Number of items</p> <span> {currentOrder.quantity} </span>
+                  <p>Number of items</p> <span> {currentOrder?.quantity} </span>
                 </div>
                 <div className="flex justify-between">
                   <p>Subtotal</p> <span> $1,500 </span>
@@ -215,20 +215,20 @@ const OrderDetails = ({ currentOrder }) => {
                 <div className="flex flex-col lg:flex-row justify-between mt-3 border border-[#c7c7c7] p-6 items-center">
                   <div className="flex flex-col lg:flex-row gap-4 items-center">
                     <Image
-                      src={currentOrder.productImage}
+                      src={currentOrder?.productImage}
                       alt=""
                       width={88}
                       height={109.27}
                     />
                     <h3 className="text-[18px] max-w-full text-center lg:text-left text-black font-bold leading-6 lg:max-w-[50%]">
                       {" "}
-                      {currentOrder.productTitle}{" "}
+                      {currentOrder?.productTitle}{" "}
                     </h3>
                     <div className="flex gap-4 lg:flex-col">
                       <p className="text-[#757575] text-base">Size: 6</p>
                       <p className="text-[#757575] text-base">Color: Black</p>
                       <p className="text-[#757575] text-base">
-                        Quantity: {currentOrder.quantity}
+                        Quantity: {currentOrder?.quantity}
                       </p>
                     </div>
                   </div>
@@ -262,7 +262,7 @@ const OrderDetails = ({ currentOrder }) => {
                 <div className="flex flex-col gap-2 w-full">
                   <div className="flex justify-between">
                     <p>Number of items</p>{" "}
-                    <span> {currentOrder.quantity} </span>
+                    <span> {currentOrder?.quantity} </span>
                   </div>
                   <div className="flex justify-between">
                     <p>Subtotal</p> <span> $1,500 </span>

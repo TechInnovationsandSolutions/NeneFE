@@ -14,6 +14,7 @@ import signoutImg from "./signout.svg";
 import google from "./google.svg";
 import apple from "./apple.svg";
 import facebook from "./facebook.svg";
+import deliveryBg from "./delivery_bg.png";
 
 export {
   ProfileImg,
@@ -32,4 +33,5 @@ export {
   google,
   apple,
   facebook,
+  deliveryBg,
 };

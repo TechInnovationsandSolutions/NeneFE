@@ -30,22 +30,22 @@ const SideBar = () => {
     {
       text: "Change password",
       img: ChangePasswordImg,
-      link: "",
+      link: "change-password",
     },
     {
       text: "Address book",
       img: AddressBookImg,
-      link: "",
+      link: "address-book",
     },
     {
       text: "Payment method",
       img: PaymentImg,
-      link: "",
+      link: "payment",
     },
     {
       text: "Contact preferences",
       img: ContactImg,
-      link: "",
+      link: "contact-preferences",
     },
     {
       text: "Social accounts",
@@ -64,12 +64,12 @@ const SideBar = () => {
     {
       text: "Where's my order",
       img: WhereissMyOrderImg,
-      link: "",
+      link: "where-is-my-order",
     },
     {
       text: "How do I make a return",
       img: WhereissMyOrderImg,
-      link: "",
+      link: "returns-and-refunds",
     },
     {
       text: "I need a new return's note",
@@ -130,8 +130,8 @@ const SideBar = () => {
               href={`/account/${detail.link}`}
               className={
                 activeRoute === `/account/${detail.link}`
-                  ? `${activeSectionStyles} pr-0 pb-0`
-                  : `${sectionStyles} pr-0 pb-0`
+                  ? `${activeSectionStyles} md:pr-0 md:pb-0`
+                  : `${sectionStyles} md:pr-0 md:pb-0`
               }
               key={detail.text}
             >
@@ -171,8 +171,8 @@ const SideBar = () => {
               href={`/account/${help.link}`}
               className={
                 activeRoute === `/account/${help.link}`
-                  ? `${activeSectionStyles} pr-0 pb-0`
-                  : `${sectionStyles} pr-0 pb-0`
+                  ? `${activeSectionStyles} md:pr-0 md:pb-0`
+                  : `${sectionStyles} md:pr-0 md:pb-0`
               }
               key={help.text}
             >
@@ -202,7 +202,8 @@ const SideBar = () => {
 
 export default SideBar;
 
-const sectionStyles = "flex gap-16 bg-white px-6 py-4 cursor-pointer";
-const sectionText = "text-small hidden lg:flex";
+const sectionStyles =
+  "flex gap-8 lg:gap-16 justify-center md:justify-start bg-white px-6 py-4 cursor-pointer";
+const sectionText = "text-[14px] lg:text-small hidden md:flex";
 const activeSectionStyles =
-  "flex gap-16 bg-[#f9f9f9] px-6 py-4 border-l-4 border-black cursor-pointer";
+  "flex gap-8 lg:gap-16 bg-[#f9f9f9] justify-center md:justify-start px-6 py-4 border-l-4 border-black cursor-pointer";

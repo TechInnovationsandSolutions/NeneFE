@@ -1,11 +1,13 @@
-import React from 'react'
+import { Overview, ProductListing } from "@/sections/pages/vendor/product";
+import React from "react";
 
 const VendorProduct = () => {
   return (
-    <div>
-      VendorProduct
-    </div>
-  )
-}
+    <>
+      <Overview />
+      <ProductListing />
+    </>
+  );
+};
 
-export default VendorProduct
+export default VendorProduct;
