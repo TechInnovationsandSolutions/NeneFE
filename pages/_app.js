@@ -30,6 +30,10 @@ export default function App({ Component, pageProps }) {
             </VendorLayout>
           ) : isCreateProductPath ? (
             getLayout(<Component {...pageProps} />)
+          ) : pathname.includes("super-admin") ? (
+            <VendorLayout>
+              <Component {...pageProps} />
+            </VendorLayout>
           ) : (
             <Layout>{getLayout(<Component {...pageProps} />)}</Layout>
           )}

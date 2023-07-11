@@ -17,6 +17,7 @@ module.exports = {
         header: {
           gray: "#757575",
         },
+        btnRed:'#D52C2C',
         lightPink: "hsl(var(--lightPink))",
         lightGray: "hsl(var(--lightGray))",
         priBlack: "hsl(var(--pri-black))",
