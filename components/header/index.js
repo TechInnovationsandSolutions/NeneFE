@@ -9,6 +9,7 @@ import FeaturedTab from "../header-categories/featured";
 import HeaderProfile from "../headerProfileBox";
 import { stateContext } from "@/context/accountProvider";
 import { useContext } from "react";
+import { useModalScrollBar } from "@/utils/helpers/modalFunctions";
 import SignIn from "../verifications/signin";
 
 const Header = () => {
@@ -34,6 +35,7 @@ const Header = () => {
     "Brands",
     "Featured",
   ];
+  useModalScrollBar(isSignin)
 
   useEffect(() => {
     const handleResize = () => {

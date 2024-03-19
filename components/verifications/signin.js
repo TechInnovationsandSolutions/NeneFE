@@ -1,14 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useContext, useState } from "react";
+import { useContext, useState,useEffect } from "react";
 import Button from "../button/button";
 import { stateContext } from "@/context/accountProvider";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import axios from "axios";
-
+import { removeMainScrollBar } from "@/utils/helpers/modalFunctions";
 const SignIn = () => {
+
+
   const { isSignin, setIsSignin } = useContext(stateContext);
   const [activeTab, setActiveTab] = useState("createAcc");
   const schema = yup
@@ -40,6 +42,7 @@ const SignIn = () => {
     formState: { errors, isSubmitting },
   } = form;
 
+
   const handleSignInSubmit = async (data) => {
     const userInfo = {
       firstName: data.firstName,
@@ -59,8 +62,8 @@ const SignIn = () => {
     }
   };
   return (
-    <div className="w-full h-screen bg-black/70 ml-0 flex justify-end items-center fixed top-0 left-0 z-[100]">
-      <div className="bg-white h-screen w-[80%] md:w-[50%] lg:w-[25rem] px-[1.25rem] pt-[1.5rem] pb-[3.4375rem] flex flex-col gap-[3rem] overflow-y-auto scrollbar-hide  ">
+    <div className="w-full h-screen overflow-y-auto bg-black/70 ml-0 flex justify-end items-center fixed top-0 left-0 z-[100]">
+      <div className="bg-white h-full w-[80%] md:w-[50%] lg:w-[25rem] px-[1.25rem] pt-[1.5rem] pb-[3.4375rem] flex flex-col gap-[3rem] overflow-y-auto ">
         {/* Header */}
         <div className="flex justify-between">
           <h1 className="text-black font-alegreya text-2xl font-normal leading-[2.0625rem]  ">
