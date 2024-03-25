@@ -47,8 +47,8 @@ const VendorLogin = () => {
     formState: { errors, isSubmitting },
   } = useForm();
   return (
-    <div className="py-5 px-4 md:p-0    flex flex-col md:gap-x-5 md:grid grid-cols-2 ">
-      <main className=" flex flex-col gap-12 md:py-5 md:px-8">
+    <div className="py-5 px-4 md:p-0  flex flex-col md:flex-row ">
+      <main className=" flex flex-col w-3/5 gap-12 md:py-5 md:px-12 " >
         <span className="font-alegreya">Nene</span>
 
         <div className="flex justify-between">
@@ -101,11 +101,10 @@ const VendorLogin = () => {
           />
         </form>
       </main>
-      <aside>
-        <div className="col-span-3">
+      <aside className="w-[49%]" >
+        <div className=" ml-auto ">
           <Image
-            className="hidden md:flex md:h-[120vh] lg:h-[120vh] "
-            objectFit="contain"
+            className="hidden ml-auto object-fill  md:flex md:h-[120vh]"
             src={HeroImg}
             alt="hero image"
           ></Image>
