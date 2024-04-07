@@ -3,7 +3,7 @@ import { useState } from 'react';
 import DisputesTableHead from './disputesTableHead';
 import DisputesTableRow from './disputesTableRow';
 import MobileTableDisputes from './mobileTableDisputes';
-import PaginateDisputes from './paginateDisputes';
+import Paginate from '@/components/paginate/pagination';
 
 let list = [
   {id:'73283DMD', date:'10-jan-2022', reason:'wrong pice tag Doe',status:'resolved', action:'', name:'john emeka'},
@@ -60,7 +60,7 @@ const PaymentDisputes = () => {
       <div className='px-6 grid grid-cols-1 gap-4 lg:hidden my-6'>
         <MobileTableDisputes currentItems={currentItems} />
       </div>
-      <PaginateDisputes setCurrentItems={setCurrentItems} tableData={tableData} />
+      <Paginate setCurrentItems={setCurrentItems} tableData={tableData} />
     </>
   )
 }

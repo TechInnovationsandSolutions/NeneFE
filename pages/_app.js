@@ -5,6 +5,7 @@ import Layout from "@/layout/layout";
 import VendorLayout from "@/components/vendor/layout";
 import StateProvider from "@/context/accountProvider";
 import { useRouter } from "next/router";
+import AuthLayout from "@/components/admin/layout";
 // import { FormProvider } from "react-hook-form";
 
 export default function App({ Component, pageProps }) {
@@ -13,32 +14,39 @@ export default function App({ Component, pageProps }) {
   // Use layout defined at page level
   const getLayout = Component.getLayout || ((page) => page);
 
-  const isCreateProductPath =
-    pathname.includes("/vendor") && pathname.includes("/create-product");
 
   return (
     <Provider store={store}>
       <StateProvider>
         <div>
-          {pathname.includes("/vendor") && pathname.includes("/auth") ? (
-            <Component {...pageProps} />
-          ) : pathname.includes("/vendor") &&
-            !pathname.includes("/auth") &&
-            !pathname.includes("/create") ? (
-            <VendorLayout>
-              <Component {...pageProps} />
-            </VendorLayout>
-          ) : isCreateProductPath ? (
-            getLayout(<Component {...pageProps} />)
-          ) : pathname.includes("super-admin") ? (
-            <VendorLayout>
-              <Component {...pageProps} />
-            </VendorLayout>
-          ) : (
-            <Layout>{getLayout(<Component {...pageProps} />)}</Layout>
-          )}
+          {
+          renderAppropriateLayout(pathname,getLayout,Component,pageProps)
+          }
         </div>
       </StateProvider>
     </Provider>
   );
+}
+
+const renderAppropriateLayout = (pathname,getLayout,Component,pageProps) => {
+  if(pathname.includes("/vendor") && pathname.includes("/auth")){
+
+    return <Component {...pageProps} />
+
+  }else if(pathname.includes("/vendor") & !pathname.includes("/auth") && !pathname.includes("/create")  || pathname.includes("super-admin")){
+
+   return( <VendorLayout><Component {...pageProps} /></VendorLayout>)
+
+  }else if(pathname.includes("/vendor") && pathname.includes("/create-product")){
+
+   return getLayout(<Component {...pageProps} />)
+
+  }else if(pathname.includes("/admin")){
+
+    return( <AuthLayout><Component {...pageProps} /></AuthLayout>)
+ 
+  }else {
+
+    return <Layout>{getLayout(<Component {...pageProps} />)}</Layout>
+  }
 }

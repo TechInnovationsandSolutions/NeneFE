@@ -1,10 +1,9 @@
 import Image from 'next/image';
-import React, { useEffect } from 'react'
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import ReactPaginate from "react-paginate";
-import chevronDown from '../../../../public/assets/svgs/chevronDown.svg'
+import chevronDown from '@/public/assets/svgs/chevronDown.svg'
 
-const PaginateDisputes = ({setCurrentItems, tableData}) => {
+ const Paginate = ({setCurrentItems, tableData}) => {
   // const {tableData} = usePaginate()
   // We start with an empty list of items.
   
@@ -86,4 +85,4 @@ const PaginateDisputes = ({setCurrentItems, tableData}) => {
   )
 }
 
-export default PaginateDisputes
+export default Paginate

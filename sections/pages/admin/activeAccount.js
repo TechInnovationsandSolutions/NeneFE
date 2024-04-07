@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import MobileTablePayments from './mobileTablePayments'
-import PaymentTableHead from './paymentTableHead'
-import PaymentTableRow from './paymentTableRow'
+// import MobileTablePayments from '../mobileTablePayments'
+import AccountTableHead from './activeTablehead'
+import AccountTableRow from './activeTablerow'
 import Paginate from '@/components/paginate/pagination'
 
 let list = [
@@ -42,7 +42,7 @@ let list = [
   
 ]
 
-const PaymentLists = () => {
+const ActiveAcoountList = () => {
   const [tableData, setTableData] = useState(list)
   const [currentItems, setCurrentItems] = useState(null);
 
@@ -52,16 +52,16 @@ const PaymentLists = () => {
     <>
       <div className='px-6'>
         <table className='w-full hidden lg:block'>
-        <PaymentTableHead setTableData={setTableData} tableData={tableData} />
-        <PaymentTableRow currentItems={currentItems} />
+        <AccountTableHead setTableData={setTableData} tableData={tableData} />
+        <AccountTableRow currentItems={currentItems} />
         </table>
       </div>
       <div className='px-6 grid grid-cols-1 gap-4 lg:hidden my-6'>
-        <MobileTablePayments currentItems={currentItems} />
+        {/* <MobileTablePayments currentItems={currentItems} /> */}
       </div>
       <Paginate setCurrentItems={setCurrentItems} tableData={tableData} />
     </>
   )
 }
 
-export default PaymentLists
+export default ActiveAcoountList
