@@ -289,11 +289,18 @@ const ActiveAccount = () => {
             </article>
             <article>
               <h1 className="font-bold text-2xl">Roles</h1>
-              <p>
-                To ensure the Glamour and Luxury Page is well updated regularly
-                to meet clients’ satisfaction. To regularly fill the page with
-                trending themes and styles of customer’s satisfaction.
-              </p>
+              <ul className="list-disc pl-5">
+                <li>
+                  {" "}
+                  To ensure the Glamour and Luxury Page is well updated
+                  regularly to meet clients’ satisfaction.
+                </li>
+                <li>
+                  {" "}
+                  To regularly fill the page with trending themes and styles of
+                  customer’s satisfaction.
+                </li>
+              </ul>
             </article>
 
             <div>
