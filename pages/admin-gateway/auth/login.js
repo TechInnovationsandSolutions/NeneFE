@@ -48,7 +48,7 @@ const VendorLogin = () => {
   } = useForm();
   return (
     <div className="py-5 px-4 md:p-0  ">
-      <main className=" flex flex-col md:w-3/5 m-auto gap-12 md:py-5 md:px-12 ">
+      <main className=" flex flex-col md:w-1/2 m-auto gap-12 md:py-5 md:px-12 ">
         <span className="font-alegreya">Nene</span>
 
         <div className="flex justify-between">
@@ -59,30 +59,6 @@ const VendorLogin = () => {
           className="flex flex-col gap-8"
           onSubmit={handleSubmit(handleLogin)}
         >
-          <div className="flex flex-col">
-            <label htmlFor="">Log in as </label>
-            <select
-              placeholder="Admin or Super Admin"
-              className="border rounded-md border-[#979797]"
-              type="selecc"
-              {...register("Role", { required: true })}
-            >
-              <option>Admin </option>
-              <option>Super Admin </option>
-            </select>
-            {errors.role && (
-              <span style={{ color: "red" }}>*Role* is mandatory </span>
-            )}
-          </div>
-          <div className="flex flex-col">
-            <label htmlFor="">Full Name</label>
-            <input
-              placeholder="Enter Full Name"
-              className="border rounded-md border-[#979797]"
-              type="text"
-              {...register("fullName", { required: true })}
-            />
-          </div>
           <div className="flex flex-col">
             <label htmlFor="">Email Address</label>
             <input
@@ -96,9 +72,9 @@ const VendorLogin = () => {
             )}
           </div>
           <div className="flex flex-col">
-            <label htmlFor="">Passcode</label>
+            <label htmlFor="">Password</label>
             <input
-              placeholder="Enter Passcode"
+              placeholder="Enter Password"
               className="border rounded-md border-[#979797]"
               type="password"
               {...register("password", { required: true })}
@@ -116,7 +92,7 @@ const VendorLogin = () => {
               href="/"
               className="border border-transparent hover:border box-border  hover:border-solid hover:border-b-black "
             >
-              Forgot Passcode ? Report.
+              Forgot Password ? Report.
             </Link>
           </span>
         </form>
