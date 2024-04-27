@@ -1,10 +1,8 @@
 import img1 from "../../../public/assets/gallery/Rectangle 373.png";
 import GalleryItem from "@/components/galleryItem";
 import Button from "@/components/button/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const Scrapbook = () => {
-  const [selectClicked, setSelectClicked] = useState(false);
-  const [selectedItems, setSelectedItems] = useState([]);
   const imgArray = [
     { src: img1, id: 1 },
     { src: img1, id: 2 },
@@ -19,6 +17,12 @@ const Scrapbook = () => {
     { src: img1, id: 11 },
     { src: img1, id: 12 },
   ];
+  const [selectClicked, setSelectClicked] = useState(false);
+  const [selectedItems, setSelectedItems] = useState([]);
+  const [displayedItems, setDisplayedItems] = useState(imgArray);
+
+  useEffect(() => {}, []);
+
   function handleNoOfItemsClicked(e, id) {
     if (e.target.checked) {
       setSelectedItems([...selectedItems, id]);
@@ -28,10 +32,16 @@ const Scrapbook = () => {
     }
     console.log(selectedItems);
   }
+  function removePhotos() {
+    const items = displayedItems.filter(
+      (item) => !selectedItems.includes(item.id)
+    );
+    setDisplayedItems(items);
+  }
   return (
     <div className="px-[2%] py-10">
-
       <main className="flex flex-col gap-5">
+        <div className="min-h-[52px]">
         {!selectClicked ? (
           <div className="flex flex-col md:flex-row gap-4">
             <Button
@@ -52,16 +62,17 @@ const Scrapbook = () => {
             />
           </div>
         ) : (
-          <div className="flex justify-between items-center" >
+          <div className="flex justify-between items-center">
             <p>
               {" "}
+              {/* count to be fixed  */}
               <strong>{selectedItems.length}</strong> selected{" "}
             </p>
             {selectedItems.length > 0 ? (
               <Button
                 variant="white"
                 onClick={() => {
-                  setSelectClicked(true);
+                  removePhotos();
                 }}
                 text="Remove Photos"
                 customClassName="border w-full md:w-auto "
@@ -69,8 +80,9 @@ const Scrapbook = () => {
             ) : null}{" "}
           </div>
         )}
+        </div>
         <div className="scrapbook-wrapper ">
-          {imgArray.map((img) => {
+          {displayedItems.map((img) => {
             return (
               <GalleryItem
                 img={img}
