@@ -37,6 +37,7 @@ const Scrapbook = () => {
       (item) => !selectedItems.includes(item.id)
     );
     setDisplayedItems(items);
+    setSelectedItems([])
   }
   return (
     <div className="px-[2%] py-10">
