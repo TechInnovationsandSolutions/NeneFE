@@ -7,7 +7,9 @@ const GalleryItem = ({ img }) => {
   const [currentId, setCurrentId] = useState("");
 
   const router = useRouter();
-  const imgResizeId = [1, 4, 8, 11];
+  // ids for images that are resized in the gallery
+  const tallImgResizeId = [1, 11];
+  const wideImgResizeId = [8, 4];
   useEffect(() => {
     console.log(imgRef);
   }, [imgRef]);
@@ -23,8 +25,12 @@ const GalleryItem = ({ img }) => {
   return (
     <div
       className={`overflow-y-hidden ${
-        imgResizeId.includes(img.id) ? "lg:col-span-2 lg:row-span-2 " : "h-full"
-      }  w-fit h-fit relative`}
+        tallImgResizeId.includes(img.id)
+          ? "tall"
+          : wideImgResizeId.includes(img.id)
+          ? "wide"
+          : ""
+      }  relative`}
       onMouseOut={() => setHovered(false)}
       onMouseOver={() => handleMouseOver()}
     >
@@ -39,7 +45,7 @@ const GalleryItem = ({ img }) => {
 
       <div
         onClick={handleToCollectionPage}
-        class={` cursor-pointer bg-[#0000008c] p-2 flex flex-col gap-2 absolute w-full bg-opacity-0 opacity-0 -translate-y-full ${
+        class={` cursor-pointer bg-[#0000008c] p-2 flex flex-col gap-2 opacity-0 bottom-0 absolute w-full  ${
           hovered ? "animate-slide-up opacity-100 " : " "
         }   text-white`}
       >

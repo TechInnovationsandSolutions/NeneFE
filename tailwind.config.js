@@ -17,7 +17,7 @@ module.exports = {
         header: {
           gray: "#757575",
         },
-        btnRed:'#D52C2C',
+        btnRed: "#D52C2C",
         lightPink: "hsl(var(--lightPink))",
         lightGray: "hsl(var(--lightGray))",
         priBlack: "hsl(var(--pri-black))",
@@ -49,10 +49,10 @@ module.exports = {
       keyframes: {
         "slide-up": {
           "0%": {
-            transform: "translateY(0%)",
+            bottom: "-100%",
             opacity: 0,
           },
-          "100%": { transform: "translateY(-100%)", opacity: 1 },
+          "100%": { bottom: "0", opacity: 1 },
         },
         "slide-right": {
           "0%": {

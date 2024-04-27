@@ -19,7 +19,7 @@ const Scrapbook = () => {
     <div className="px-[8%] py-5">
       <h1 className="text-center font-bold">Scrapbook</h1>
       <main>
-        <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-4 flex-wrap  gap-4 py-5 ">
+        <div className="scrapbook-wrapper ">
           {imgArray.map((img) => {
             return <GalleryItem img={img} key={img.id} />;
           })}
