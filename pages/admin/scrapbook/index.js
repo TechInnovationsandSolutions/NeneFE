@@ -1,4 +1,4 @@
-import img1 from "../../public/assets/gallery/Rectangle 373.png";
+import img1 from "../../../public/assets/gallery/Rectangle 373.png";
 import GalleryItem from "@/components/galleryItem";
 import Button from "@/components/button/button";
 import { useEffect, useState } from "react";

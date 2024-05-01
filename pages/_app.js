@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }) {
     <Provider store={store}>
       <StateProvider>
         <div>
-          {pathname.includes("/vendor") && pathname.includes("/auth") ? (
+          {pathname.includes("/auth") ? (
             <Component {...pageProps} />
           ) : pathname.includes("/vendor") &&
             !pathname.includes("/auth") &&
