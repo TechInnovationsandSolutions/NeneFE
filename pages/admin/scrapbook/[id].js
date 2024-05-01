@@ -1,5 +1,5 @@
 import Image from "next/image";
-import img1 from "../../public/assets/gallery/Rectangle 373.png";
+import img1 from "@/public/assets/gallery/Rectangle 373.png";
 import Button from "@/components/button/button";
 const GalleryDetailItem = () => {
   return (
