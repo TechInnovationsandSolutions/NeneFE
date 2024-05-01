@@ -4,11 +4,14 @@ import PendingTablehead from "@/sections/pages/admin/pendingAccounts/pendingTabl
 import Table from "@/sections/pages/admin/table";
 import { useState } from "react";
 import Modal from "@/sections/pages/admin/modal";
+import PendingMobile from "@/sections/pages/admin/pendingAccounts/pendingMobile";
 
 function Pending() {
     const [currentItems, setCurrentItems] = useState(null);
     const [isApproveModalOpen, setIsApproveModalOpen] = useState(false);
     const [isDeclineModalOpen, setIsDeclineModalOpen] = useState(false);
+    const [selected, setSelected] = useState([])
+    const [allSelected, setAllSelected] = useState(false)
 
     return (  
         <div className='p-5 sm:p-8'>
@@ -18,23 +21,27 @@ function Pending() {
                     <span className='text-gray-600 ml-2'>({pendingAccountsList.length})</span>
                 </span>
 
-                <div className='flex flex-col sm:flex-row gap-2'>
+                <div className=' flex-col sm:flex-row gap-2  lg:flex hidden'>
                     <Button text="View Details" variant="white" customClassName="border border-gray-300" />
                     <Button text="Approve Account" variant="white" customClassName="border border-gray-300" onClick={() => setIsApproveModalOpen(true)} />
                     <Button text="Decline Account" variant="white" customClassName="border border-gray-300" onClick={() => setIsDeclineModalOpen(true)} />
                 </div>
             </div>
 
-            <div className='w-full'>
+            <div className='w-full  lg:overflow-x-auto mt-10 lg:block hidden'>
                 <Table 
-                    tableHead={<PendingTablehead />}
-                    tableRows={<PendingTableRow currentItems={currentItems} />}
+                    tableHead={<PendingTablehead  setSelected={setSelected} allLists={pendingAccountsList} setAllSelected={setAllSelected}/>}
+                    tableRows={<PendingTableRow setSelected={setSelected} currentItems={currentItems}  selected={selected} allSelected={allSelected}/>}
                     data={pendingAccountsList}
                     currentItems={currentItems}
                     setCurrentItems={setCurrentItems}
                 />
 
                
+            </div>
+
+            <div className='px-6 grid grid-cols-1 gap-4 lg:hidden my-6'>
+                <PendingMobile currentItems={currentItems} />
             </div>
 
             <Modal 
@@ -80,28 +87,28 @@ const pendingAccountsList = [
     {   
         id : 1,
         fullName : "John Doe",
-        email : "johndoe@gmail.com",
+        email : "johndoea@gmail.com",
         businessName : "JD Enterprises Ltd",
         date : "10 Jan, 2023"
     },
     {   
         id : 2,
         fullName : "John Doe",
-        email : "johndoe@gmail.com",
+        email : "johndoeb@gmail.com",
         businessName : "JD Enterprises Ltd",
         date : "10 Jan, 2023"
     },
     {   
         id : 3,
         fullName : "John Doe",
-        email : "johndoe@gmail.com",
+        email : "johndoec@gmail.com",
         businessName : "JD Enterprises Ltd",
         date : "10 Jan, 2023"
     },
     {
         id : 4,
         fullName : "John Doe",
-        email : "johndoe@gmail.com",
+        email : "johndoed@gmail.com",
         businessName : "JD Enterprises Ltd",
         date : "10 Jan, 2023"
     },
@@ -115,7 +122,7 @@ const pendingAccountsList = [
     {
         id : 6,
         fullName : "John Doe",
-        email : "johndoe@gmail.com",
+        email : "johndoer@gmail.com",
         businessName : "JD Enterprises Ltd",
         date : "10 Jan, 2023"
     },
@@ -129,7 +136,7 @@ const pendingAccountsList = [
     {
         id : 8,
         fullName : "John Doe",
-        email : "johndoe@gmail.com",
+        email : "johndoef@gmail.com",
         businessName : "JD Enterprises Ltd",
         date : "10 Jan, 2023"
     },

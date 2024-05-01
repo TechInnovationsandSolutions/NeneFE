@@ -39,7 +39,7 @@ const Payment = () => {
             <p>Change payment method</p>
           </div>
           <div className='py-3 px-5 flex  justify-center bg-black text-white gap-3 w-full md:w-[240px]'>
-            <p>withdraw earnings</p>
+            <p>Withdraw earnings</p>
           </div>
         </div>
       </div>

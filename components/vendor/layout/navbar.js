@@ -22,7 +22,7 @@ const Navbar = ({ setOpenBar, setOpenSearch, openSearch }) => {
         <div className='lg:flex items-center justify-between w-full px-9 pt-9 pb-4  hidden'>
           <div className='h-10 xl:w-[400px]  flex px-5 py-2 bg-[#F2F2F2] rounded-sm '>
             <input
-              className='w-full bg-inherit h-full outline-none'
+              className='w-full bg-inherit h-full border-none outline-none focus:ring-0'
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder='search . . .'

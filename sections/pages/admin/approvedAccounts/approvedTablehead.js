@@ -1,10 +1,29 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import arrowdownup from '../../../../public/assets/svgs/ArrowsDownUp.svg'
 
 
 
-const ApprovedTablehead = ({tableData, setTableData}) => {
+const ApprovedTablehead = ({tableData, setTableData, setSelected, allLists, setAllSelected}) => {
+  const [isChecked, setIsChecked] = useState()
+
+  const handleChangle = (event) => {
+    setIsChecked(!isChecked)
+    if(event.target.checked){
+      setSelected(prev => {
+        let newSelectedArr = []
+        for (let i = 0; i < allLists.length; i++) {
+          const element = allLists[i];
+          newSelectedArr.push({id:element.email})
+        }
+        return newSelectedArr
+      })
+      setAllSelected(true)
+    }else{
+      setSelected([])
+      setAllSelected(false)
+    }
+  }
 
   const sortDate = (tableData) => {
     let newData = [...tableData]
@@ -29,7 +48,7 @@ const ApprovedTablehead = ({tableData, setTableData}) => {
         <tr className='text-xs sm:text-sm font-bold text-[#757575] border-b '>
           <th className='text-left py-5 px-4'>
             <div>
-              <input type="checkbox" className='outline-none' />
+            <input type="checkbox" style={{ backgroundColor: isChecked ? 'black' : 'transparent', border:"1px solid gray"}} className='checkedApproved outline-none  focus:ring-0 checked:bg-black border border-black' onChange={handleChangle} />
             </div>
           </th>
           <th className='text-left py-5 px-4'>

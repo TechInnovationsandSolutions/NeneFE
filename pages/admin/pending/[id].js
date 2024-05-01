@@ -10,7 +10,7 @@ function AccountDetailsPage() {
 
     return (  
         <section className='p-5 sm:p-10'>
-            <div className='mb-6 flex items-center'>
+            <div className='mb-16 flex items-center'>
                 <button className="mr-3 px-1" onClick={() => router.back()}>
                     <picture>
                         <img src="/assets/svgs/arrow-left.svg" className="h-[20px]" alt="" />
@@ -21,7 +21,7 @@ function AccountDetailsPage() {
                     Vendor Details
                 </p>
             </div>
-            <AccountDetails vendor={vendor} />
+            <AccountDetails vendor={vendor}  color={"transparent"}/>
 
             
         </section>

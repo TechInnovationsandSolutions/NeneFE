@@ -13,7 +13,7 @@ const Table = ({tableHead, tableRows, data, currentItems, setCurrentItems
 
 
   return (
-    <div className='w-full'>
+    <div className='w-full lg:min-w-[1000px]'>
       <div className='overflow-x-auto w-full'>
         <table className='w-full'>
         {/* <Tablehead setTableData={setTableData} tableData={tableData} />
