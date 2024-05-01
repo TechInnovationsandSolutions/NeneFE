@@ -1,7 +1,7 @@
-function AccountDetails({ vendor, additionalInfo }) {
-    
+function AccountDetails({ vendor, color, additionalInfo }) {
+    console.log(color);
     return (  
-        <section className=''>
+        <section className={`bg-[${color}] p-10`}>
             <div>
                 {additionalInfo}
             </div>

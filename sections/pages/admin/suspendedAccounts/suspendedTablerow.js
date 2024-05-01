@@ -1,13 +1,14 @@
 import Link from "next/link";
+import ChecboxSuspendedbox from "./checkboxSuspended";
 
-function SuspendedTableRow({ currentItems }) {
+function SuspendedTableRow({currentItems, setSelected,allSelected}) {
     return (  
         <>
       <tbody className='w-full'>
       {currentItems && currentItems.map((cell, i) => (
         <tr className='text-sm sm:text-base font-normal hover:bg-[#F6F6F6] w-full' key={i}>
-          <td className='py-8 px-4  '>
-            <input type="checkbox" />
+          <td className='py-8 pr-4  '>
+          <ChecboxSuspendedbox setSelected={setSelected} cell={cell} currentItems={currentItems} allSelected={allSelected} />
           </td>
           <td className='py-8 px-4 '>
             <Link href={`/admin/pending/${cell.id}`}>{cell.fullName}</Link>
