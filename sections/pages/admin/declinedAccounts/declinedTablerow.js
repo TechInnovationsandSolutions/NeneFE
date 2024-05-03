@@ -1,8 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
+import ChecboxDeclinedbox from './checkboxDeclined';
 
 
-function DeclinedTableRow({currentItems}) {
+function DeclinedTableRow({currentItems, setSelected,allSelected}) {
   // console.log("table rows now showing");  
 
   return (
@@ -10,8 +11,8 @@ function DeclinedTableRow({currentItems}) {
       <tbody className='w-full'>
       {currentItems && currentItems.map((cell, i) => (
         <tr className='text-sm sm:text-base font-normal hover:bg-[#F6F6F6] w-full' key={i}>
-          <td className='py-8 px-4  '>
-            <input type="checkbox" />
+          <td className='py-8 pr-4  '>
+            <ChecboxDeclinedbox setSelected={setSelected} cell={cell} currentItems={currentItems} allSelected={allSelected} />
           </td>
           <td className='py-8 px-4 '>
             <Link href={`/admin/declined/${cell.id}`}>{cell.fullName}</Link>

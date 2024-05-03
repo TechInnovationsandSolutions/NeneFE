@@ -16,12 +16,12 @@ import { setAdminState } from "@/store/superAdminSlice";
 import AdminSidebar from "@/components/admin/layout/adminSidebar";
 
 const List = [
-  { id: 1, page: "Product", icon: QrCode, route: "product" },
+  { id: 1, page: "Product", icon: QrCode, route: "" },
   { id: 2, page: "Orders", icon: ShoppingCart, route: "orders" },
   { id: 3, page: "Payments", icon: CreditCard, route: "payments" },
-  { id: 4, page: "Settings", icon: Settings, route: "settings" },
-  { id: 5, page: "Enable Ads", icon: Slideshow, route: "ads" },
-  { id: 6, page: "Log out", icon: SignOut, route: "products" },
+  { id: 4, page: "Settings", icon: Settings, route: "" },
+  { id: 5, page: "Enable Ads", icon: Slideshow, route: "" },
+  { id: 6, page: "Log out", icon: SignOut, route: "" },
 ];
 
 const Sidebar = ({ openBar, setOpenBar }) => {
@@ -46,10 +46,12 @@ const Sidebar = ({ openBar, setOpenBar }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    replace({
-      pathname: router.pathname,
-      query: { status: AdminStatus },
-    });
+    if( pathname.includes("/super-admin")){
+      replace({
+        pathname: router.pathname,
+        query: { status: AdminStatus },
+      });
+    }
   }, []);
 
   console.log(path[1] === "admin" ? `right path: ${[path]}` : `Wrong path: ${[path]}`);
@@ -59,7 +61,7 @@ const Sidebar = ({ openBar, setOpenBar }) => {
   //
   function updateAdminStatus(params) {
     // checks if status is in queryURL i.e correct URL for status change.
-    if (query.hasOwnProperty("status")) {
+    if (query.hasOwnProperty("status") &&  pathname.includes("/super-admin")) {
       dispatch(setAdminState(params));
       replace({
         pathname: router.pathname,
@@ -70,16 +72,16 @@ const Sidebar = ({ openBar, setOpenBar }) => {
 
   return (
     <div
-      className={`h-screen overflow-y-auto scrollbar-hide lg:pt-[100px] min-w-[288px] fixed lg:border-r border-[#D7D7D7] ${
+      className={`h-[calc(100vh-88px)] bottom-0 overflow-y-auto scrollbar-hide min-w-[288px] fixed lg:border-r border-[#D7D7D7] ${
         openBar ? "block" : "hidden"
       } ${openBar ? "z-30" : "z-0"} lg:block bg-white`}
     >
-      <div
+      {/* <div
         className="p-6 flex justify-end pb-0 lg:hidden cursor-pointer"
         onClick={closeBar}
       >
         <Image src={close} alt="close" />
-      </div>
+      </div> */}
       {isSuperAdminPage ? (
         <div className="px-10 flex flex-col py-10 gap-8 ">
           <div className="flex gap-4  ">
