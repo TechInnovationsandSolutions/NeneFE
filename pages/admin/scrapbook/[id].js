@@ -17,7 +17,7 @@ const GalleryDetailItem = () => {
           />
 
           <div className="flex flex-col  justify-center gap-5 ">
-            <span className="font-bold"> Clerk Exclusive blouse</span>
+            <span className="font-bold"> Clerk Exclusive Blouse</span>
             <span> Sep 3,2020</span>
             <Button text="View Brand/Collection" customClassName="h-fit">
               {" "}
