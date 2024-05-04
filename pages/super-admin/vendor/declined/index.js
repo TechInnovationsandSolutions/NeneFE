@@ -28,8 +28,8 @@ function Declined() {
 
             <div className='w-full  lg:overflow-x-auto mt-10 lg:block hidden'>
                 <Table 
-                    tableHead={<DeclinedTablehead   setSelected={setSelected} allLists={declinedAccountsList} setAllSelected={setAllSelected} />}
-                    tableRows={<DeclinedTableRow setSelected={setSelected} currentItems={currentItems}  selected={selected} allSelected={allSelected}/>}
+                    tableHead={<DeclinedTablehead  role='super-admin'  setSelected={setSelected} allLists={declinedAccountsList} setAllSelected={setAllSelected} />}
+                    tableRows={<DeclinedTableRow role='super-admin' setSelected={setSelected} currentItems={currentItems}  selected={selected} allSelected={allSelected}/>}
                     data={declinedAccountsList}
                     currentItems={currentItems}
                     setCurrentItems={setCurrentItems}

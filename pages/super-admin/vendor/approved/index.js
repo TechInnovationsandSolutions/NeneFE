@@ -51,6 +51,7 @@ function Approved() {
               setSelected={setSelected}
               allLists={accountsList}
               setAllSelected={setAllSelected}
+              role='super-admin'
             />
           }
           tableRows={
@@ -58,6 +59,7 @@ function Approved() {
               setSelected={setSelected}
               currentItems={currentItems}
               selected={selected}
+              role='super-admin'
               allSelected={allSelected}
             />
           }

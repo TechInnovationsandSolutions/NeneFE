@@ -6,8 +6,8 @@ import SuspendedMobile from "@/sections/pages/admin/suspendedAccounts/suspendedM
 
 function Suspened() {
   const [currentItems, setCurrentItems] = useState(null);
-  const [selected, setSelected] = useState([])
-  const [allSelected, setAllSelected] = useState(false)
+  const [selected, setSelected] = useState([]);
+  const [allSelected, setAllSelected] = useState(false);
 
   return (
     <div>
@@ -23,15 +23,30 @@ function Suspened() {
 
         <div className="w-full  lg:overflow-x-auto mt-10  lg:block hidden">
           <Table
-            tableHead={<SuspendedTablehead  setSelected={setSelected} allLists={suspendedAccountsList} setAllSelected={setAllSelected} />}
-            tableRows={<SuspendedTableRow setSelected={setSelected} currentItems={currentItems}  selected={selected} allSelected={allSelected} />}
+            tableHead={
+              <SuspendedTablehead
+                role="super-admin"
+                setSelected={setSelected}
+                allLists={suspendedAccountsList}
+                setAllSelected={setAllSelected}
+              />
+            }
+            tableRows={
+              <SuspendedTableRow
+                role="super-admin"
+                setSelected={setSelected}
+                currentItems={currentItems}
+                selected={selected}
+                allSelected={allSelected}
+              />
+            }
             data={suspendedAccountsList}
             currentItems={currentItems}
             setCurrentItems={setCurrentItems}
           />
         </div>
-        <div className='px-6 grid grid-cols-1 gap-4 lg:hidden my-6'>
-            <SuspendedMobile currentItems={currentItems} />
+        <div className="px-6 grid grid-cols-1 gap-4 lg:hidden my-6">
+          <SuspendedMobile currentItems={currentItems} />
         </div>
       </div>
     </div>

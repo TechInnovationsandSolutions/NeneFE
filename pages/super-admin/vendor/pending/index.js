@@ -30,8 +30,8 @@ function Pending() {
 
             <div className='w-full  lg:overflow-x-auto mt-10 lg:block hidden'>
                 <Table 
-                    tableHead={<PendingTablehead  setSelected={setSelected} allLists={pendingAccountsList} setAllSelected={setAllSelected}/>}
-                    tableRows={<PendingTableRow setSelected={setSelected} currentItems={currentItems}  selected={selected} allSelected={allSelected}/>}
+                    tableHead={<PendingTablehead role='super-admin'  setSelected={setSelected} allLists={pendingAccountsList} setAllSelected={setAllSelected}/>}
+                    tableRows={<PendingTableRow role='super-admin'setSelected={setSelected} currentItems={currentItems}  selected={selected} allSelected={allSelected}/>}
                     data={pendingAccountsList}
                     currentItems={currentItems}
                     setCurrentItems={setCurrentItems}
