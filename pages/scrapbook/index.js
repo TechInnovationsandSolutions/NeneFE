@@ -82,6 +82,7 @@ const Scrapbook = () => {
           </div>
         )}
         </div>
+        {/* Scrapbook Wrapper */}
         <div className="scrapbook-wrapper ">
           {displayedItems.map((img) => {
             return (
